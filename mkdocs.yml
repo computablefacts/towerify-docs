@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: Documentation Towerify
+site_url: https://docs.towerify.io/
+
+# Page tree
+nav:
+  - Accueil: index.md
+  - Démarrage rapide:
+    - demarrage-rapide/index.md
+    - App statique: demarrage-rapide/app-statique.md
+    - API Python: demarrage-rapide/app-api-python.md
+  - Avancés:
+    - avances/todo.md
+    - avances/variables.md
+  - Markdown: markdown-examples.md
+
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - content.code.select
+
+copyright: Copyright &copy; 2023 ComputableFacts
+
+markdown_extensions:
+  - admonition
+  - def_list
+  - toc:
+      permalink: true
+      title: Sur cette page
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
