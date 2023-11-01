@@ -1,3 +1,15 @@
-FROM nginx
+FROM python:3 AS build
 
-COPY ./docs /usr/share/nginx/html
+WORKDIR /usr/src/app
+
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir mkdocs-material
+
+COPY . .
+
+RUN mkdocs build
+
+
+FROM nginx AS publish
+
+COPY --from=build /usr/src/app/site/ /usr/share/nginx/html/
