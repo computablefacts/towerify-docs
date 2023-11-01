@@ -11,7 +11,7 @@ pipeline {
         /* Variables you must change */
         TOWERIFY_ROOT_DOMAIN = 'docs.towerify.io'
         APP_NAME = 'towerify-docs'
-        APP_NAME_SHORT = 'td' // two characters
+        APP_NAME_SHORT = 'TD' // two characters
         DOCKER_IMAGE_NAME = 'computablefacts/towerify-docs'
         /* DO NOT change below */
         DOCKER_REGISTRY_URL = '' // Leave empty for Docker Hub
@@ -25,9 +25,9 @@ pipeline {
             steps {
                 script {
                     // Build...
-                    dockerImage = docker.build("${env.DOCKER_IMAGE_NAME}", './towerify/Dockerfile')
+                    dockerImage = docker.build("${env.DOCKER_IMAGE_NAME}", '-f towerify/Dockerfile .')
                     // .. and push to Docker Hub
-                    docker.withRegistry("${env.DOCKER_REGISTRY_URL}", "${env.DOCKER_REGISTRY_CRED_ID}") {
+                    docker.withRegistry('', "${env.DOCKER_REGISTRY_CRED_ID}") {
                         dockerImage.push("${env.DOCKER_IMAGE_TAG}")
                     }
                 }
@@ -73,8 +73,8 @@ pipeline {
 
                 dir(TOWERIFY_APP_TEMPLATE_DIR) {
                     sh 'cp ../towerify/docker-compose.yaml ./conf/docker-compose.yaml'
-                    sh "./customize.sh --app-id ${TOWERIFY_APP_ID} --name 'CC ${APP_ENV} ${TOWERIFY_PATH}' "
-                    sh "sed -ri 's/__DOCKER_IMAGE_NAME__/${DOCKER_IMAGE_NAME}/' ./conf/docker-compose.yaml"
+                    sh "./customize.sh --app-id ${TOWERIFY_APP_ID} --name '${APP_NAME_SHORT} ${APP_ENV}' "
+                    sh "sed -ri 's#__DOCKER_IMAGE_NAME__#${DOCKER_IMAGE_NAME}#' ./conf/docker-compose.yaml"
                     sh "sed -ri 's/__DOCKER_IMAGE_TAG__/${DOCKER_IMAGE_TAG}/' ./conf/docker-compose.yaml"
                     sh "sed -ri 's/__DEPLOY_CPU_RESERVE__/${DEPLOY_CPU_RESERVE}/' ./conf/docker-compose.yaml"
                     sh "sed -ri 's/__DEPLOY_CPU_LIMIT__/${DEPLOY_CPU_LIMIT}/' ./conf/docker-compose.yaml"
@@ -87,7 +87,7 @@ pipeline {
         stage('Towerify Publish') {
             steps {
                 script {
-                    docker.withRegistry("${env.DOCKER_REGISTRY_URL}", "${env.DOCKER_REGISTRY_CRED_ID}") {
+                    docker.withRegistry('', "${env.DOCKER_REGISTRY_CRED_ID}") {
                         dockerImage.push("${ENV_DOCKER_TAG}")
                     }
                 }
