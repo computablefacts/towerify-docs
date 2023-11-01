@@ -1,0 +1,114 @@
+/* groovylint-disable LineLength, NestedBlockDepth */
+pipeline {
+    agent any
+
+    options {
+        disableConcurrentBuilds()
+        buildDiscarder(logRotator(daysToKeepStr: '90', numToKeepStr: '120'))
+    }
+
+    environment {
+        /* Variables you must change */
+        TOWERIFY_ROOT_DOMAIN = 'docs.towerify.io'
+        APP_NAME = 'towerify-docs'
+        APP_NAME_SHORT = 'td' // two characters
+        DOCKER_IMAGE_NAME = 'computablefacts/towerify-docs'
+        /* DO NOT change below */
+        DOCKER_REGISTRY_URL = '' // Leave empty for Docker Hub
+        DOCKER_REGISTRY_CRED_ID = 'docker-hub-cf-cred' // credential defined in Jenkins
+        DOCKER_IMAGE_TAG = sh(script: "echo twr-${env.BUILD_TAG} | sed -r 's#%2F#_#g'", returnStdout: true).trim()
+        TOWERIFY_APP_TEMPLATE_DIR = 'docker_compose_ynh'
+    }
+
+    stages {
+        stage('Build Docker image') {
+            steps {
+                script {
+                    // Build...
+                    dockerImage = docker.build("${env.DOCKER_IMAGE_NAME}", './towerify/Dockerfile')
+                    // .. and push to Docker Hub
+                    docker.withRegistry("${env.DOCKER_REGISTRY_URL}", "${env.DOCKER_REGISTRY_CRED_ID}") {
+                        dockerImage.push("${env.DOCKER_IMAGE_TAG}")
+                    }
+                }
+            }
+        }
+
+        stage('Prepare Towerify App template') {
+            steps {
+                script {
+                    TOWERIFY_PATH = ''
+                    TOWERIFY_APP_ID_SUFFIX = ''
+                    DEPLOY_CPU_RESERVE = '0.1'
+                    DEPLOY_CPU_LIMIT = '1'
+                    DEPLOY_MEM_RESERVE = '300M'
+                    DEPLOY_MEM_LIMIT = '300M'
+                    if (env.GIT_BRANCH =~ /develop/) {
+                        APP_ENV = 'dev'
+                        TOWERIFY_APP_ID = "${APP_NAME}_${APP_ENV}"
+                        TOWERIFY_PATH = 'dev'
+                    } else if (env.GIT_BRANCH =~ /release/ || env.GIT_BRANCH =~ /hotfix/) {
+                        APP_ENV = 'staging'
+                        TOWERIFY_APP_ID = "${APP_NAME}_${APP_ENV}"
+                        TOWERIFY_PATH = 'staging'
+                    } else if (env.GIT_BRANCH =~ /main/ || env.GIT_BRANCH =~ /master/) {
+                        APP_ENV = 'prod'
+                        TOWERIFY_APP_ID = "${APP_NAME}_${APP_ENV}"
+                        TOWERIFY_PATH = 'prod'
+                    }
+
+                    TOWERIFY_DOMAIN = "${TOWERIFY_ROOT_DOMAIN}"
+                    ENV_DOCKER_TAG = "${APP_ENV}-latest"
+                    TOWERIFY_APP_NOT_INSTALLED = sh(script: "sudo yunohost app list | grep ${TOWERIFY_APP_ID}", returnStatus: true)
+
+                    print "APP_ENV=${APP_ENV}"
+                    print "TOWERIFY_APP_ID=${TOWERIFY_APP_ID}"
+                    print "TOWERIFY_APP_NOT_INSTALLED=${TOWERIFY_APP_NOT_INSTALLED}"
+                    print "TOWERIFY_DOMAIN=${TOWERIFY_DOMAIN}"
+                    print "TOWERIFY_PATH=${TOWERIFY_PATH}"
+                    print "ENV_DOCKER_TAG=${ENV_DOCKER_TAG}"
+                }
+
+                checkout changelog: false, scm: scmGit(branches: [[name: '*/main']], extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: "${TOWERIFY_APP_TEMPLATE_DIR}"]], userRemoteConfigs: [[url: 'https://github.com/computablefacts/docker_compose_ynh']])
+
+                dir(TOWERIFY_APP_TEMPLATE_DIR) {
+                    sh 'cp ../towerify/docker-compose.yaml ./conf/docker-compose.yaml'
+                    sh "./customize.sh --app-id ${TOWERIFY_APP_ID} --name 'CC ${APP_ENV} ${TOWERIFY_PATH}' "
+                    sh "sed -ri 's/__DOCKER_IMAGE_NAME__/${DOCKER_IMAGE_NAME}/' ./conf/docker-compose.yaml"
+                    sh "sed -ri 's/__DOCKER_IMAGE_TAG__/${DOCKER_IMAGE_TAG}/' ./conf/docker-compose.yaml"
+                    sh "sed -ri 's/__DEPLOY_CPU_RESERVE__/${DEPLOY_CPU_RESERVE}/' ./conf/docker-compose.yaml"
+                    sh "sed -ri 's/__DEPLOY_CPU_LIMIT__/${DEPLOY_CPU_LIMIT}/' ./conf/docker-compose.yaml"
+                    sh "sed -ri 's/__DEPLOY_MEM_RESERVE__/${DEPLOY_MEM_RESERVE}/' ./conf/docker-compose.yaml"
+                    sh "sed -ri 's/__DEPLOY_MEM_LIMIT__/${DEPLOY_MEM_LIMIT}/' ./conf/docker-compose.yaml"
+                }
+            }
+        }
+
+        stage('Towerify Publish') {
+            steps {
+                script {
+                    docker.withRegistry("${env.DOCKER_REGISTRY_URL}", "${env.DOCKER_REGISTRY_CRED_ID}") {
+                        dockerImage.push("${ENV_DOCKER_TAG}")
+                    }
+                }
+                dir(TOWERIFY_APP_TEMPLATE_DIR) {
+                    script {
+                        if (TOWERIFY_APP_NOT_INSTALLED == 1) {
+                            sh "sudo yunohost app install . --force --args=\"domain=${TOWERIFY_DOMAIN}&path=/${APP_NAME}/${TOWERIFY_PATH}&init_main_permission=visitors\" "
+                        } else {
+                            sh "sudo yunohost app upgrade ${TOWERIFY_APP_ID} --file . --force --no-safety-backup"
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('END') {
+            steps {
+                script {
+                    echo 'Pipeline terminated'
+                }
+            }
+        }
+    }
+}
