@@ -92,7 +92,7 @@ services:
 Le fichier `Jenkinsfile` décrit le pipeline Jenkins que Towerify va utiliser pour packager puis déployer
 votre application.
 
-Créez un fichier `docker-compose.yaml` dans le dossier `towerify` et copiez l'exemple ci-dessous&nbsp;:
+Créez un fichier `Jenkinsfile` dans le dossier `towerify` et copiez l'exemple ci-dessous&nbsp;:
 
 ``` groovy hl_lines="11-14"
 pipeline {
