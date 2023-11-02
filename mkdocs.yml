@@ -12,6 +12,7 @@ nav:
     - API Python: demarrage-rapide/app-api-python.md
   - Avancés:
     - avances/variables.md
+  - next.md
 
 
 theme:
