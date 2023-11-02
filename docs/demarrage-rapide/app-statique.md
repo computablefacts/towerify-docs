@@ -279,11 +279,6 @@ et choisissez un intervalle de 1 minute.
 
 
 
-!!! warning "TODO"
-
-    Créer le job. Mettre des captures
-
-
 
 !!! warning "Repo Docker ?"
 
