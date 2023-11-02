@@ -19,6 +19,9 @@ nav:
 theme:
   name: material
   features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
     - content.code.copy
     - content.code.select
 
