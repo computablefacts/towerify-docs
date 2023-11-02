@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # TODO
 
 Je liste ici les pages de documentation qu'il faudrait faire ensuite.
