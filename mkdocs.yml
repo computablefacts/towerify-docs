@@ -13,7 +13,6 @@ nav:
   - Avancés:
     - avances/todo.md
     - avances/variables.md
-  - Markdown: markdown-examples.md
 
 
 theme:

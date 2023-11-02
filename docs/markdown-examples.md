@@ -1,3 +1,8 @@
+---
+search:
+  exclude: true
+---
+
 # Exemples possibles de MarkDown
 
 !!! warning "TODO"
