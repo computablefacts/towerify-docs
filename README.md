@@ -12,9 +12,7 @@ Commencer, bien sûr, par cloner cette repo.
 git clone https://github.com/computablefacts/towerify-docs.git
 ```
 
-Prérequis : avoir python v3.x
-
-Installer Material for MkDocs :
+Installer Material for MkDocs (MkDocs nécessite python `v3.x`) :
 
 ``` bash
 pip install mkdocs-material
@@ -23,7 +21,7 @@ pip install mkdocs-material
 Lancer le serveur pour voir la documentation dans son navigateur :
 
 ``` bash
-pip install mkdocs-material
+mkdocs serve
 ```
 
 Si tout se passe bien, MkDocs affiche ceci :
