@@ -240,6 +240,45 @@ Committez les 3 fichiers du répertoire `towerify` puis pousser le commit vers v
 
 ## Configurer Jenkins
 
+Connectez-vous à votre instance de Towerify puis allez dans Jenkins.
+
+![Allez dans Jenkins](../img/towerify-go-to-jenkins.png)
+
+Créez un nouveau job dans Jenkins en cliquant sur "Nouveau Item".
+
+![Créer un job Jenkins](../img/jenkins-new-item.png)
+
+Donnez lui un nom, celui de votre application, et choisissez le type "Pipeline Multibranches".
+
+![Créer un job Jenkins](../img/jenkins-create-job.png)
+
+
+Ajoutez votre repo Git comme source du Job Jenkins en choisissant "Add source > Git".
+
+![Source Git pour le Job Jenkins](../img/jenkins-job-source-git.png)
+
+Définissez l'URL de votre repo Git.
+
+![URL repo Git pour le Job Jenkins](../img/jenkins-job-set-repo-url.png)
+
+
+!!! warning "TODO"
+
+    Et si ma repo Git n'est pas publique ?
+
+
+Plus bas, dans "Build Configuration", modifier l'emplacement du fichier `Jenkinsfile` afin
+d'utiliser celui que vous avez créé ci-dessus dans le répertoire `towerify`.
+
+![URL repo Git pour le Job Jenkins](../img/jenkins-job-build-configuration.png)
+
+Puis dans "Scan Pipeline Multibranches Triggers", cochez "Periodically if not otherwise run" 
+et choisissez un intervalle de 1 minute.
+
+![Scan intervalle de Job Jenkins](../img/jenkins-job-scan.png)
+
+
+
 !!! warning "TODO"
 
     Créer le job. Mettre des captures
