@@ -1,10 +1,9 @@
 # Getting started
 
-Déployer une nouvelle application grâce à Towerify
+Pour déployer une nouvelle application grâce à Towerify, vous devez utiliser notre
+outil en ligne de commande.
 
-Outil en ligne de commande
-
-## Installation CLI
+## Installation de l'outil
 
 ``` bash
 curl -L https://acme.towerify.io/cli/install.sh | sh
@@ -12,56 +11,70 @@ curl -L https://acme.towerify.io/cli/install.sh | sh
 
 Towerify vous demande votre token d'accès :
 
-``` bash
-? Token ? RQEKeY6QHoM1YddR6JNNr4D8IyWBjKXf
+``` output
+Installation de Towerify pour l'instance acme.towerify.io
+
+Pour vous authentifier auprès de Towerify, vous devez fournir votre Token 
+Jenkins. Vous pouvez le voir en utilisant cette URL :
+https://jenkins.acme.towerify.io/page/vers/le/token
+
+Pour accéder à cette page, Towerify vous demandera de vous connecter avec vos 
+login et mot de passe.
+
+Coller ensuite votre Token ci-dessous.
+
+? Quel est votre Token ? RQEKeY6QHoM1YddR6JNNr4D8IyWBjKXf
 ```
 
 Towerify confirme l'installation :
 
-``` bash
-towerify est maintenant installé et relié à votre instance Towerify acme.towerify.io
+``` output
+towerify est maintenant installé et configuré pour votre instance Towerify 
+acme.towerify.io
 ```
 
 ??? question "Comment on fait ça ?"
 
     - une application YunoHost qui déploie le /cli/ qui contient `install.sh` (et certainement d'autres fichiers)
     - grâce au domaine du `curl` on connait le client (acme)
-    - install.sh peut vérifier le token auprès de l'app /cli/
-    - install.sh télécharge le CLI et le stocke dans $HOME/.towerify (ce répertoire pourra contenir nos libraries 
-      bash, un fichier de config avec l'URL du Towerify et le token(?), etc)
+    - install.sh télécharge le CLI et le stocke dans $HOME/.towerify (ce répertoire contiendra aussi un fichier 
+      de config avec l'URL du Towerify et le Token)
+
+    Voir [le diagramme](coder.md#installation-de-towerify-cli).
 
 
-## Création de votre première application
+## Initialisation de votre première application
 
-Prérequis = être dans le répertoire d'une repo Git
+Vous devez vous placer dans le répertoire de votre application avant de faire
+la commande.
 
 ``` bash
 towerify init
 ```
 
-``` bash
+``` output
 ? Quel est le nom de votre application ?
 > my-app
 ```
 
-``` bash
+``` output
 ? Quel est le type de votre application ?
    > Statique
      LEMP
 ```
 
-``` bash
-Création de l'application dans Towerify...
-Création du fichier de configuration dans votre repo...
+``` output
+? Dans quel répertoire se trouvent les fichiers statiques [./src] ?
+> 
+```
 
-L'application a été créée avec succès.
+``` output
+Initialisation de l'application my-app dans Towerify...
 
-Vous devez maintenant committer le fichier de configuration avec :
-    git add .towerify.yaml
-    git commit -m "Towerify initial configuration"
+L'application a été initialisée avec succès.
 
-Puis déployer avec :
-    git push
+Vous pouvez maintenant déployer votre application avec :
+    towerify app deploy
 ```
 
 
@@ -69,28 +82,34 @@ Puis déployer avec :
 
 ??? question "Choix de la repo ?"
 
-    1. Traiter le cas où `towerify init` est exécuté à la racine d'une repo ?
-    2. La commande a-t-elle besoin de créer des fichiers dans la repo ?
-        1. si oui, il faudra laisser le client faire un commit. Donc si le client donne l'URL, il faudra faire 
-           un `git clone` avant d'y mettre les fichiers
-        2. si non, où stocker les réponses du client ? Juste les envoyer vers Towerify qui fera tout le reste ?
-            1. Dans ce cas, comment faire pour modifier la conf de l'app après coup ? Towerify stocke la 
-               conf de son côté et le CLI lui passe les nouveaux paramètres ?
+    Nous avons décidé de pouvoir déployer des applications depuis un répertoire local sur
+    le poste de l'utilisateur. Donc sans connaitre la repo Git, ni la repo d'un autre type
+    ni même si ce répertoire est sous contrôle de source.
 
-    Cela semble plus simple de mettre le fichier de conf dans la repo. Par exemple `.towerify.yaml`.
+    Jenkins n'aura pas besoin de se connecter à la repo pour récupérer le code. Cela simplifie
+    la configuration et cela permet de traiter le cas où la repo Git n'est accessible qu'en 
+    interne à une entreprise (donc pas accessible par Jenkins).
 
-    1. Towerify (Jenkins) lit ce fichier de conf pour savoir quoi faire ?
-    2. Toute la conf se trouve dans ce fichier ou on peut personnaliser avec un répertoire /towerify ?
-       Ce serait bien de pouvoir personnaliser le `Dockerfile` par exemple. Dans ce cas on ajoute une clé
-       à la config du type `dockerfile: towerify/Dockerfile`
-    
-    Exemple de fichier de conf :
-    
-    Minimal :
+    Pour que Jenkins puisse déployer le code, nous ferons un ZIP du répertoire que nous
+    téléverserons à un Job Jenkins qui fera le déploiement.
+
+
+??? question "Stockage de la configuration ?"
+
+    Toute la configuration de Towerify pour l'application sera stockée dans le fichier `.towerify.yaml`
+    dans le répertoire où la commande `towerify init` a été lancée.
+
+    Ce fichier de configuration fera partie du ZIP transmis à Jenkins donc le Job Jenkins adaptera son
+    comportement en fonction de cette configuration.
+
+    Exemple de fichier de conf minimal :
     ``` yaml 
     name: my-app
     type: static
     ```
+
+    Pour les cas plus complexes, le fichier de conf pourra référencer un fichier externe stocké dans le
+    répertoire de l'application comme, par exemple, un `Dockerfile` spécifique.
 
     Avec une conf spécifique :
     ``` yaml 
@@ -109,6 +128,42 @@ Puis déployer avec :
         On peut lire un YAML avec groovy dans Jenkins, voir [ce billet SO](https://stackoverflow.com/a/56675940)
         ou la [doc (très réduite) de Jenkins](https://www.jenkins.io/doc/pipeline/steps/pipeline-utility-steps/#readyaml-read-yaml-from-files-in-the-workspace-or-text)
 
+
+## Déploiement de votre application
+
+Vous devez vous placer dans le répertoire de votre application avant de faire
+la commande.
+
+``` bash
+towerify app deploy
+```
+
+``` output
+Déploiement de l'application my-app en cours...
+Application correctement déployée en prod.
+
+Vous pouvez accéder à votre application avec :
+https://my-app.acme.towerify.io/
+```
+
+!!! failure "Pas de fichier `.towerify.yaml`"
+
+    Si le fichier de configuration n'existe pas, on affiche une erreur :
+    ``` output
+    Impossible de publier une application depuis ce répertoire.
+    Vous devez d'abord initialiser votre application avec :
+        towerify init
+    ```
+
+
+??? question "Comment on fait ça ?"
+
+    - durant l'installation, Towerify CLI a stocké l'URL de l'instance et le token de Jenkins
+    - on zippe le répertoire
+    - on envoie le zip au Job Jenkins
+    - Jenkins déploie en fonction du fichier de conf `.towerify.yaml`
+
+    Voir [le diagramme](coder.md#deploiement-dune-application).
 
 
 

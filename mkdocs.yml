@@ -13,6 +13,7 @@ nav:
   - Idéal:
     - ideal/index.md
     - ideal/getting-started.md
+    - Coder: ideal/coder.md
   - Avancés:
     - avances/variables.md
   - next.md
