@@ -9,29 +9,35 @@ outil en ligne de commande.
 curl -L https://acme.towerify.io/cli/install.sh | sh
 ```
 
-Towerify vous demande votre token d'accès :
+Towerify vous demande vos login et mot de passe :
 
 ``` output
 Installation de Towerify pour l'instance acme.towerify.io
 
-Pour vous authentifier auprès de Towerify, vous devez fournir votre Token 
-Jenkins. Vous pouvez le voir en utilisant cette URL :
-https://jenkins.acme.towerify.io/page/vers/le/token
+Pour vous authentifier auprès de Towerify, vous devez fournir votre login
+et votre mot de passe.
 
-Pour accéder à cette page, Towerify vous demandera de vous connecter avec vos 
-login et mot de passe.
+? Quel est votre login Towerify ?
+> 
 
-Coller ensuite votre Token ci-dessous.
-
-? Quel est votre Token ? RQEKeY6QHoM1YddR6JNNr4D8IyWBjKXf
+? Quel est votre mot de passe Towerify ?
+(Par sécurité, les caractères que vous tapez ne s'afficheront à l'écran)
+> 
 ```
 
 Towerify confirme l'installation :
 
 ``` output
-towerify est maintenant installé et configuré pour votre instance Towerify 
-acme.towerify.io
+Towerify CLI est installé
+
+Il est configuré pour l'instance Towerify acme.towerify.io
+
+Pour déployer votre première application, allez dans le répertoire de votre 
+application et utilisez :
+  towerify init
 ```
+
+![towerify install](../img/towerify-install.gif)
 
 ??? question "Comment on fait ça ?"
 
