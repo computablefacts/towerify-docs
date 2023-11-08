@@ -98,6 +98,13 @@ Pour la partie automatisation (CI/CD), nous allons utiliser Jenkins.
 Voir [ce billet](https://bootvar.com/how-to-create-jenkins-job-using-api/) 
 pour la création d'un Job Jenkins grâce à son API.
 
+Pour le pipeline Jenkins, j'ai dû installer des plugins :
+
+- [File Parameter](https://plugins.jenkins.io/file-parameters/) pour pouvoir passer en fichier en paramètre 
+  du pipeline
+- [Pipeline Utility Steps](https://plugins.jenkins.io/pipeline-utility-steps/) pour avoir readYaml (et 
+  d'autres truc qui seront peut-être utile)
+
 ## Une app YunoHost
 
 Pour déployer Towerify CLI, nous voulons faire une app YunoHost.
