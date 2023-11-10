@@ -17,25 +17,28 @@ dans plusieurs environnements.
 ## Objectif
 
 Towerify vous permet d'automatiser la publication de votre application
-dans 3 environnements en fonction du code que vous mettez à jour dans votre repo Git.
+dans plusieurs environnements en fonction du code que vous mettez à jour dans votre repo Git.
 
 
 ## Prérequis
 
-Avoir le code de votre application dans une repo Git.
+Aucun.
+
+Installez notre outil en ligne de commande, Towerify CLI, puis utilisez le pour déployer vos
+applications.
 
 ## Principe
 
-Pour bénéficier de Towerify, vous devez ajouter un répertoire `towerify` à votre repo Git afin d'y mettre
-les differents fichiers de configuration nécessaires pour packager, tester et publier votre application
-avec Towerify.
+Une première commande, `towerify init`, initialise le répertoire de votre application. Une
+deuxième commande, `towerify deploy`, paramètre votre instance Towerify et déclenche la
+publication de votre application dessus.
 
-Les grandes étapes du fonctionnement de Towerify sont :
+Towerify gère la complexité à votre place :
 
-* Towerify packagera votre application dans une image Docker. Vous devrez donc ajouter un `Dockerfile` à votre repo Git.
-* Towerify publiera votre application grâce à Docker Compose. Vous devrez donc ajouter un `docker-compose.yaml` à votre repo Git.
-* Towerify automatisera la création de l'image Docker et sa publication avec Docker Compose grâce à un pipeline Jenkins.
-  Vous devrez donc ajouter un `Jenkinsfile` à votre repo Git.
+* Towerify packagera votre application dans une image Docker grâce à un `Dockerfile`.
+* Towerify publiera votre application grâce à Docker Compose et sa configuration dans un `docker-compose.yaml`.
+* Towerify automatisera la création de l'image Docker et sa publication avec Docker Compose grâce à un pipeline Jenkins
+  configuré dans un `Jenkinsfile`.
 
 ## Et maintenant ?
 
@@ -44,11 +47,11 @@ Après cette présentation, vous vous dîtes certainement :
 > Très bien. Tout cela est intéressant mais je ne connais ni Docker, ni Jenkins, donc encore moins comment 
 > écrire un `Dockerfile`, un `Jenkinsfile` ou un `docker-compose.yaml`.
 
-Pas de panique, cette documentation de Towerify va vous guidez pas à pas pour créer les fichiers de configuration dont 
-votre application va avoir besoin. Ces fichiers dépendent du type de votre application et nous avons une documentation
-pour chacun des cas les plus courants :
+Pas de panique, cette documentation de Towerify va vous guidez pas à pas pour déployer votre application
+en 2 commandes : commencez par notre [Démarrage rapide](demarrage-rapide/index.md).
 
-* Mon application est [un ensemble de pages statiques](demarrage-rapide/app-statique.md)
-* Mon application est [une API écrite en Python](demarrage-rapide/app-api-python.md)
-* Mon application est écrite en PHP
-* Mon application est écrite en PHP avec Laravel
+Vous pourrez ensuite personnaliser le comportement de Towerify en fonction du type d'application que
+vous voulez déployer.
+
+Et, si vous savez écrire un `Dockerfile` ou un `docker-compose.yaml`, vous pourrez demander à
+Towerify d'utiliser les vôtres.

@@ -5,7 +5,7 @@ et de nouvelles procédures.
 
 Nos prochains ajouts seront :
 
+- [ ] Ajouter le type d'application "API Python"
+- [ ] Ajouter le type d'application "LEMP"
+- [ ] Ajouter le type d'application "Laravel"
 - [ ] Décrire les outils mis à disposition par Towerify (Jenkins, Portainer, MySQL, etc)
-- [ ] Comment mettre son application dans une repo Git
-    - [ ] avec GitHub
-    - [ ] avec GitLab

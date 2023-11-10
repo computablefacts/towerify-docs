@@ -9,14 +9,9 @@ nav:
   - Démarrage rapide:
     - demarrage-rapide/index.md
     - App statique: demarrage-rapide/app-statique.md
-    - API Python: demarrage-rapide/app-api-python.md
-  - Idéal:
-    - ideal/index.md
-    - ideal/getting-started.md
-    - Coder: ideal/coder.md
-  - Avancés:
-    - avances/variables.md
   - next.md
+  - Interne:
+    - develop/coder.md
 
 
 theme:

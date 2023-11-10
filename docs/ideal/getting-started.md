@@ -149,7 +149,7 @@ Déploiement de l'application my-app en cours...
 Application correctement déployée en prod.
 
 Vous pouvez accéder à votre application avec :
-https://my-app.acme.towerify.io/
+https://dev.my-app.acme.towerify.io/
 ```
 
 !!! failure "Pas de fichier `.towerify.yaml`"
