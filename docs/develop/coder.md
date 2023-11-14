@@ -109,7 +109,7 @@ sequenceDiagram
     * [X] Nom de l'app
     * [X] Type de l'app
         * 2 types affichés et un seul géré par `towerify deploy`
-            * [ ] Supprimer le type "en trop" pour ne garder que `static`
+            * [X] Supprimer le type "en trop" pour ne garder que `static`
 * [X] Crée le fichier de configuration `.towerify.yaml`
 * [X] Gère le cas où un fichier de configuration existe déjà => affiche une erreur
 
