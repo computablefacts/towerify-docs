@@ -294,6 +294,41 @@ Pour le pipeline Jenkins du type `static`, j'ai dû installer des plugins :
 - [Pipeline Utility Steps](https://plugins.jenkins.io/pipeline-utility-steps/) pour avoir readYaml (et 
   d'autres truc qui seront peut-être utile)
 
+Pour pouvoir créer un job Jenkins avec son API, j'ai dû installer le plugin 
+[Strict Crumb Issuer](https://plugins.jenkins.io/strict-crumb-issuer/) comme expliqué 
+[ici](https://www.jenkins.io/doc/upgrade-guide/2.176/#SECURITY-626).
+Et voici pourquoi :
+
+- pour utiliser l'API de Jenkins je dois m'authentifier en Basic Auth
+- il existe 2 possibilités :
+    - soit l'utilisation des login et mot de passe de l'utilisateur Jenkins
+    - soit l'utilisation du login de l'utilisateur Jenkins et un Token API à la place du mot de passe
+- je ne peux pas utiliser le Token API et je suis donc obligé d'utiliser le mot de passe de l'utilisateur 
+  Jenkins car le Basic Auth est analysé par YunoHost pour vérifier que l'utilisateur a bien le droit
+  d'accèder à l'application Jenkins. Donc ce Basic Auth doit correspondre à des login et mot de passe
+  d'un utilisateur de YunoHost. Comme Jenkins utilise le LDAP de YunoHost, les login et mot de passe
+  de l'utilisateur Jenkins sont aussi les login et mot de passe de l'utilisateur YunoHost
+- par contre, quand on utilise le mot de passe pour le Basic Auth de l'API Jenkins, il faut également
+  ajouter un `crumb`, qui est une protection contre les attaques CSRF, quand on fait une requête `POST`
+- il y a une API Jenkins avec une requête `GET` qui permet de récupérer un `crumb` donc on peut remettre
+  ce `crumb` dans la requête `POST` suivante
+- malheureusement, cela ne fonctionne pas car Jenkins vérifie le `crumb` par rapport à la session de 
+  l'utilisateur ce qui ne fonctionne pas avec `curl` qui ne conserve pas d'information entre les requêtes.
+  NOTA : j'ai essayé d'enregistrer les cookies de la requête `GET` pour obtenir le `crumb` puis de les 
+  passer à la requête `POST` où j'utilise ce `crumb` mais le `crumb` était tout de même refusé
+- j'ai donc installé le plugin Strict Crumb Issuer qui permet de modifier le paramétrage de la vérification
+  de `crumb` en retirant la vérification de la session. Mais en ajoutant un délai d'expiration.
+
+Réglage du plugin :
+
+- aller dans Administrer Jenkins > Security
+- descendre à la rubrique CSRF Protection
+- choisir Strict Crumb Issuer dans la liste déroulante
+- laisser une expiration de 2 heures
+- ouvrir les paramètres avancés
+- décocher l'option "Check the session ID"
+- Enregistrer les réglages
+
 ## Inspirations
 
 ### Fly
