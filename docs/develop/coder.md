@@ -165,7 +165,7 @@ sequenceDiagram
 * [X] Gère le cas où un fichier de configuration existe déjà => affiche une erreur
 
 Les options possibles de `towerify/config.yaml` dépendent du type d'app. Ca pourrait être
-instéressant d'avoir une commande qui ajoute toutes les options possibles (avec leur
+intéressant d'avoir une commande qui ajoute toutes les options possibles (avec leur
 valeur par défaut ou des valeurs exemples et des commentaires pour les expliquer) 
 afin que l'utilisateur n'est pas besoin de lire cette doc pour les trouver.
 
