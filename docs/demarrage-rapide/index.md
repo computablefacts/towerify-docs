@@ -41,7 +41,7 @@ Pour le configurer avec vos login et mot de passe, utilisez :
 
 !!! tips
 
-    Ajoutez votre propre domaine Towerify au bout de la commande. Par exemple, si votre domaine
+    Ajoutez le domaine de votre propre Towerify au bout de la commande. Par exemple, si votre domaine
     est my-corp.towerify.io, faîtes :
 
     ``` bash
