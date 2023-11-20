@@ -1,0 +1,7 @@
+name: towerify-docs
+type: static
+config:
+  dockerfile: ./towerify/Dockerfile
+  envs:
+    dev:
+      domain: dev.docs.towerify.io
