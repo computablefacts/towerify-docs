@@ -20,16 +20,56 @@ du type https://my-app.acme.towerify.io/.
 ## Installation de l'outil
 
 ``` bash
-curl -L https://acme.towerify.io/cli/install.sh | sh
+curl -sL https://acme.towerify.io/cli/install.sh | bash
 ```
 
-Towerify vous demande vos login et mot de passe :
+Towerify télécharge et installe notre outil en ligne de commande :
 
 ``` output
 Installation de Towerify pour l'instance acme.towerify.io
+##################################################################### 100,0%
+```
 
-Pour vous authentifier auprès de Towerify, vous devez fournir votre login
-et votre mot de passe.
+Towerify confirme l'installation :
+
+``` output
+Towerify CLI est installé pour l'instance acme.towerify.io
+
+Pour le configurer avec vos login et mot de passe, utilisez :
+  towerify configure
+```
+
+!!! tips
+
+    Ajoutez votre propre domaine Towerify au bout de la commande. Par exemple, si votre domaine
+    est my-corp.towerify.io, faîtes :
+
+    ``` bash
+    curl -sL https://acme.towerify.io/cli/install.sh | bash -s -- my-corp.towerify.io
+    ```
+
+??? question "Comment on fait ça ?"
+
+    - une application YunoHost qui déploie le /cli/ qui contient `install.sh` et l'application 
+      Towerify CLI compressée (towerify.tar.gz)
+    - le domaine peut être passé à `install.sh`
+    - `install.sh` télécharge le CLI et le stocke dans $HOME/.towerify (ce répertoire contiendra aussi un fichier 
+      de config avec l'URL du Towerify et les credentials)
+    - `install.sh` ajoute `towerify` dans le PATH de l'utilisateur
+
+    Voir [`install.sh`](../develop/coder.md#installsh) et [le packaging](../develop/coder.md#packaging).
+
+## Configuration des paramètres d'accès
+
+``` bash
+towerify configure
+```
+
+Towerify vous demande votre domaine, votre login et votre mot de passe :
+
+``` output
+? Quel est le domaine de votre Towerify ?
+> acme.towerify.io
 
 ? Quel est votre login Towerify ?
 > 
@@ -42,26 +82,22 @@ et votre mot de passe.
 Towerify confirme l'installation :
 
 ``` output
-Towerify CLI est installé
+Tentative de connexion à Towerify... ==> Connexion réussie.
 
-Il est configuré pour l'instance Towerify acme.towerify.io
+Towerify CLI est correctement configuré pour l'instance Towerify acme.towerify.io
 
 Pour déployer votre première application, allez dans le répertoire de votre 
 application et utilisez :
   towerify init
 ```
 
-![towerify install](../img/towerify-install.gif)
+!!! tips
 
-??? question "Comment on fait ça ?"
+    Vous pouvez donner vos paramètres d'accès directement dans la commande :
 
-    - une application YunoHost qui déploie le /cli/ qui contient `install.sh` (et certainement d'autres fichiers)
-    - au moment de l'installation de cette application Towerify mettra le domaine dans le script `install.sh`
-    - `install.sh` télécharge le CLI et le stocke dans $HOME/.towerify (ce répertoire contiendra aussi un fichier 
-      de config avec l'URL du Towerify et les credentials)
-    - `install.sh` ajoute `towerify` dans le PATH de l'utilisateur
-
-    Voir [`install.sh`](../develop/coder.md#installsh) et [le packaging](../develop/coder.md#packaging).
+    ``` bash
+    towerify configure --domain my-corp.towerify.io --login user --password P@ssw0rd
+    ```
 
 
 ## Initialisation de votre première application
@@ -79,21 +115,19 @@ towerify init
 ```
 
 ``` output
-? Quel est le type de votre application ?
-   > Statique
-     LEMP
+? Choissisez le type de votre application ?
+1) static
+2) laravel
+Votre choix : 1
+
 ```
 
 ``` output
-Initialisation de l'application my-app dans Towerify...
-
-L'application a été initialisée avec succès.
+Application my-app initialisée
 
 Vous pouvez maintenant déployer votre application avec :
     towerify deploy
 ```
-
-
 
 
 ??? question "Choix de la repo ?"

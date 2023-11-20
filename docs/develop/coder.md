@@ -29,8 +29,6 @@ Les 2 applications se trouvent dans la même repo :
 
 ### `install.sh`
 
-!!! warning "Le diagramme ci-dessous doit être mis à jour"
-
 ``` mermaid
 sequenceDiagram
   autonumber
@@ -45,29 +43,21 @@ sequenceDiagram
     participant Jenkins
   end
 
-  par curl -L https://acme.towerify.io/cli/install.sh | sh
+  par curl -L https://acme.towerify.io/cli/install.sh | bash
     User ->> AppCLI: Installe Towerify CLI
     AppCLI ->> Install: Télécharge install.sh
 
-    Install ->> User: Demande le token Jenkins
-    User ->> Jenkins: Se connecte à Jenkins avec ses login/pwd
-    Jenkins ->> User: Récupère son Token
-    User ->> Install: Donne le Token Jenkins
-
-    Install ->> CLI: Copie towerify
-    Install ->> CLI: Stocke l'URL et le Token
+    Install ->> AppCLI: Télécharge towerify.tar.gz
+    AppCLI ->> Install: Télécharge towerify.tar.gz
+    Install ->> CLI: Décompresse Towerify CLI dans ~/.towerify
+    Install ->> CLI: Stocke le domaine dans ~/.towerify/config.ini
   end
 ```
 
-
 * [X] Vérifie que `towerify` n'est pas déjà installé
-* [X] Demande le login Towerify
-* [X] Demande le password Towerify
-* [X] Vérifie la connexion au Jenkins => si non, affiche une erreur
-* [ ] Télécharge le package et le décompresse dans le répertoire d'installation
-    * Pour l'instant, copie le fichier towerify depuis la repo locale
+* [X] Télécharge le package et le décompresse dans le répertoire d'installation
 * [X] Ajoute `towerify` dans le PATH
-* [X] Stocke les paramètres dans `config.ini`
+* [X] Stocke le domaine dans `config.ini`
 
 ### `towerify`
 
@@ -78,6 +68,67 @@ Codé automatiquement par Bashly :-)
 #### `towerify version`
 
 Codé automatiquement par Bashly :-)
+
+#### `towerify configure`
+
+``` mermaid
+sequenceDiagram
+  autonumber
+  box Local PC
+    participant User
+    participant CLI
+  end
+
+  box Towerify
+    participant AppCLI as CLI App
+    participant Jenkins
+  end
+
+  par towerify configure
+    CLI ->> User: Demande le domaine
+    CLI ->> User: Demande le login
+    CLI ->> User: Demande le mot de passe
+
+    CLI ->> Jenkins: Se connecte à Jenkins avec ses login/pwd
+    CLI ->> User: Confirme la connexion
+
+    CLI ->> CLI: Stocke le domaine, le login et le mot de passe
+  end
+```
+
+Permet de changer la configuration de son Towerify CLI i.e. modifier l'URL, le login et le mot
+de passe du serveur Towerify avec lequel Towerify CLI va interagir.
+
+* [ ] Avertissement : si l'utilisateur change de serveur, il va perdre sa conf actuelle
+* [X] Poser les questions : URL Towerfiy, login, pwd
+* [X] Vérifier la connexion au Jenkins
+* [X] Mettre à jour la `config.ini` avec les nouveaux paramètres
+
+Dans un deuxième temps, nous pourrions gérer plusieurs serveurs Towerify avec, comme AWS CLI, une notion de
+profil.
+
+* [ ] Ajouter un paramètre `--profile`
+* [ ] Si le paramètre n'est pas passé, on change les credentials par défaut
+* [ ] Si le paramètre est passé, on crée ou on modifie les credentials de ce profile
+
+Le fichier `config.ini` ressemblerait alors à ça :
+
+``` ini
+jenkins_domain = jenkins.myapps.addapps.io
+towerify_domain = myapps.addapps.io
+towerify_login = cfadmin
+towerify_password = **********
+
+[ista]
+jenkins_domain = jenkins.apps.ista.computablefacts.com
+towerify_domain = apps.ista.computablefacts.com
+towerify_login = pbrisacier
+towerify_password = **********
+
+```
+
+* [ ] Il faudra ajouter l'option `--profile` aux commandes de `towerify` pour en tenir compte
+
 
 #### `towerify init`
 
@@ -199,42 +250,6 @@ Permet de mettre à jour `towerify`
 * [ ] Compare la version de ce package et avec celle qui est installée
 * [ ] Si la version est la même (ou celle installée supérieure à celle du Towerify) => message Towerify est à jour
 * [ ] Si la version est plus récente, remplace le `towerify` installé par le nouveau (avec les templates)
-
-#### `towerify configure`
-
-Permet de changer la configuration de son Towerify CLI i.e. modifier l'URL, le login et le pwd du serveur Towerify
-avec lequel Towerify CLI va interagir.
-
-* [ ] Avertissement : si l'utilisateur change de serveur, il va perdre sa conf actuelle
-* [ ] Poser les questions : URL Towerfiy, login, pwd
-* [ ] Vérifier la connexion au Jenkins
-* [ ] Mettre à la `config.ini` avec les nouveaux paramètres
-
-Dans un deuxième temps, nous pourrions gérer plusieurs serveurs Towerify avec, comme AWS CLI, une notion de
-profil.
-
-* [ ] Ajouter un paramètre `--profile`
-* [ ] Si le paramètre n'est pas passé, on change les credentials par défaut
-* [ ] Si le paramètre est passé, on crée ou on modifie les credentials de ce profile
-
-Le fichier `config.ini` ressemblerait alors à ça :
-
-``` ini
-jenkins_domain = jenkins.myapps.addapps.io
-towerify_domain = myapps.addapps.io
-towerify_login = cfadmin
-towerify_password = **********
-
-[ista]
-jenkins_domain = jenkins.apps.ista.computablefacts.com
-towerify_domain = apps.ista.computablefacts.com
-towerify_login = pbrisacier
-towerify_password = **********
-
-```
-
-* [ ] Il faudra ajouter l'option `--profile` aux commandes de `towerify` pour en tenir compte
-
 
 ### Packaging
 

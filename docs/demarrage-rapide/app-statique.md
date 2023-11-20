@@ -18,16 +18,16 @@ C'est en modifiant ce fichier que vous pouvez changer le comportement de Towerif
 ## Répertoire de vos fichiers statiques
 
 Par défaut, Towerify considère que les fichiers statiques de votre application se 
-trouvent dans le sous-répertoire `./src`.
+trouvent à la racine `.`.
 
-Si vos fichiers se trouvent dans le sous-répertoire `./statique` vous pouvez modifier
+Si vos fichiers se trouvent dans le sous-répertoire `./public` vous pouvez modifier
 la configuration de cette façon :
 
 ``` yaml 
 name: my-app
 type: static
 config:
-    webroot: ./statique 
+    webroot: ./public 
 ```
 
 !!! warning "TODO: cette option n'existe pas pour le moment"
