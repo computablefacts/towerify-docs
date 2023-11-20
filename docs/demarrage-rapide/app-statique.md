@@ -6,7 +6,7 @@ par défaut de Towerify pour votre application statique.
 Le reste de ce document considère que le domaine principal de votre serveur Towerify 
 est `acme.towerify.io` et que vous avez nommé votre application statique `my-app`.
 
-Towerify a donc créé un fichier de configuration `.towerify.yaml` qui contient :
+Towerify a donc créé un fichier de configuration `towerify/config.yaml` qui contient :
 
 ``` yaml 
 name: my-app

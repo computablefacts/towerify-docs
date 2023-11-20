@@ -152,7 +152,7 @@ sequenceDiagram
     CLI ->> User: Demande le nom de l'application
     CLI ->> User: Demande le type de l'application
 
-    CLI ->> App: Crée le fichier de config .towerify.yaml
+    CLI ->> App: Crée le fichier de config towerify/config.yaml
   end
 ```
 
@@ -161,10 +161,10 @@ sequenceDiagram
     * [X] Type de l'app
         * 2 types affichés et un seul géré par `towerify deploy`
             * [X] Supprimer le type "en trop" pour ne garder que `static`
-* [X] Crée le fichier de configuration `.towerify.yaml`
+* [X] Crée le fichier de configuration `towerify/config.yaml`
 * [X] Gère le cas où un fichier de configuration existe déjà => affiche une erreur
 
-Les options possibles de `.towerify.yaml` dépendent du type d'app. Ca pourrait être
+Les options possibles de `towerify/config.yaml` dépendent du type d'app. Ca pourrait être
 instéressant d'avoir une commande qui ajoute toutes les options possibles (avec leur
 valeur par défaut ou des valeurs exemples et des commentaires pour les expliquer) 
 afin que l'utilisateur n'est pas besoin de lire cette doc pour les trouver.

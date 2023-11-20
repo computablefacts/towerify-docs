@@ -146,7 +146,7 @@ Vous pouvez maintenant déployer votre application avec :
 
 ??? question "Stockage de la configuration ?"
 
-    Toute la configuration de Towerify pour l'application sera stockée dans le fichier `.towerify.yaml`
+    Toute la configuration de Towerify pour l'application sera stockée dans le fichier `towerify/config.yaml`
     dans le répertoire où la commande `towerify init` a été lancée.
 
     Ce fichier de configuration fera partie du ZIP transmis à Jenkins donc le Job Jenkins adaptera son
@@ -200,7 +200,7 @@ https://dev.my-app.acme.towerify.io/
 Vous pouvez visiter le lien fourni par Towerify (https://dev.my-app.acme.towerify.io/)
 pour afficher votre application dans votre navigateur.
 
-??? failure "Pas de fichier `.towerify.yaml`"
+??? failure "Pas de fichier `towerify/config.yaml`"
 
     Si le fichier de configuration n'existe pas, on affiche une erreur :
     ``` output
@@ -215,7 +215,7 @@ pour afficher votre application dans votre navigateur.
     - durant l'installation, Towerify CLI a stocké l'URL de l'instance et le token de Jenkins
     - on zippe le répertoire
     - on envoie le zip au Job Jenkins
-    - Jenkins déploie en fonction du fichier de conf `.towerify.yaml`
+    - Jenkins déploie en fonction du fichier de conf `towerify/config.yaml`
 
     Voir [le détail](develop/coder.md#towerify-deploy).
 
