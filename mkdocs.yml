@@ -12,6 +12,7 @@ nav:
     - App Laravel 10: demarrage-rapide/app-laravel-10.md
   - Avancés:
     - Environnements: avances/environments.md
+    - Secrets: avances/secrets.md
     - Dockerfile: avances/mydockerfile.md
   - next.md
   - Interne:
