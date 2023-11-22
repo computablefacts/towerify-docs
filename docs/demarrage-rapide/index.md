@@ -48,17 +48,6 @@ Pour le configurer avec vos login et mot de passe, utilisez :
     curl -sL https://acme.towerify.io/cli/install.sh | bash -s -- my-corp.towerify.io
     ```
 
-??? question "Comment on fait ça ?"
-
-    - une application YunoHost qui déploie le /cli/ qui contient `install.sh` et l'application 
-      Towerify CLI compressée (towerify.tar.gz)
-    - le domaine peut être passé à `install.sh`
-    - `install.sh` télécharge le CLI et le stocke dans $HOME/.towerify (ce répertoire contiendra aussi un fichier 
-      de config avec l'URL du Towerify et les credentials)
-    - `install.sh` ajoute `towerify` dans le PATH de l'utilisateur
-
-    Voir [`install.sh`](../develop/coder.md#installsh) et [le packaging](../develop/coder.md#packaging).
-
 ## Configuration des paramètres d'accès
 
 ``` bash
@@ -130,56 +119,6 @@ Vous pouvez maintenant déployer votre application avec :
 ```
 
 
-??? question "Choix de la repo ?"
-
-    Nous avons décidé de pouvoir déployer des applications depuis un répertoire local sur
-    le poste de l'utilisateur. Donc sans connaitre la repo Git, ni la repo d'un autre type
-    ni même si ce répertoire est sous contrôle de source.
-
-    Jenkins n'aura pas besoin de se connecter à la repo pour récupérer le code. Cela simplifie
-    la configuration et cela permet de traiter le cas où la repo Git n'est accessible qu'en 
-    interne à une entreprise (donc pas accessible par Jenkins).
-
-    Pour que Jenkins puisse déployer le code, nous ferons un ZIP du répertoire que nous
-    téléverserons à un Job Jenkins qui fera le déploiement.
-
-
-??? question "Stockage de la configuration ?"
-
-    Toute la configuration de Towerify pour l'application sera stockée dans le fichier `towerify/config.yaml`
-    dans le répertoire où la commande `towerify init` a été lancée.
-
-    Ce fichier de configuration fera partie du ZIP transmis à Jenkins donc le Job Jenkins adaptera son
-    comportement en fonction de cette configuration.
-
-    Exemple de fichier de conf minimal :
-    ``` yaml 
-    name: my-app
-    type: static
-    ```
-
-    Pour les cas plus complexes, le fichier de conf pourra référencer un fichier externe stocké dans le
-    répertoire de l'application comme, par exemple, un `Dockerfile` spécifique.
-
-    Avec une conf spécifique :
-    ``` yaml 
-    name: my-app
-    type: static
-    config:
-      webroot: ./src 
-      dockerfile: ./towerify/Dockerfile
-      domain: my-app.autre-domaine.com 
-      envs:
-      - dev
-      - prod  
-    ```
-
-    !!! tip
-        On peut lire un YAML avec groovy dans Jenkins, voir [ce billet SO](https://stackoverflow.com/a/56675940)
-        ou la [doc (très réduite) de Jenkins](https://www.jenkins.io/doc/pipeline/steps/pipeline-utility-steps/#readyaml-read-yaml-from-files-in-the-workspace-or-text)
-
-
-
 ## Déploiement de votre application
 
 Vous devez vous placer dans le répertoire de votre application avant de faire
@@ -208,16 +147,6 @@ pour afficher votre application dans votre navigateur.
     Vous devez d'abord initialiser votre application avec :
         towerify init
     ```
-
-
-??? question "Comment on fait ça ?"
-
-    - durant l'installation, Towerify CLI a stocké l'URL de l'instance et le token de Jenkins
-    - on zippe le répertoire
-    - on envoie le zip au Job Jenkins
-    - Jenkins déploie en fonction du fichier de conf `towerify/config.yaml`
-
-    Voir [le détail](develop/coder.md#towerify-deploy).
 
 
 ## Et maintenant ?
