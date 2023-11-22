@@ -159,9 +159,8 @@ sequenceDiagram
 * Pose 2 questions :
     * [X] Nom de l'app
     * [X] Type de l'app
-        * 2 types affichés et un seul géré par `towerify deploy`
-            * [X] Supprimer le type "en trop" pour ne garder que `static`
 * [X] Crée le fichier de configuration `towerify/config.yaml`
+* [ ] Crée le fichier d'exclusion du fichier compressé `towerify/.tarignore` (dépend du type d'app)
 * [X] Gère le cas où un fichier de configuration existe déjà => affiche une erreur
 
 Les options possibles de `towerify/config.yaml` dépendent du type d'app. Ca pourrait être
@@ -200,15 +199,15 @@ sequenceDiagram
   end
 ```
 
-* [ ] Vérifie qu'il a bien accès au Jenkins (credentials dans le fichier `config.ini`) => Affiche une erreur
-* [ ] Créer le pipeline Jenkins s'il n'existe pas
-* [ ] Compresse le répertoire de l'app (crée un fichier .tarignore qui permettra de ne pas compresser des 
-      fichiers ou des répertoires, comme `.git`)
-* [ ] Lance le job Jenkins en lui envoyant le fichier compressé
+* [X] Vérifie qu'il a bien accès au Jenkins (credentials dans le fichier `config.ini`) => Affiche une erreur
+* [X] Créer le pipeline Jenkins s'il n'existe pas
+* [X] Compresse le répertoire de l'app (tient compte du fichier `towerify/.tarignore` qui permettra de ne pas 
+      compresser des fichiers ou des répertoires, comme `.git`)
+* [X] Lance le job Jenkins en lui envoyant le fichier compressé
 * [ ] Surveille l'avancement du job Jenkins (API toutes les 5 secondes, afficher le numéro de build)
 * [ ] Affiche le résultat : succès ou échec
 * [ ] Affiche les URL : lien vers l'app déployée, lien vers le détail du job Jenkins en cas d'échec      
-* [ ] Ajouter l'option `--env` pour pouvoir déployer autant d'environnement que nécessaire. `dev` par défaut
+* [X] Ajouter l'option `--env` pour pouvoir déployer autant d'environnement que nécessaire. `dev` par défaut
     * [ ] Avertissement si on déploie dans un environnement autre que `dev` pour la première fois (permet 
           d'éviter les erreurs comme `--env prod` puis `--env production`)
     * [ ] On sait si un environnement a déjà été déployé en vérifiant l'existance du job Jenkins 
@@ -259,13 +258,13 @@ Towerify CLI.
 Une fois cette app installé sur un YunoHost, le client peut faire la commande :
 
 ``` bash
-curl -L https://acme.towerify.io/cli/install.sh | sh
+curl -L https://acme.towerify.io/cli/install.sh | bash
 ```
 
 * Adapter le script `build.sh` à la racine de la repo `towerify-cli` pour : 
     * [X] générer `install.sh` et `towerify` en mode production
-    * [ ] packager (met dans un tar.gz ou un zip) `towerify` et ses fichiers (templates Jenkins pour l'instant)
-    * [ ] mettre le tout dans un répertoire `./build`
+    * [X] packager (met dans un tar.gz ou un zip) `towerify` et ses fichiers (templates Jenkins pour l'instant)
+    * [X] mettre le tout dans un répertoire `./build`
 
 * Créer une repo `towerify_cli_ynh` pour :
     * [ ] déployer un site statique sur le domaine principal du YunoHost et le répertoire `/cli` par défaut
