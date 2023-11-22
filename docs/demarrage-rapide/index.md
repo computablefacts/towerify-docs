@@ -125,7 +125,7 @@ Vous devez vous placer dans le répertoire de votre application avant de faire
 la commande.
 
 ``` bash
-towerify app deploy
+towerify deploy
 ```
 
 ``` output
@@ -151,4 +151,12 @@ pour afficher votre application dans votre navigateur.
 
 ## Et maintenant ?
 
-Vous pouvez personnaliser la configuration de votre [application statique](app-statique.md).
+Vous pouvez personnaliser la configuration de votre application en fonction de son type :
+   
+* options pour une [application statique](app-static.md)
+* options pour une [application Lavarel 10](app-laravel-10.md)
+
+Vous pouvez également utiliser des options communes à tous les types d'application :
+
+* options pour publier dans [plusieurs environnements](../avances/environments.md)
+* options pour utiliser [votre propre Dockerfile](../avances/mydockerfile.md)

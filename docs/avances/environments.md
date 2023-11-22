@@ -1,44 +1,10 @@
-# Application statique
-
-Cet article vous explique les options que vous pouvez modifier pour changer le comportement
-par défaut de Towerify pour votre application statique.
-
-Le reste de ce document considère que le domaine principal de votre serveur Towerify 
-est `acme.towerify.io` et que vous avez nommé votre application statique `my-app`.
-
-Towerify a donc créé un fichier de configuration `towerify/config.yaml` qui contient :
-
-``` yaml 
-name: my-app
-type: static
-```
-
-C'est en modifiant ce fichier que vous pouvez changer le comportement de Towerify.
-
-## Répertoire de vos fichiers statiques
-
-Par défaut, Towerify considère que les fichiers statiques de votre application se 
-trouvent à la racine `.`.
-
-Si vos fichiers se trouvent dans le sous-répertoire `./public` vous pouvez modifier
-la configuration de cette façon :
-
-``` yaml 
-name: my-app
-type: static
-config:
-    webroot: ./public 
-```
-
-!!! warning "TODO: cette option n'existe pas pour le moment"
-
-## Environnements
+# Environnements
 
 Par défaut, Towerify publie votre application dans un environnement appelé `dev` (comme développement).
 Votre application est publiée à la racine (`/`) du domaine `dev.my-app.acme.towerify.io`. Son URL est donc
 `https://dev.my-app.acme.towerify.io/`.
 
-### Ajouter un environnement
+## Ajouter un environnement
 
 Vous pouvez publier votre application dans autant d'environnements que vous le souhaitez en précisant
 le nom de l'environnement de cette façon :
@@ -54,7 +20,7 @@ Donc, de façon générique, si vous ajouter un environnement `<env-name>` pour 
 `<app-name>` en déployant l'application avec `towerify deploy --env <env-name>` alors l'URL
 de l'application sera `https://<env-name>.<app-name>.acme.towerify.io/`.
 
-### Personnaliser l'URL d'un environnement
+## Personnaliser l'URL d'un environnement
 
 Si vous préférez publier `dev` avec l'URL `https://my-app.acme.towerify.io/dev/`, modifiez
 la configuration de cette façon :
@@ -136,46 +102,4 @@ config:
       domain: preprod.my-app.com
     prod:
       domain: my-app.com
-```
-
-
-## Personnalisation Dockerfile
-
-Towerify génère une image par défaut qui permet de publier les pages statiques de votre application
-sur un site Internet.
-
-Cette image par défaut utilise [l'image Docker officielle](https://hub.docker.com/_/nginx) de 
-[nginx](https://nginx.org/) depuis un `Dockerfile` comme celui-ci :
-
-``` Dockerfile
-FROM nginx
-COPY ./src /usr/share/nginx/html
-```
-
-Vous pouvez avoir besoin de modifier cette image, par exemple, si vous voulez utiliser Apache plutôt
-que nginx pour publier votre site statique. Dans ce cas, créer un fichier `Dockerfile` puis modifiez
-la configuration de cette façon :
-
-``` yaml 
-name: my-app
-type: static
-config:
-    dockerfile: ./towerify/Dockerfile
-```
-
-Changer nginx par apache n'est pas le meilleur exemple. Vous pouvez avoir besoin de modifier le
-`Dockerfile` car vous avez besoin de générer les fichiers statiques de votre site avant de
-pouvoir les publier. Ce serait le cas si vous utiliser Material for MkDocs pour écrire une documentation.
-Dans ce cas, vous pouvez utiliser un `Dockerfile` de ce type :
-
-``` Dockerfile
-FROM python:3 AS build
-WORKDIR /usr/src/app
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir mkdocs-material
-COPY . .
-RUN mkdocs build
-
-FROM nginx AS publish
-COPY --from=build /usr/src/app/site/ /usr/share/nginx/html/
 ```

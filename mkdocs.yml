@@ -8,7 +8,11 @@ nav:
   - Accueil: index.md
   - Démarrage rapide:
     - demarrage-rapide/index.md
-    - App statique: demarrage-rapide/app-statique.md
+    - App statique: demarrage-rapide/app-static.md
+    - App Laravel 10: demarrage-rapide/app-laravel-10.md
+  - Avancés:
+    - Environnements: avances/environments.md
+    - Dockerfile: avances/mydockerfile.md
   - next.md
   - Interne:
     - develop/coder.md
