@@ -1,4 +1,4 @@
-# Towerify
+# Towerify CLI
 
 ## C'est quoi ?
 

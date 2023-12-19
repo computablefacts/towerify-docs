@@ -158,5 +158,5 @@ Vous pouvez personnaliser la configuration de votre application en fonction de s
 
 Vous pouvez également utiliser des options communes à tous les types d'application :
 
-* options pour publier dans [plusieurs environnements](../avances/environments.md)
-* options pour utiliser [votre propre Dockerfile](../avances/mydockerfile.md)
+* options pour publier dans [plusieurs environnements](avance/environments.md)
+* options pour utiliser [votre propre Dockerfile](avance/mydockerfile.md)

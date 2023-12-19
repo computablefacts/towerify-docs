@@ -5,19 +5,20 @@ site_url: https://docs.towerify.io/
 
 # Page tree
 nav:
-  - Accueil: index.md
-  - Démarrage rapide:
-    - demarrage-rapide/index.md
-    - App statique: demarrage-rapide/app-static.md
-    - App Laravel 10: demarrage-rapide/app-laravel-10.md
-  - Avancé:
-    - Environnements: avances/environments.md
-    - Secrets: avances/secrets.md
-    - Dockerfile: avances/mydockerfile.md
-  - next.md
-  - Interne:
-    - develop/coder.md
-
+  - CLI:
+    - Accueil: cli/getting-started.md
+    - Tutorial: cli/tutorial.md
+    - App statique: cli/app-static.md
+    - App Laravel 10: cli/app-laravel-10.md
+    - Avancé:
+      - Environnements: cli/avance/environments.md
+      - Secrets: cli/avance/secrets.md
+      - Dockerfile: cli/avance/mydockerfile.md
+    - Interne:
+      - cli/interne/coder.md
+      - cli/interne/next.md
+  - Cloud:
+    - Accueil: cloud/getting-started.md
 
 theme:
   name: material
