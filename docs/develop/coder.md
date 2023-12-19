@@ -1,4 +1,4 @@
-# Fonctionnement CLI
+# Fonctionnement de la CLI
 
 ## Idéal
 
@@ -6,7 +6,7 @@ Nous avons écrit cette documentation en ayant en tête un démarrage idéal pou
 
 C'est-à-dire un démarrage :
 
-- qui leur permet d'être opérationel le plus rapidement possible
+- qui leur permet d'être opérationnel le plus rapidement possible
 - sans avoir besoin de connaître les composants utilisés par Towerify (Docker, Jenkins, etc)
 - sans avoir besoin de configurer manuellement ces composants
 
