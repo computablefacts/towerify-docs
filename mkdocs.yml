@@ -30,6 +30,11 @@ theme:
     - content.code.select
   logo: img/logo.svg
   favicon: img/favicon.png
+  palette:
+    primary: custom
+
+extra_css:
+  - stylesheets/extra.css
 
 copyright: Copyright &copy; 2023 ComputableFacts
 
