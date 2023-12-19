@@ -28,6 +28,8 @@ theme:
     - navigation.top
     - content.code.copy
     - content.code.select
+  logo: img/logo.svg
+  favicon: img/favicon.png
 
 copyright: Copyright &copy; 2023 ComputableFacts
 
