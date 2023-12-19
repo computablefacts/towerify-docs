@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
-site_name: Documentation Towerify
+site_name: Towerify
 site_url: https://docs.towerify.io/
 
 # Page tree
@@ -10,7 +10,7 @@ nav:
     - demarrage-rapide/index.md
     - App statique: demarrage-rapide/app-static.md
     - App Laravel 10: demarrage-rapide/app-laravel-10.md
-  - Avancés:
+  - Avancé:
     - Environnements: avances/environments.md
     - Secrets: avances/secrets.md
     - Dockerfile: avances/mydockerfile.md

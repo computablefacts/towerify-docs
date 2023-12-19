@@ -1,4 +1,4 @@
-# Comment coder Towerify CLI
+# Fonctionnement CLI
 
 ## Idéal
 
