@@ -106,7 +106,8 @@ towerify init
 ``` output
 ? Choissisez le type de votre application ?
 1) static
-2) laravel
+2) laravel-10
+3) laravel-9
 Votre choix : 1
 
 ```
@@ -154,7 +155,7 @@ pour afficher votre application dans votre navigateur.
 Vous pouvez personnaliser la configuration de votre application en fonction de son type :
    
 * options pour une [application statique](app-static.md)
-* options pour une [application Lavarel 10](app-laravel-10.md)
+* options pour une [application Lavarel](app-laravel.md)
 
 Vous pouvez également utiliser des options communes à tous les types d'application :
 

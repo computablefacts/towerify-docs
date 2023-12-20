@@ -9,7 +9,7 @@ nav:
     - Accueil: index.md
     - Tutoriel: cli/tutorial.md
     - App statique: cli/app-static.md
-    - App Laravel 10: cli/app-laravel-10.md
+    - App Laravel: cli/app-laravel.md
     - Avancé:
       - Environnements: cli/avance/environments.md
       - Secrets: cli/avance/secrets.md

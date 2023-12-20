@@ -1,10 +1,10 @@
 # Application Laravel 10
 
 Cet article vous explique les options que vous pouvez modifier pour changer le comportement
-par défaut de Towerify pour votre application Laravel 10.
+par défaut de Towerify pour votre application Laravel.
 
 Le reste de ce document considère que le domaine principal de votre serveur Towerify 
-est `acme.towerify.io` et que vous avez nommé votre application Laravel 10 `my-app`.
+est `acme.towerify.io` et que vous avez nommé votre application Laravel `my-app`.
 
 Towerify a donc créé un fichier de configuration `towerify/config.yaml` qui contient :
 
@@ -12,12 +12,18 @@ Towerify a donc créé un fichier de configuration `towerify/config.yaml` qui co
 name: my-app
 type: laravel-10
 ```
+ou 
+``` yaml 
+name: my-app
+type: laravel-9
+```
+en fonction de la version de Laravel que vous utilisez.
 
 C'est en modifiant ce fichier que vous pouvez changer le comportement de Towerify.
 
-!!! todo
+!!! warning "todo"
 
-    Décrire ci-dessous les options
+    Les options ci-dessous ne sont pas encore opérationnelles
 
 
 ## Version de PHP
