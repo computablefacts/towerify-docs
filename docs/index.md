@@ -48,7 +48,7 @@ Après cette présentation, vous vous dîtes certainement :
 > écrire un `Dockerfile`, un `Jenkinsfile` ou un `docker-compose.yaml`.
 
 Pas de panique, cette documentation de Towerify va vous guidez pas à pas pour déployer votre application
-en 2 commandes : commencez par notre [Démarrage rapide](demarrage-rapide/index.md).
+en 2 commandes : suivez notre [tutoriel pour un démarrage rapide](cli/tutorial.md).
 
 Vous pourrez ensuite personnaliser le comportement de Towerify en fonction du type d'application que
 vous voulez déployer.
