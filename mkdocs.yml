@@ -6,8 +6,8 @@ site_url: https://docs.towerify.io/
 # Page tree
 nav:
   - CLI:
-    - Accueil: cli/getting-started.md
-    - Tutorial: cli/tutorial.md
+    - Accueil: index.md
+    - Tutoriel: cli/tutorial.md
     - App statique: cli/app-static.md
     - App Laravel 10: cli/app-laravel-10.md
     - Avancé:
