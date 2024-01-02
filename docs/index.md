@@ -1,57 +1,44 @@
-# Towerify CLI
+# Towerify
 
-## C'est quoi ?
+## Qu'est-ce que Towerify?
 
-Towerify est notre tour de contrôle. 
-Il facilite l'emballage, le déploiement et la réutilisation des applications et des services. 
-Enregistrez votre application et regardez Towerify tout tenir à jour et en bonne santé.
+Towerify est un service de gestion de serveurs et de déploiement d'applications. Towerify élimine la douleur et les
+tracas liés au déploiement d'applications et à la maintenance de serveurs physiques.
 
-Towerify met à votre disposition un ensemble d'outils vous permettant de publier vos applications
-dans plusieurs environnements.
+Que vous souhaitiez développer une application avec un framework tel que [Laravel](https://laravel.com/),
+[FastApi](https://fastapi.tiangolo.com/), [Jooby](https://jooby.io/), ou qu'il s'agisse simplement de déployer une
+application pré-packagée par nos soins, Towerify est la solution qu'il vous faut.
 
-!!! warning "TODO"
+## Tutorial Vidéos
 
-    Lien vers une page décrivant les outils mis à disposition (Jenkins, phpMyAdmin, Portainer, etc).
+A venir.
 
+## Changements d'adresses IP
 
-## Objectif
+Afin de provisionner et de communiquer avec vos serveurs, Towerify a besoin d'un accès SSH à ces derniers. Si vous avez
+configuré vos serveurs pour restreindre l'accès SSH à l'aide de listes d'autorisations IP, vous devez autoriser les
+adresses IP suivantes de Towerify:
 
-Towerify vous permet d'automatiser la publication de votre application
-dans plusieurs environnements en fonction du code que vous mettez à jour dans votre repo Git.
+- `51.15.140.162`
+- `217.70.184.38`
 
+Vous pouvez également accéder aux adresses IP via l'URL
+suivante: [`https://app.towerify.io/ips-v4.txt`](https://app.towerify.io/ips-v4.txt). Ceci est particulièrement utile si
+vous avez l'intention d'automatiser la gestion de votre réseau ou de votre infrastructure.
 
-## Prérequis
+!!! note
 
-Aucun.
+    Les adresses IP de Towerify peuvent changer de temps à autre. Cependant, nous vous enverrons toujours un courriel 
+    plusieurs semaines avant tout changement d'adresse IP.
 
-Installez notre outil en ligne de commande, Towerify CLI, puis utilisez le pour déployer vos
-applications.
+## Intégration de Towerify et Towerify CLI
 
-## Principe
+Towerify CLI est une ligne de commande pouvant être utilisée de manière indépendante de Towerify Cloud pour vous
+permettre de déployer vos propres applications de manière programmatique. Vous trouverez la documentation de Towerify
+CLI [ici](/cli/getting-started/).
 
-Une première commande, `towerify init`, initialise le répertoire de votre application. Une
-deuxième commande, `towerify deploy`, paramètre votre instance Towerify et déclenche la
-publication de votre application dessus.
+## Vous avez trouvé quelque chose qui ne va pas?
 
-Towerify gère la complexité à votre place :
-
-* Towerify packagera votre application dans une image Docker grâce à un `Dockerfile`.
-* Towerify publiera votre application grâce à Docker Compose et sa configuration dans un `docker-compose.yaml`.
-* Towerify automatisera la création de l'image Docker et sa publication avec Docker Compose grâce à un pipeline Jenkins
-  configuré dans un `Jenkinsfile`.
-
-## Et maintenant ?
-
-Après cette présentation, vous vous dîtes certainement : 
-
-> Très bien. Tout cela est intéressant mais je ne connais ni Docker, ni Jenkins, donc encore moins comment 
-> écrire un `Dockerfile`, un `Jenkinsfile` ou un `docker-compose.yaml`.
-
-Pas de panique, cette documentation de Towerify va vous guidez pas à pas pour déployer votre application
-en 2 commandes : suivez notre [tutoriel pour un démarrage rapide](cli/tutorial.md).
-
-Vous pourrez ensuite personnaliser le comportement de Towerify en fonction du type d'application que
-vous voulez déployer.
-
-Et, si vous savez écrire un `Dockerfile` ou un `docker-compose.yaml`, vous pourrez demander à
-Towerify d'utiliser les vôtres.
+Avez-vous trouvé quelque chose de confus ou d'incorrect dans la documentation? La documentation de Towerify est
+entièrement open source! N'hésitez pas à soumettre un `pull request`
+sur [GitHub](https://github.com/computablefacts/towerify-docs/tree/develop).

@@ -5,8 +5,12 @@ site_url: https://docs.towerify.io/
 
 # Page tree
 nav:
+  - Cloud:
+      - Accueil: index.md
+      - Cas d'usage: cloud/use-case.md
+      - Fonctionnement: cloud/how-it-works.md
   - CLI:
-    - Accueil: index.md
+    - Accueil: cli/getting-started.md
     - Tutoriel: cli/tutorial.md
     - App statique: cli/app-static.md
     - App Laravel: cli/app-laravel.md
@@ -17,8 +21,6 @@ nav:
     - Interne:
       - cli/interne/coder.md
       - cli/interne/next.md
-  - Cloud:
-    - Accueil: cloud/getting-started.md
 
 theme:
   name: material

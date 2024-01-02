@@ -1,3 +1,0 @@
-# Towerify Cloud
-
-Disponible bientôt!
