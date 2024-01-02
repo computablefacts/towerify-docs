@@ -9,7 +9,7 @@ Que vous souhaitiez développer une application avec un framework tel que [Larav
 [FastApi](https://fastapi.tiangolo.com/), [Jooby](https://jooby.io/), ou qu'il s'agisse simplement de déployer une
 application pré-packagée par nos soins, Towerify est la solution qu'il vous faut.
 
-## Tutorial Vidéos
+## Tutorial Vidéo
 
 A venir.
 
