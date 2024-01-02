@@ -7,6 +7,7 @@ site_url: https://docs.towerify.io/
 nav:
   - Cloud:
       - Accueil: index.md
+      - Catalogue: cloud/catalog.md
       - Cas d'usage: cloud/use-case.md
       - Fonctionnement: cloud/how-it-works.md
   - CLI:
@@ -43,6 +44,8 @@ copyright: Copyright &copy; 2023 ComputableFacts
 markdown_extensions:
   - admonition
   - def_list
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
       title: Sur cette page

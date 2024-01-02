@@ -7,7 +7,7 @@ tracas liés au déploiement d'applications et à la maintenance de serveurs phy
 
 Que vous souhaitiez développer une application avec un framework tel que [Laravel](https://laravel.com/),
 [FastApi](https://fastapi.tiangolo.com/), [Jooby](https://jooby.io/), ou qu'il s'agisse simplement de déployer une
-application pré-packagée par nos soins, Towerify est la solution qu'il vous faut.
+[application pré-packagée](/cloud/catalog) par nos soins, Towerify est la solution qu'il vous faut.
 
 ## Tutorial Vidéo
 
