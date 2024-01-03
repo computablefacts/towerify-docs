@@ -107,6 +107,50 @@ sudo yunohost app install https://github.com/computablefacts/jenkins_ynh/tree/cf
 
     Documenter comment terminer l'installation de Jenkins grâce à son interface Admin (URL a saisir dans la conf notamment)
 
+!!! warning
+
+    Pour que Towerify CLI puisse faire des requêtes POST au Jenkins, il faut ajouter le plugin Strict Crumb Issuer.
+    Puis aller dans "Administrer Jenkins" > "Security" > CSRF Protection, choisir "Strict Crumb Issuer", cliquer
+    sur "Avancé" et décocher "Check the session ID"
+
+!!! warning
+
+    Pour que le pipeline Jenkins de Towerify puisse accepter un paramètre de type stashedFile, il faut installer
+    le plugin File Parameter.
+
+!!! warning
+
+    Pour que le pipeline Jenkins de Towerify puisse lire le fichier de configuration en YAML, il faut installer
+    le plugin Pipeline Utility Steps.
+
+!!! warning
+
+    Pour que le pipeline Jenkins de Towerify puisse utiliser Docker, il faut installer le plugin Docker Pipeline.
+    Et donner à Jenkins le droit d'utiliser Docker avec la commande `sudo usermod -a -G docker jenkins`. Puis
+    redémarrer Jenkins avec la commande `sudo systemctl restart jenkins.service`.
+
+!!! danger
+
+    Pour que le pipeline Jenkins de Towerify puisse pousser les images Docker vers le Docker Hub de ComputableFacts,
+    il faut définir les crendentials `docker-hub-cf-cred` dans Jenkins.
+
+    !!! question 
+        
+        Faut-il, à terme, avoir une repo locale au Towerify ???
+
+    Une solution court terme serait de ne pas pousser les images Docker générées vers une repo. Elles ne seraient
+    présentes que sur la machine Towerify. Comme le Docker Compose qui démarre l'application est sur la même
+    machine, il devrait trouver l'image locale (A tester).
+
+    L'inconvénient de cette solution de stockage en local, c'est qu'on perd la possibilité d'utiliser l'image 
+    ailleurs et un "backup" gratuit des images en dehors du serveur Towerify. Peut-être pas très grave pour commencer.
+
+!!! warning
+
+    Pour que le pipeline Jenkins de Towerify puisse executer les commandes `sudo yunohost ...`, il faut
+    ajouter l'utilisateur `jenkins` aux sudoers avec la commande : 
+    `sudo sh -c 'echo "jenkins ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/50-jenkins'`
+
 
 ### Installer Portainer
 
