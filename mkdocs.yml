@@ -10,6 +10,7 @@ nav:
       - Catalogue: cloud/catalog.md
       - Cas d'usage: cloud/use-case.md
       - Fonctionnement: cloud/how-it-works.md
+      - Auto-hébergement: self-hosting.md
   - CLI:
     - Accueil: cli/getting-started.md
     - Tutoriel: cli/tutorial.md

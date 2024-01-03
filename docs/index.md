@@ -37,6 +37,12 @@ Towerify CLI est une ligne de commande pouvant être utilisée de manière indé
 permettre de déployer vos propres applications de manière programmatique. Vous trouverez la documentation de Towerify
 CLI [ici](/cli/getting-started/).
 
+## Vous voulez déployer Towerify vous-même ?
+
+Towerify Cloud vous permet d'avoir rapidement un serveur opérationnel pour y déployer nos applications pré-packagées
+mais, si vous préférez, vous pouvez aussi mettre en place Towerify sur votre serveur en suivant 
+[notre guide d'auto-hébergement](self-hosting.md).
+
 ## Vous avez trouvé quelque chose qui ne va pas?
 
 Avez-vous trouvé quelque chose de confus ou d'incorrect dans la documentation? La documentation de Towerify est
