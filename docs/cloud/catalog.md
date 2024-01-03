@@ -6,8 +6,8 @@ Installer des applications avec Towerify est aussi facile que d'installer des ap
 Choisissez une application dans notre catalogue et commencez à l'utiliser en quelques clics.
 
 Parce que maintenir votre système à jour et sécurisé est un travail à plein temps, Towerify s'occupe de mettre à jour
-automatiquement les applications que vous déployez. <b>Towerify vous permet ainsi de vous concentrer sur
-l'utilisation des applications</b> et de ne pas avoir à vous préoccuper de l'administration du système.
+automatiquement les applications que vous déployez. **Towerify vous permet ainsi de vous concentrer sur
+l'utilisation des applications** et de ne pas avoir à vous préoccuper de l'administration du système.
 
 ## Applications supportées
 
