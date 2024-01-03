@@ -36,8 +36,8 @@ d'[intégration continue](https://fr.wikipedia.org/wiki/Int%C3%A9gration_continu
 
 !!! note
 
-    Il n'y a aucune dépendance entre Towerify Cloud et Towerify CLI. L'utilisation de l'un n'implique pas d'utiliser 
-    l'autre.
+    Il n'y a aucune dépendance entre Towerify Cloud et Towerify CLI. L'utilisation de l'un n'implique pas l'utilisation 
+    de l'autre.
 
 ### Towerify Cloud
 
