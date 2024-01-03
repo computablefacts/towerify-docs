@@ -27,6 +27,18 @@ Cette section donne un aperçu du fonctionnement de [Towerify Cloud](#towerify-c
 [Towerify CLI](#towerify-cli). Bien que cette vue d'ensemble contienne des approximations, l'objet est ici de donner une
 image globale du fonctionnement de Towerify avant de détailler les différents aspects de l'architecture.
 
+[**Towerify Cloud**](#towerify-cloud) est l'application en charge de la gestion de l'infrastructure: installer YunoHost,
+configurer l'instance, déployer des [apps pré-packagées](/cloud/catalog), distribuer des accès aux apps, etc.
+
+[**Towerify CLI**](#towerify-cli) est une ligne de commande permettant de déployer sur une instance YunoHost des
+applications hors catalogue, i.e. développées par vos soins, au moyen d'un processus
+d'[intégration continue](https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue).
+
+!!! note
+
+    Il n'y a aucune dépendance entre Towerify Cloud et Towerify CLI. L'utilisation de l'un n'implique pas d'utiliser 
+    l'autre.
+
 ### Towerify Cloud
 
 ![Schéma du fonctionnement de Towerify Cloud](/img/towerify-cloud.png)
