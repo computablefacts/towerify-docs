@@ -104,9 +104,49 @@ Les possibilités offertes à toute personne possédant le rôle _administrateur
 
 </div>
 
+Une des fonctions les plus importantes de l'*administrateur*, une fois la commande de serveur effectuée par le client, 
+consiste à mettre en service celui-ci. Pour ce faire, l'*administrateur* a accès à une interface dédiée lui permettant 
+d'associer un serveur de la commande à une adresse IP et de lancer la configuration automatique de celui-ci: 
+configuration du DNS, installation de YunoHost, configuration de Fail2ban, désactivation de l'API de YunoHost, etc.
+
+<div class="grid cards" markdown>
+
+-   **Serveurs à configurer**
+
+    ---
+
+    ![Liste des serveurs](../img/towerify-administrator-settings.png)
+
+-   **Configuration d'un serveur**
+
+    ---
+
+    ![Configuration d'un serveur](../img/towerify-setup-server.png)
+
+</div>
+
 #### Rôle "Administrateur Restreint"
 
-A venir.
+Les possibilités offertes à toute personne possédant le rôle _administrateur restreint_ sont les suivantes:
+
+- **Gérer les serveurs.** Permet la commande et la demande de mise en service de nouveaux serveurs auprès de 
+  l'*administrateur restreint*.
+- **Gérer les applications.** Permet d'ajouter une application à sa bibliothèque et de déployer celle-ci sur un serveur 
+  précédemment mis en service.
+- **Gérer les utilisateurs finaux.** Permet d'inviter de nouveaux utilisateurs et de distribuer à ceux-ci des accès aux 
+  apps déployées.
+
+![Paramétrage](../img/towerify-limited-administrator-settings-1.png)
+
+1. Permet de démarrer une application pour laquelle une permission d'accès a été délivrée à l'utilisateur connecté. 
+2. Permet de lister les serveurs commandés ainsi l'état de ceux-ci: en cours de mise en service ou prêt à être utilisé. 
+3. Permet de lister les applications disponibles ainsi que l'état de celles-ci: prête à être déployée ou déployée.
+
+![Paramétrage](../img/towerify-limited-administrator-settings-2.png)
+
+1. Permet de lister les applications qui n'ont pas été déployées à l'aide de Towerify Cloud.
+2. Permet de lister les utilisateurs ayant accès aux différents serveurs.
+3. Permet d'inviter un utilisateur à utiliser une ou plusieurs applications.
 
 #### Rôle "Basic End User"
 
