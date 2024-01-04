@@ -129,12 +129,12 @@ configuration du DNS, installation de YunoHost, configuration de Fail2ban, désa
 
 Les possibilités offertes à toute personne possédant le rôle _administrateur restreint_ sont les suivantes:
 
-- **Gérer les serveurs.** Permet la commande et la demande de mise en service de nouveaux serveurs auprès de 
-  l'*administrateur restreint*.
-- **Gérer les applications.** Permet d'ajouter une application à sa bibliothèque et de déployer celle-ci sur un serveur 
-  précédemment mis en service.
-- **Gérer les utilisateurs finaux.** Permet d'inviter de nouveaux utilisateurs et de distribuer à ceux-ci des accès aux 
-  apps déployées.
+- **Gestion des serveurs.** Permet la commande et la demande de mise en service de nouveaux serveurs auprès de 
+  l'*administrateur*.
+- **Gestion des applications.** Permet d'ajouter une application à sa bibliothèque et de déployer celle-ci sur un 
+  serveur précédemment mis en service.
+- **Gestion des utilisateurs finaux.** Permet d'inviter de nouveaux utilisateurs et de distribuer à ceux-ci des accès 
+  aux apps déployées.
 
 ![Paramétrage](../img/towerify-limited-administrator-settings-1.png)
 
@@ -150,7 +150,12 @@ Les possibilités offertes à toute personne possédant le rôle _administrateur
 
 #### Rôle "Basic End User"
 
-A venir.
+Les possibilités offertes à toute personne possédant le rôle _utilisateur final_ sont les suivantes:
+
+- **Accès aux applications.** Permet d'accéder aux applications pour lesquelles un _administrateur restreint_ a 
+  configuré un accès à l'utilisateur.
+
+![Paramétrage](../img/towerify-apps-launcher.png)
 
 ### Towerify CLI
 
