@@ -1,32 +1,52 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
-site_name: Documentation Towerify
+site_name: Towerify
 site_url: https://docs.towerify.io/
 
 # Page tree
 nav:
-  - Accueil: index.md
-  - Démarrage rapide:
-    - demarrage-rapide/index.md
-    - App statique: demarrage-rapide/app-statique.md
-    - API Python: demarrage-rapide/app-api-python.md
-  - Avancés:
-    - avances/todo.md
-    - avances/variables.md
-  - Markdown: markdown-examples.md
-
+  - Cloud:
+      - Accueil: index.md
+      - Catalogue: cloud/catalog.md
+      - Cas d'usage: cloud/use-case.md
+      - Fonctionnement: cloud/how-it-works.md
+      - Auto-hébergement: self-hosting.md
+  - CLI:
+    - Accueil: cli/getting-started.md
+    - Tutoriel: cli/tutorial.md
+    - App statique: cli/app-static.md
+    - App Laravel: cli/app-laravel.md
+    - Avancé:
+      - Environnements: cli/avance/environments.md
+      - Secrets: cli/avance/secrets.md
+      - Dockerfile: cli/avance/mydockerfile.md
+    - Interne:
+      - cli/interne/coder.md
+      - cli/interne/next.md
 
 theme:
   name: material
   features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
     - content.code.copy
     - content.code.select
+  logo: img/logo.svg
+  favicon: img/favicon.png
+  palette:
+    primary: custom
+
+extra_css:
+  - stylesheets/extra.css
 
 copyright: Copyright &copy; 2023 ComputableFacts
 
 markdown_extensions:
   - admonition
   - def_list
+  - attr_list
+  - md_in_html
   - toc:
       permalink: true
       title: Sur cette page
@@ -44,3 +64,11 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - glightbox

@@ -1,54 +1,50 @@
 # Towerify
 
-## C'est quoi ?
+## Qu'est-ce que Towerify?
 
-Towerify est notre tour de contrôle. 
-Il facilite l'emballage, le déploiement et la réutilisation des applications et des services. 
-Enregistrez votre application et regardez Towerify tout tenir à jour et en bonne santé.
+Towerify est un service de gestion de serveurs et de déploiement d'applications. Towerify élimine la douleur et les
+tracas liés au déploiement d'applications et à la maintenance de serveurs physiques.
 
-Towerify met à votre disposition un ensemble d'outils vous permettant de publier vos applications
-dans plusieurs environnements.
+Que vous souhaitiez développer une application avec un framework tel que [Laravel](https://laravel.com/),
+[FastApi](https://fastapi.tiangolo.com/), [Jooby](https://jooby.io/), ou qu'il s'agisse simplement de déployer une
+[application pré-packagée](cloud/catalog.md) par nos soins, Towerify est la solution qu'il vous faut.
 
-!!! warning "TODO"
+## Tutorial Vidéo
 
-    Lien vers une page décrivant les outils mis à disposition (Jenkins, phpMyAdmin, Portainer, etc).
+A venir.
 
+## Changements d'adresses IP
 
-## Objectif
+Afin de provisionner et de communiquer avec vos serveurs, Towerify a besoin d'un accès SSH à ces derniers. Si vous avez
+configuré vos serveurs pour restreindre l'accès SSH à l'aide de listes d'autorisations IP, vous devez autoriser les
+adresses IP suivantes de Towerify:
 
-Towerify vous permet d'automatiser la publication de votre application
-dans 3 environnements en fonction du code que vous mettez à jour dans votre repo Git.
+- `51.15.140.162`
+- `217.70.184.38`
 
+Vous pouvez également accéder aux adresses IP via l'URL
+suivante: [`https://app.towerify.io/ips-v4.txt`](https://app.towerify.io/ips-v4.txt). Ceci est particulièrement utile si
+vous avez l'intention d'automatiser la gestion de votre réseau ou de votre infrastructure.
 
-## Prérequis
+!!! note
 
-Avoir le code de votre application dans une repo Git.
+    Les adresses IP de Towerify peuvent changer de temps à autre. Cependant, nous vous enverrons toujours un courriel 
+    plusieurs semaines avant tout changement d'adresse IP.
 
-## Principe
+## Intégration de Towerify et Towerify CLI
 
-Pour bénéficier de Towerify, vous devez ajouter un répertoire `towerify` à votre repo Git afin d'y mettre
-les differents fichiers de configuration nécessaires pour packager, tester et publier votre application
-avec Towerify.
+Towerify CLI est une ligne de commande pouvant être utilisée de manière indépendante de Towerify Cloud pour vous
+permettre de déployer vos propres applications de manière programmatique. Vous trouverez la documentation de Towerify
+CLI [ici](cli/getting-started.md).
 
-Les grandes étapes du fonctionnement de Towerify sont :
+## Vous voulez déployer Towerify vous-même ?
 
-* Towerify packagera votre application dans une image Docker. Vous devrez donc ajouter un `Dockerfile` à votre repo Git.
-* Towerify publiera votre application grâce à Docker Compose. Vous devrez donc ajouter un `docker-compose.yaml` à votre repo Git.
-* Towerify automatisera la création de l'image Docker et sa publication avec Docker Compose grâce à un pipeline Jenkins.
-  Vous devrez donc ajouter un `Jenkinsfile` à votre repo Git.
+Towerify Cloud vous permet d'avoir rapidement un serveur opérationnel pour y déployer nos applications pré-packagées
+mais, si vous préférez, vous pouvez aussi mettre en place Towerify sur votre serveur en suivant 
+[notre guide d'auto-hébergement](self-hosting.md).
 
-## Et maintenant ?
+## Vous avez trouvé quelque chose qui ne va pas?
 
-Après cette présentation, vous vous dîtes certainement : 
-
-> Très bien. Tout cela est intéressant mais je ne connais ni Docker, ni Jenkins, donc encore moins comment 
-> écrire un `Dockerfile`, un `Jenkinsfile` ou un `docker-compose.yaml`.
-
-Pas de panique, cette documentation de Towerify va vous guidez pas à pas pour créer les fichiers de configuration dont 
-votre application va avoir besoin. Ces fichiers dépendent du type de votre application et nous avons une documentation
-pour chacun des cas les plus courants :
-
-* Mon application est [un ensemble de pages statiques](demarrage-rapide/app-statique.md)
-* Mon application est [une API écrite en Python](demarrage-rapide/app-api-python.md)
-* Mon application est écrite en PHP
-* Mon application est écrite en PHP avec Laravel
+Avez-vous trouvé quelque chose de confus ou d'incorrect dans la documentation? La documentation de Towerify est
+entièrement open source! N'hésitez pas à soumettre un `pull request`
+sur [GitHub](https://github.com/computablefacts/towerify-docs/tree/develop).
