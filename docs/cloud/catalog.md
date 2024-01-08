@@ -26,7 +26,9 @@ l'utilisation des applications** et de ne pas avoir à vous préoccuper de l'adm
         display: flex;
         align-items: center;
         justify-content: left;
-        padding-top: 0.5rem;    
+        padding-top: 0.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
     .card .card-head img {
         height: 50px;
