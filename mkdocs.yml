@@ -12,18 +12,18 @@ nav:
       - Fonctionnement: cloud/how-it-works.md
       - Auto-hébergement: cloud/self-hosting.md
   - CLI:
-    - Accueil: cli/index.md
-    - Tutoriel: cli/tutorial.md
-    - App statique: cli/app-static.md
-    - App Laravel: cli/app-laravel.md
-    - Auto-hébergement: cli/self-hosting.md
-    - Avancé:
-      - Environnements: cli/avance/environments.md
-      - Secrets: cli/avance/secrets.md
-      - Dockerfile: cli/avance/mydockerfile.md
-    - Interne:
-      - cli/interne/coder.md
-      - cli/interne/next.md
+      - Accueil: cli/index.md
+      - Tutoriel: cli/tutorial.md
+      - App statique: cli/app-static.md
+      - App Laravel: cli/app-laravel.md
+      - Auto-hébergement: cli/self-hosting.md
+      - Avancé:
+          - Environnements: cli/avance/environments.md
+          - Secrets: cli/avance/secrets.md
+          - Dockerfile: cli/avance/mydockerfile.md
+      - Interne:
+          - cli/interne/coder.md
+          - cli/interne/next.md
 
 theme:
   name: material
