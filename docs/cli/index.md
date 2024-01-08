@@ -24,13 +24,13 @@ dans plusieurs environnements en fonction du code que vous mettez à jour dans v
 
 Aucun.
 
-Installez notre outil en ligne de commande, Towerify CLI, puis utilisez le pour déployer vos
+Installez notre outil en ligne de commande, *Towerify CLI*, puis utilisez le pour déployer vos
 applications.
 
 ## Principe
 
 Une première commande, `towerify init`, initialise le répertoire de votre application. Une
-deuxième commande, `towerify deploy`, paramètre votre instance Towerify et déclenche la
+deuxième commande, `towerify deploy`, paramètre votre *instance Towerify* et déclenche la
 publication de votre application dessus.
 
 Towerify gère la complexité à votre place :

@@ -2,56 +2,64 @@
 
 ## Idéal
 
-Nous avons écrit cette documentation en ayant en tête un démarrage idéal pour nos clients.
+Nous avons écrit cette documentation en ayant en tête un démarrage idéal pour nos 
+clients.
 
 C'est-à-dire un démarrage :
 
 - qui leur permet d'être opérationnel le plus rapidement possible
-- sans avoir besoin de connaître les composants utilisés par Towerify (Docker, Jenkins, etc)
+- sans avoir besoin de connaître les composants utilisés par Towerify (Docker, 
+  Jenkins, etc)
 - sans avoir besoin de configurer manuellement ces composants
 
 
 ## CLI
 
-Pour la partie CLI, nous allons utiliser [Bashly](https://bashly.dannyb.co/) qui va gérer pour nous
-les commandes, les options, l'affichage de l'aide, etc.
+Pour la partie CLI, nous allons utiliser [Bashly](https://bashly.dannyb.co/) qui
+va gérer pour nous les commandes, les options, l'affichage de l'aide, etc.
 
 Nous avons besoin de coder 2 scripts :
 
 - `install.sh` qui sera téléchargé par le client grâce à un `curl`
-- `towerify` qui sera l'outil principal permettant de piloter le déploiement des applications
-  grâce à ses commandes (`towerify init`, `towerify deploy`)
+- `towerify` qui sera l'outil principal permettant de piloter le déploiement des
+  applications grâce à ses commandes (`towerify init`, `towerify deploy`, etc)
 
-Les 2 applications se trouvent dans la même repo :
+Les 2 applications se trouvent dans le [même dépôt GitHub public][towerify-cli].
 
-[https://github.com/computablefacts/towerify-cli](https://github.com/computablefacts/towerify-cli)
+[towerify-cli]: https://github.com/computablefacts/towerify-cli
 
 
 ### `install.sh`
+
+Permet d'installer Towerify CLI grâce à la commande :
 
 ``` bash
 curl -sL https://acme.towerify.io/cli/install.sh | bash
 ```
 
+Il est possible de préciser le domaine de son instance Towerify si besoin :
+
 ``` bash
 curl -sL https://acme.towerify.io/cli/install.sh | bash -s -- my-corp.towerify.io
 ```
+
+Voici comment cela fonctionne :
 
 ``` mermaid
 sequenceDiagram
   autonumber
   box Local PC
-    participant User
+    actor User
     participant Install as Install.sh
     participant CLI
   end
 
   box Towerify
-    participant AppCLI as CLI App
+    participant AppCLI as acme.towerify.io
     participant Jenkins
   end
 
-  par curl -L https://acme.towerify.io/cli/install.sh | bash
+  par curl -sL https://acme.towerify.io/cli/install.sh | bash
     User ->> AppCLI: Installe Towerify CLI
     AppCLI ->> Install: Télécharge install.sh
 
@@ -69,11 +77,12 @@ sequenceDiagram
 
 ??? question "Comment on fait ça ?"
 
-    - une application YunoHost qui déploie le /cli/ qui contient `install.sh` et l'application 
-      Towerify CLI compressée (towerify.tar.gz)
+    - déploiement avec Towerify CLI (:smile:) sur `acme.towerify.com` de 
+      `install.sh` et l'application *Towerify CLI* compressée (towerify.tar.gz)
     - le domaine peut être passé à `install.sh`
-    - `install.sh` télécharge le CLI et le stocke dans $HOME/.towerify (ce répertoire contiendra aussi un fichier 
-      de config avec l'URL du Towerify et les credentials)
+    - `install.sh` télécharge le CLI et le stocke dans $HOME/.towerify (ce
+      répertoire contiendra aussi un fichier de config avec l'URL du Towerify et
+      les credentials)
     - `install.sh` ajoute `towerify` dans le PATH de l'utilisateur
 
     Voir aussi [le packaging](#packaging).
@@ -82,13 +91,31 @@ sequenceDiagram
 
 #### `towerify --help`
 
-Codé automatiquement par Bashly :-)
+Codé automatiquement par Bashly :thumbup:
+
 
 #### `towerify version`
 
-Codé automatiquement par Bashly :-)
+Codé automatiquement par Bashly :thumbup:
+
+
+#### `towerify update`
+
+Permet de mettre à jour `towerify`
+
+* [ ] Télécharge le package (towerify.tar.gz) depuis acme.towerify.io
+* [ ] Décompresse le package dans un répertoire temporaire
+* [ ] Compare la version de ce package et avec celle qui est installée
+* [ ] Si la version est la même => message Towerify est à jour
+* [ ] Si la version est plus récente, remplace le `towerify` installé par le
+      nouveau (avec les templates)
+
 
 #### `towerify configure`
+
+Permet de changer la configuration de son *Towerify CLI* i.e. modifier l'URL, 
+le login et le mot de passe de l'instance Towerify avec lequel *Towerify CLI*
+va interagir.
 
 ``` bash
 towerify configure
@@ -102,12 +129,12 @@ towerify configure --domain my-corp.towerify.io --login user --password P@ssw0rd
 sequenceDiagram
   autonumber
   box Local PC
-    participant User
+    actor User
     participant CLI
   end
 
   box Towerify
-    participant AppCLI as CLI App
+    participant AppCLI as acme.towerify.io
     participant Jenkins
   end
 
@@ -123,24 +150,23 @@ sequenceDiagram
   end
 ```
 
-Permet de changer la configuration de son Towerify CLI i.e. modifier l'URL, le login et le mot
-de passe du serveur Towerify avec lequel Towerify CLI va interagir.
-
-* [ ] Avertissement : si l'utilisateur change de serveur, il va perdre sa conf actuelle
+* [ ] Avertissement : si l'utilisateur change d'instance, il va perdre sa conf
+      actuelle
 * [X] Poser les questions : URL Towerfiy, login, pwd
 * [X] Vérifier la connexion au Jenkins
 * [X] Mettre à jour la `config.ini` avec les nouveaux paramètres
 
-Dans un deuxième temps, nous pourrions gérer plusieurs serveurs Towerify avec, comme AWS CLI, une notion de
-profil.
+Dans un deuxième temps, nous pourrions gérer plusieurs instances Towerify avec,
+comme AWS CLI, une notion de profil.
 
 * [ ] Ajouter un paramètre `--profile`
 * [ ] Si le paramètre n'est pas passé, on change les credentials par défaut
-* [ ] Si le paramètre est passé, on crée ou on modifie les credentials de ce profile
+* [ ] Si le paramètre est passé, on crée ou on modifie les credentials de ce profil
 
 Le fichier `config.ini` ressemblerait alors à ça :
 
 ``` ini
+[default]
 jenkins_domain = jenkins.myapps.addapps.io
 towerify_domain = myapps.addapps.io
 towerify_login = cfadmin
@@ -151,10 +177,10 @@ jenkins_domain = jenkins.apps.ista.computablefacts.com
 towerify_domain = apps.ista.computablefacts.com
 towerify_login = pbrisacier
 towerify_password = **********
-
 ```
 
-* [ ] Il faudra ajouter l'option `--profile` aux commandes de `towerify` pour en tenir compte
+* [ ] Il faudra ajouter l'option `--profile` aux commandes de `towerify` pour
+      en tenir compte
 
 
 #### `towerify init`
@@ -173,14 +199,9 @@ towerify init my-app
 sequenceDiagram
   autonumber
   box Local PC
-    participant User
+    actor User
     participant CLI
     participant App as App directory
-  end
-
-  box Towerify
-    participant AppCLI as CLI App
-    participant Jenkins
   end
 
   par towerify init
@@ -200,34 +221,37 @@ sequenceDiagram
 * [ ] Crée le fichier d'exclusion du fichier compressé `towerify/.tarignore` (dépend du type d'app)
 * [X] Gère le cas où un fichier de configuration existe déjà => affiche une erreur
 
-Les options possibles de `towerify/config.yaml` dépendent du type d'app. Ca pourrait être
-intéressant d'avoir une commande qui ajoute toutes les options possibles (avec leur
-valeur par défaut ou des valeurs exemples et des commentaires pour les expliquer) 
-afin que l'utilisateur n'est pas besoin de lire cette doc pour les trouver.
+Les options possibles de `towerify/config.yaml` dépendent du type d'app. Ca
+pourrait être intéressant d'avoir une commande qui ajoute toutes les options
+possibles (avec leur valeur par défaut ou des valeurs exemples et des
+commentaires pour les expliquer) afin que l'utilisateur n'est pas besoin de
+lire cette doc pour les trouver.
 
 * [ ] Ajouter une option `--add-all-options` pour faire ça
 
 ??? question "Choix de la repo ?"
 
-    Nous avons décidé de pouvoir déployer des applications depuis un répertoire local sur
-    le poste de l'utilisateur. Donc sans connaitre la repo Git, ni la repo d'un autre type
-    ni même si ce répertoire est sous contrôle de source.
+    Nous avons décidé de pouvoir déployer des applications depuis un répertoire 
+    local sur le poste de l'utilisateur. Donc sans connaitre la repo Git, ni la
+    repo d'un autre type ni même si ce répertoire est sous contrôle de source.
 
-    Jenkins n'aura pas besoin de se connecter à la repo pour récupérer le code. Cela simplifie
-    la configuration et cela permet de traiter le cas où la repo Git n'est accessible qu'en 
-    interne à une entreprise (donc pas accessible par Jenkins).
+    Jenkins n'aura pas besoin de se connecter à la repo pour récupérer le code.
+    Cela simplifie la configuration et cela permet de traiter le cas où la repo
+    Git n'est accessible qu'en interne à une entreprise (donc pas accessible par
+    Jenkins).
 
-    Pour que Jenkins puisse déployer le code, nous ferons un ZIP du répertoire que nous
-    téléverserons à un Job Jenkins qui fera le déploiement.
+    Pour que Jenkins puisse déployer le code, nous ferons un `tar.gz` du 
+    répertoire que nous téléverserons à un Job Jenkins qui fera le déploiement.
 
 
 ??? question "Stockage de la configuration ?"
 
-    Toute la configuration de Towerify pour l'application sera stockée dans le fichier `towerify/config.yaml`
-    dans le répertoire où la commande `towerify init` a été lancée.
+    Toute la configuration de Towerify pour l'application sera stockée dans le
+    fichier `towerify/config.yaml` dans le répertoire où la commande `towerify
+    init` a été lancée.
 
-    Ce fichier de configuration fera partie du ZIP transmis à Jenkins donc le Job Jenkins adaptera son
-    comportement en fonction de cette configuration.
+    Ce fichier de configuration fera partie du `tar.gz` transmis à Jenkins donc
+    le Job Jenkins adaptera son comportement en fonction de cette configuration.
 
     Exemple de fichier de conf minimal :
     ``` yaml 
@@ -235,8 +259,9 @@ afin que l'utilisateur n'est pas besoin de lire cette doc pour les trouver.
     type: static
     ```
 
-    Pour les cas plus complexes, le fichier de conf pourra référencer un fichier externe stocké dans le
-    répertoire de l'application comme, par exemple, un `Dockerfile` spécifique.
+    Pour les cas plus complexes, le fichier de conf pourra référencer un fichier
+    externe stocké dans le répertoire de l'application comme, par exemple, un
+    `Dockerfile` spécifique.
 
     Avec une conf spécifique :
     ``` yaml 
@@ -251,9 +276,6 @@ afin que l'utilisateur n'est pas besoin de lire cette doc pour les trouver.
       - prod  
     ```
 
-    !!! tip
-        On peut lire un YAML avec groovy dans Jenkins, voir [ce billet SO](https://stackoverflow.com/a/56675940)
-        ou la [doc (très réduite) de Jenkins](https://www.jenkins.io/doc/pipeline/steps/pipeline-utility-steps/#readyaml-read-yaml-from-files-in-the-workspace-or-text)
 
 #### `towerify deploy`
 
@@ -263,7 +285,7 @@ afin que l'utilisateur n'est pas besoin de lire cette doc pour les trouver.
 sequenceDiagram
   autonumber
   box Local PC
-    participant User
+    actor User
     participant CLI
     participant App as App directory
   end
@@ -284,25 +306,33 @@ sequenceDiagram
   end
 ```
 
-* [X] Vérifie qu'il a bien accès au Jenkins (credentials dans le fichier `config.ini`) => Affiche une erreur
+* [X] Vérifie qu'il a bien accès au Jenkins (credentials dans le fichier
+      `config.ini`) => Affiche une erreur
 * [X] Créer le pipeline Jenkins s'il n'existe pas
-* [X] Compresse le répertoire de l'app (tient compte du fichier `towerify/.tarignore` qui permettra de ne pas 
-      compresser des fichiers ou des répertoires, comme `.git`)
+* [X] Compresse le répertoire de l'app (tient compte du fichier
+      `towerify/.tarignore` qui permettra de ne pas compresser des fichiers ou
+      des répertoires, comme `.git`)
 * [X] Lance le job Jenkins en lui envoyant le fichier compressé
-* [ ] Surveille l'avancement du job Jenkins (API toutes les 5 secondes, afficher le numéro de build)
+* [ ] Surveille l'avancement du job Jenkins (API toutes les 5 secondes, afficher
+      le numéro de build)
 * [ ] Affiche le résultat : succès ou échec
-* [ ] Affiche les URL : lien vers l'app déployée, lien vers le détail du job Jenkins en cas d'échec      
-* [X] Ajouter l'option `--env` pour pouvoir déployer autant d'environnement que nécessaire. `dev` par défaut
-    * [ ] Avertissement si on déploie dans un environnement autre que `dev` pour la première fois (permet 
-          d'éviter les erreurs comme `--env prod` puis `--env production`)
-    * [ ] On sait si un environnement a déjà été déployé en vérifiant l'existance du job Jenkins 
-          correspondant (`<app_name>_<app_type>`).
+* [ ] Affiche les URL : lien vers l'app déployée, lien vers le détail du job
+      Jenkins en cas d'échec
+* [X] Ajouter l'option `--env` pour pouvoir déployer autant d'environnement que
+      nécessaire. `dev` par défaut.
+    * [ ] Avertissement si on déploie dans un environnement autre que `dev` pour
+          la première fois (permet d'éviter les erreurs comme `--env prod` puis
+          `--env production`)
+          
+          On sait si un environnement a déjà été déployé en vérifiant l'existance
+          du job Jenkins correspondant (`<app_name>_<app_type>`).
 
 ??? question "Comment on fait ça ?"
 
-    - durant l'installation, Towerify CLI a stocké l'URL de l'instance et le token de Jenkins
+    - durant l'installation, *Towerify CLI* a stocké l'URL de l'instance, le 
+      login et le mot de passe de Jenkins
     - on compresse le répertoire
-    - on envoie le zip au Job Jenkins
+    - on envoie le `tar.gz` au Job Jenkins
     - Jenkins déploie en fonction du fichier de conf `towerify/config.yaml`
 
 
@@ -315,43 +345,62 @@ towerify delete --env my_feature
 ```
 
 * [ ] Demande confirmation (sauf si option `--force`)
-* [ ] Supprime l'application (de YunoHost). Nécessitera un pipeline Jenkins pour le faire car `towerify`
-      ne peut pas agir sur YunoHost directement.
-* [ ] Supprime le job Jenkins de déploiement (`<app_name>_<app_type>`) et le job Jenkins de suppression
-      crée à l'étape précédente
+* [ ] Supprime l'application (de YunoHost). 
+      
+      Nécessitera d'ajouter un paramètre au pipeline Jenkins de déploiement
+      pour qu'il supprime l'application YunoHost car `towerify` ne peut pas
+      agir sur YunoHost directement.
+
 
 #### `towerify destroy`
 
-Supprime tous les environnements de l'application et tous les jobs Jenkins de l'application.
+Supprime l'application, les secrets et tous les jobs Jenkins de l'application
+pour un environnement donné.
 
 ``` bash
-towerify destroy
+towerify destroy --env my_feature
 ```
 
 * [ ] Demande confirmation (sauf si option `--force`)
-* [ ] Supprime toutes les applications (de YunoHost). Nécessitera un pipeline Jenkins pour le faire car `towerify`
-      ne peut pas agir sur YunoHost directement.
-      On peut lister les apps car leur ID YunoHost commence par <app_name>.
-* [ ] Supprime tous les jobs Jenkins (nom commençant par `<app_name>_`).
+* [ ] Supprime l'application (de YunoHost) de cet environnement
+* [ ] Supprime les secrets de l'application pour cet environnement
+* [ ] Supprime le job Jenkins de déploiement (`<app_name>_<env>`) 
 
-#### `towerify update`
+Permet également de supprimer tous les environnements de l'application.
 
-Permet de mettre à jour `towerify`
+``` bash
+towerify destroy --all
+```
 
-* [ ] Télécharge le package sur le Towerify (app /cli) et la décompresse dans un répertoire temporaire
-* [ ] Compare la version de ce package et avec celle qui est installée
-* [ ] Si la version est la même (ou celle installée supérieure à celle du Towerify) => message Towerify est à jour
-* [ ] Si la version est plus récente, remplace le `towerify` installé par le nouveau (avec les templates)
+* [ ] Demande confirmation (sauf si option `--force`)
+* [ ] Supprime les applications (de YunoHost) de tous les environnements
+* [ ] Supprime les secrets de l'application pour tous les environnements
+* [ ] Supprime tous les jobs Jenkins (nom commençant par `<app_name>_`)
+
 
 ### Packaging
 
+
+!!! warning
+
+    Il faut mettre à jour la doc ci-dessous : nous avons décidé de déployer
+    Towerify CLI grâce à Towerify CLI. Il ne sera disponible que depuis
+    acme.towerify.io.
+
+    Avantages :
+
+    * On ne télécharge l'application que depuis un seul endroit
+    * Plus la peine de faire un package YunoHost pour déployer le package
+      Towerify CLI
+
+
 L'idée : faire une application YunoHost qui permettra à un utilisateur du YunoHost de télécharger
-Towerify CLI.
+*Towerify CLI*.
 
 Une fois cette app installé sur un YunoHost, le client peut faire la commande :
 
 ``` bash
-curl -L https://acme.towerify.io/cli/install.sh | bash
+curl -sL https://acme.towerify.io/cli/install.sh | bash
 ```
 
 * Adapter le script `build.sh` à la racine de la repo `towerify-cli` pour : 
@@ -374,6 +423,7 @@ curl -L https://acme.towerify.io/cli/install.sh | bash
     Peut-on faire en sorte que cette app installe (et configure) Jenkins et Portainer ? (et d'autres apps au
     fur et à mesure de nos besoins)
 
+
 ### Etapes pour ajouter un nouveau type d'application
 
 * L'ajouter dans la liste des types possibles de `towerify init`
@@ -384,8 +434,9 @@ curl -L https://acme.towerify.io/cli/install.sh | bash
         * Prendre en charge les options spécifiques à ce type
 * A priori `towerify deploy` n'a pas besoin d'être modifié (il cherche le template
   Jenkins en fonction du type du fichier de config, il crée le pipeline Jenkins avec
-  `<app_name>_<app_type>`)
+  `<app_name>_<env>`)
 * Mettre à jour cette doc pour décrire le nouveau type et ses options
+
 
 ## Jenkins
 
@@ -435,6 +486,7 @@ Réglage du plugin :
 - ouvrir les paramètres avancés
 - décocher l'option "Check the session ID"
 - Enregistrer les réglages
+
 
 ## Inspirations
 
