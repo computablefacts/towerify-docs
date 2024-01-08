@@ -24,6 +24,7 @@ nav:
       - Interne:
           - cli/interne/coder.md
           - cli/interne/next.md
+  - Vocabulaire: vocabular.md
 
 theme:
   name: material
