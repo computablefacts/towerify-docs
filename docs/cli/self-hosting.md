@@ -171,4 +171,4 @@ sudo yunohost app install https://github.com/computablefacts/portainer_ynh --for
 ### Utiliser *Towerify CLI*
 
 Vous pouvez maintenant utiliser Towerify CLI avec votre instance Towerify auto-hébergée 
-en suivant [notre Tutoriel](cli/tutorial.md).
+en suivant [notre Tutoriel](tutorial.md).
