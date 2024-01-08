@@ -10,12 +10,12 @@ nav:
       - Catalogue: cloud/catalog.md
       - Cas d'usage: cloud/use-case.md
       - Fonctionnement: cloud/how-it-works.md
-      - Auto-hébergement: self-hosting.md
   - CLI:
     - Accueil: cli/index.md
     - Tutoriel: cli/tutorial.md
     - App statique: cli/app-static.md
     - App Laravel: cli/app-laravel.md
+    - Auto-hébergement: cli/self-hosting.md
     - Avancé:
       - Environnements: cli/avance/environments.md
       - Secrets: cli/avance/secrets.md
