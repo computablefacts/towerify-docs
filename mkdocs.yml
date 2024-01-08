@@ -9,6 +9,7 @@ nav:
     - Introduction: index.md
   - Towerify Cloud:
       - Aperçu: cloud/overview.md
+      - Fonctionnement: cloud/how-it-works.md
       - Archive:
         - Catalogue: cloud/archive/catalog.md
         - Cas d'usage: cloud/archive/use-case.md
