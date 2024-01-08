@@ -70,7 +70,7 @@ sequenceDiagram
 ??? question "Comment on fait ça ?"
 
     - une application YunoHost qui déploie le /cli/ qui contient `install.sh` et l'application 
-      Towerify CLI compressée (towerify.tar.gz)
+      *Towerify CLI* compressée (towerify.tar.gz)
     - le domaine peut être passé à `install.sh`
     - `install.sh` télécharge le CLI et le stocke dans $HOME/.towerify (ce répertoire contiendra aussi un fichier 
       de config avec l'URL du Towerify et les credentials)
@@ -123,8 +123,8 @@ sequenceDiagram
   end
 ```
 
-Permet de changer la configuration de son Towerify CLI i.e. modifier l'URL, le login et le mot
-de passe du serveur Towerify avec lequel Towerify CLI va interagir.
+Permet de changer la configuration de son *Towerify CLI* i.e. modifier l'URL, le login et le mot
+de passe du serveur Towerify avec lequel *Towerify CLI* va interagir.
 
 * [ ] Avertissement : si l'utilisateur change de serveur, il va perdre sa conf actuelle
 * [X] Poser les questions : URL Towerfiy, login, pwd
@@ -300,7 +300,7 @@ sequenceDiagram
 
 ??? question "Comment on fait ça ?"
 
-    - durant l'installation, Towerify CLI a stocké l'URL de l'instance et le token de Jenkins
+    - durant l'installation, *Towerify CLI* a stocké l'URL de l'instance et le token de Jenkins
     - on compresse le répertoire
     - on envoie le zip au Job Jenkins
     - Jenkins déploie en fonction du fichier de conf `towerify/config.yaml`
@@ -346,7 +346,7 @@ Permet de mettre à jour `towerify`
 ### Packaging
 
 L'idée : faire une application YunoHost qui permettra à un utilisateur du YunoHost de télécharger
-Towerify CLI.
+*Towerify CLI*.
 
 Une fois cette app installé sur un YunoHost, le client peut faire la commande :
 

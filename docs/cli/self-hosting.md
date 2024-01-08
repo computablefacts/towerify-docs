@@ -1,7 +1,7 @@
 # Auto-hébergement
 
-La procédure ci-dessous décrit les étapes à suivre pour déployer une instance Towerify sur votre
-propre serveur afin d'utiliser Towerify CLI pour déployer votre applications dessus.
+La procédure ci-dessous décrit les étapes à suivre pour déployer une *instance Towerify* sur votre
+propre serveur afin d'utiliser *Towerify CLI* pour déployer votre applications dessus.
 
 ## Pré-requis
 
@@ -13,7 +13,7 @@ SSH et vous devez être connecté en tant que root (ou utiliser `sudo`).
 
 ## Configuration d'un nom de domaine
 
-Pour fonctionner correctement, votre instance Towerify devra être reliée à un nom de domaine. Votre 
+Pour fonctionner correctement, votre *instance Towerify* devra être reliée à un nom de domaine. Votre 
 serveur doit avoir une adresse IP publique (une adresse IP fixe i.e. qui ne change pas dans le temps).
 Il peut s'agir d'une adresse IP v4 et/ou d'une adresse IP v6.
 
@@ -74,7 +74,7 @@ sudo yunohost diagnosis run web dnsrecords --force
 sudo yunohost domain cert install towerify.mycompany.com
 ```
 
-## Installer le complément pour utiliser Towerify CLI
+## Installer le complément pour utiliser *Towerify CLI*
 
 ### Installer `pass`
 
@@ -109,7 +109,7 @@ sudo yunohost app install https://github.com/computablefacts/jenkins_ynh/tree/cf
 
 !!! warning
 
-    Pour que Towerify CLI puisse faire des requêtes POST au Jenkins, il faut ajouter le plugin Strict Crumb Issuer.
+    Pour que *Towerify CLI* puisse faire des requêtes POST au Jenkins, il faut ajouter le plugin Strict Crumb Issuer.
     Puis aller dans "Administrer Jenkins" > "Security" > CSRF Protection, choisir "Strict Crumb Issuer", cliquer
     sur "Avancé" et décocher "Check the session ID"
 
@@ -168,7 +168,7 @@ Puis installez Portainer :
 sudo yunohost app install https://github.com/computablefacts/portainer_ynh --force --args "domain=portainer.towerify.mycompany.com&path=/&init_main_permission=admins&admin=twr_admin&password=<strongpassword>"
 ```
 
-### Utiliser Towerify CLI
+### Utiliser *Towerify CLI*
 
 Vous pouvez maintenant utiliser Towerify CLI avec votre instance Towerify auto-hébergée 
-en suivant [notre Tutoriel](tutorial.md).
+en suivant [notre Tutoriel](cli/tutorial.md).

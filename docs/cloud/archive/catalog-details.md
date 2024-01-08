@@ -19,10 +19,10 @@ apportées.
 [3]: https://github.com/computablefacts/jenkins_ynh/tree/cf-prod
 
 
-### Modifications pour supporter Towerify CLI
+### Modifications pour supporter *Towerify CLI*
 
-Towerify CLI, notre outil en ligne de commande, qui permet de déployer 
-facilement vos applications sur votre instance Towerify utilise Jenkins
+*Towerify CLI*, notre outil en ligne de commande, qui permet de déployer 
+facilement vos applications sur votre *instance Towerify* utilise Jenkins
 pour fabriquer l'image Docker puis la déployer.
 
 Pour cela, nous avons eu besoin d'ajouter différents plugins et de faire 
@@ -55,7 +55,7 @@ Nos modifications :
     * [ ] Ajouter l'utilisateur jenkins aux sudoers avec la commande 
       `sudo sh -c 'echo "jenkins ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/50-jenkins'`
 * Jenkins doit être déployé pour le groupe `visitors` pour que les appels à 
-  l'API de Jenkins depuis Towerify CLI fonctionnent. 
+  l'API de Jenkins depuis *Towerify CLI* fonctionnent. 
     * [ ] Nous avons changé un réglage de sécurité : ne pas laisser un accès
       en lecture seule à Jenkins pour les utilisateurs non connectés.
 * Les applications déployées peuvent peser plus de 10Mo
