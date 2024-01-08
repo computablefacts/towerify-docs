@@ -1,7 +1,7 @@
 # Auto-hébergement
 
-La procédure ci-dessous décrit les étapes à suivre pour déployer Towerify sur votre
-propre serveur.
+La procédure ci-dessous décrit les étapes à suivre pour déployer une instance Towerify sur votre
+propre serveur afin d'utiliser Towerify CLI pour déployer votre applications dessus.
 
 ## Pré-requis
 
