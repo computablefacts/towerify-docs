@@ -11,6 +11,8 @@ l'utilisation des applications** et de ne pas avoir à vous préoccuper de l'adm
 
 ## Applications supportées
 
+[En savoir plus sur les applications que nous proposons](catalog-details.md).
+
 <div id="gallery"></div>
 <style>
     .card {

@@ -1,6 +1,6 @@
 # Fonctionnement
 
-A l'origine, Towerify est né du besoins de déployer un produit en mode SaaS,
+A l'origine, Towerify est né du besoin de déployer un produit en mode SaaS,
 [AdversaryMeter](https://adversarymeter.io/), en appliance chez certains de nos clients. Après avoir évalué différentes
 solutions du marché (allant de l'utilisation de scripts [Ansible](https://www.ansible.com/)
 à [Cloudron](https://www.cloudron.io/) en passant par [Sandstorm](https://sandstorm.io/)) notre choix s'est porté
@@ -45,15 +45,15 @@ d'[intégration continue](https://fr.wikipedia.org/wiki/Int%C3%A9gration_continu
 
 Towerify Cloud prend en compte trois catégories d'utilisateurs:
 
-- Les [**administrateurs**](#rle-administrateur) fournissent des serveurs à destination de clients (internes ou
+- Les [**administrateurs**](#role-administrateur) fournissent des serveurs à destination de clients (internes ou
   externes à la structure). Ils ont en charge la maintenance du catalogue de matériels disponibles ainsi que du
   provisionnement de celui-ci quand une commande leur est passée. Ils ont aussi en charge la création d'un compte
   _administrateur restreint_ lorsque de nouveaux clients sont créés.
-- Les [**administrateurs restreints**](#rle-administrateur-restreint) ont l'autorité nécessaire chez le client pour
+- Les [**administrateurs restreints**](#role-administrateur-restreint) ont l'autorité nécessaire chez le client pour
   passer commande de matériel et d'applications. Ils ont en charge le déploiement des applications sur le matériel
-  commandé. Ils ont aussi en charge la création et la configuration des comptes nécessaire aux _utilisateurs finaux_
+  commandé. Ils ont aussi en charge la création et la configuration des comptes nécessaires aux _utilisateurs finaux_
   pour utiliser les apps déployées.
-- Les [**utilisateurs finaux**](#rle-basic-end-user) ont les permissions nécessaires pour utiliser les apps déployées
+- Les [**utilisateurs finaux**](#role-basic-end-user) ont les permissions nécessaires pour utiliser les apps déployées
   par l'_administrateur restreint_. Que celles-ci soient pré-packagées ou développées en interne et déployées à l'aide
   de Towerify CLI.
 
