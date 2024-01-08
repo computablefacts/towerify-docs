@@ -380,6 +380,20 @@ towerify destroy --all
 
 ### Packaging
 
+
+!!! warning
+
+    Il faut mettre à jour la doc ci-dessous : nous avons décidé de déployer
+    Towerify CLI grâce à Towerify CLI. Il ne sera disponible que depuis
+    acme.towerify.io.
+
+    Avantages :
+
+    * On ne télécharge l'application que depuis un seul endroit
+    * Plus la peine de faire un package YunoHost pour déployer le package
+      Towerify CLI
+
+
 L'idée : faire une application YunoHost qui permettra à un utilisateur du YunoHost de télécharger
 *Towerify CLI*.
 
