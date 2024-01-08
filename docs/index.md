@@ -32,7 +32,7 @@ conservant la certitude que le code développé peut-être déployé partout où
 Towerify est constitué de deux projets:
 
 - [**Towerify Cloud**](cloud/overview.md) est l'application en charge de la gestion de l'infrastructure: provisionner
-  des serveurs, déployer des applications du [catalogue](cloud/archive/catalog.md), gérer l'accès aux applications, etc.
+  des serveurs, déployer des applications, gérer l'accès aux applications, etc.
 - [**Towerify CLI**](cli/index.md) est une ligne de commande permettant de déployer des applications hors
   catalogue, i.e. développées par vos soins, au moyen d'un processus d'intégration continue.
 
