@@ -1,50 +1,42 @@
 # Towerify
 
-## Qu'est-ce que Towerify?
+## Introduction
 
-Towerify est un service de gestion de serveurs et de déploiement d'applications. Towerify élimine la douleur et les
-tracas liés au déploiement d'applications et à la maintenance de serveurs physiques.
+Towerify est une plateforme extensible et adaptée au déploiement de tout type d'applications. Towerify utilise des
+méthodes éprouvées pour assurer le déploiement de vos applications les plus critiques, que celles-ci soient développées
+en interne ou proviennent de notre [catalogue](cloud/catalog.md). En centralisant la gestion de vos serveurs, Towerify
+simplifie le maintien en condition opérationnelle de votre système d'information.
 
-Que vous souhaitiez développer une application avec un framework tel que [Laravel](https://laravel.com/),
-[FastApi](https://fastapi.tiangolo.com/), [Jooby](https://jooby.io/), ou qu'il s'agisse simplement de déployer une
-[application pré-packagée](cloud/catalog.md) par nos soins, Towerify est la solution qu'il vous faut.
+L'objectif de Towerify est de simplifier la vie des développeurs et des administrateurs systèmes pour que ceux-ci
+puissent se concentrer sur l'innovation et la création de valeur, en rendant simple le déploiement d'applications quel
+qu'en soit l'environnement d'exécution. Avec Towerify, les développeurs et les administrateurs systèmes n'ont plus
+besoin de perdre un temps précieux à automatiser les tâches de déploiement ou à devenir des experts des différents
+fournisseurs d'infrastructure cloud ou bare metal.
 
-## Tutorial Vidéo
+## Le problème
 
-A venir.
+Avec l'introduction continue de nouvelles réglementations telles la Réglementation Générale sur la Protection des
+Données (RGPD), de nouvelles lois telles que la loi sur la cyberrésilience (CRA) et la mise en place de labels tels que
+SecNumCloud, de plus en plus d'organisations font faces à un besoin croissant de déployer une même application dans de
+nombreux environnements d'exploitations différents.
 
-## Changements d'adresses IP
+La multiplication de ces environnements et l'évolution rapide des besoins métiers oblige les organisations à déployer en
+continu des mises à jour applicatives pour fournir aussi bien des patchs de sécurité que de nouvelles fonctionnalités
+aux utilisateurs finaux.
 
-Afin de provisionner et de communiquer avec vos serveurs, Towerify a besoin d'un accès SSH à ces derniers. Si vous avez
-configuré vos serveurs pour restreindre l'accès SSH à l'aide de listes d'autorisations IP, vous devez autoriser les
-adresses IP suivantes de Towerify:
+Towerify permet à une organisation de s'assurer que ses ressources restent tournées vers l'innovation tout en conservant
+la certitude que le code développé peut-être déployé partout où cela s'avèrerait nécessaire.
 
-- `51.15.140.162`
-- `217.70.184.38`
+## La solution Towerify
 
-Vous pouvez également accéder aux adresses IP via l'URL
-suivante: [`https://app.towerify.io/ips-v4.txt`](https://app.towerify.io/ips-v4.txt). Ceci est particulièrement utile si
-vous avez l'intention d'automatiser la gestion de votre réseau ou de votre infrastructure.
+Towerify est constitué de deux projets:
+
+- [**Towerify Cloud**](cloud/overview.md) est l'application en charge de la gestion de l'infrastructure: provisionner
+  des serveurs, déployer des applications du [catalogue](cloud/catalog.md), gérer l'accès aux applications, etc.
+- [**Towerify CLI**](cli/getting-started.md) est une ligne de commande permettant de déployer des applications hors
+  catalogue, i.e. développées par vos soins, au moyen d'un processus d'intégration continue.
 
 !!! note
 
-    Les adresses IP de Towerify peuvent changer de temps à autre. Cependant, nous vous enverrons toujours un courriel 
-    plusieurs semaines avant tout changement d'adresse IP.
-
-## Intégration de Towerify et Towerify CLI
-
-Towerify CLI est une ligne de commande pouvant être utilisée de manière indépendante de Towerify Cloud pour vous
-permettre de déployer vos propres applications de manière programmatique. Vous trouverez la documentation de Towerify
-CLI [ici](cli/index.md).
-
-## Vous voulez déployer Towerify vous-même ?
-
-Towerify Cloud vous permet d'avoir rapidement un serveur opérationnel pour y déployer nos applications pré-packagées
-mais, si vous préférez, vous pouvez aussi mettre en place Towerify sur votre serveur en suivant 
-[notre guide d'auto-hébergement](self-hosting.md).
-
-## Vous avez trouvé quelque chose qui ne va pas?
-
-Avez-vous trouvé quelque chose de confus ou d'incorrect dans la documentation? La documentation de Towerify est
-entièrement open source! N'hésitez pas à soumettre un `pull request`
-sur [GitHub](https://github.com/computablefacts/towerify-docs/tree/develop).
+    Il n'y a aucune dépendance entre Towerify Cloud et Towerify CLI. L'utilisation de l'un n'implique pas l'utilisation 
+    de l'autre.
