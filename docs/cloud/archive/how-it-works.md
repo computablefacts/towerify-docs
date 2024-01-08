@@ -41,7 +41,7 @@ d'[intégration continue](https://fr.wikipedia.org/wiki/Int%C3%A9gration_continu
 
 ### Towerify Cloud
 
-![Schéma du fonctionnement de Towerify Cloud](../img/towerify-cloud.png)
+![Schéma du fonctionnement de Towerify Cloud](../../img/towerify-cloud.png)
 
 Towerify Cloud prend en compte trois catégories d'utilisateurs:
 
@@ -82,25 +82,25 @@ Les possibilités offertes à toute personne possédant le rôle _administrateur
 
     ---
 
-    ![Gestion des clients](../img/towerify-manage-customers.png)
+    ![Gestion des clients](../../img/towerify-manage-customers.png)
 
 -   **Gestion des utilisateurs**
 
     ---
 
-    ![Gestion des users](../img/towerify-manage-users.png)
+    ![Gestion des users](../../img/towerify-manage-users.png)
 
 -   **Gestion des produits**
 
     ---
 
-    ![Gestion des produits](../img/towerify-manage-products.png)
+    ![Gestion des produits](../../img/towerify-manage-products.png)
 
 -   **Gestion des commandes**
 
     ---
 
-    ![Gestion des commandes](../img/towerify-manage-orders.png)
+    ![Gestion des commandes](../../img/towerify-manage-orders.png)
 
 </div>
 
@@ -115,13 +115,13 @@ configuration du DNS, installation de YunoHost, configuration de Fail2ban, désa
 
     ---
 
-    ![Liste des serveurs](../img/towerify-administrator-settings.png)
+    ![Liste des serveurs](../../img/towerify-administrator-settings.png)
 
 -   **Configuration d'un serveur**
 
     ---
 
-    ![Configuration d'un serveur](../img/towerify-setup-server.png)
+    ![Configuration d'un serveur](../../img/towerify-setup-server.png)
 
 </div>
 
@@ -136,13 +136,13 @@ Les possibilités offertes à toute personne possédant le rôle _administrateur
 - **Gestion des utilisateurs finaux.** Permet d'inviter de nouveaux utilisateurs et de distribuer à ceux-ci des accès 
   aux apps déployées.
 
-![Paramétrage](../img/towerify-limited-administrator-settings-1.png)
+![Paramétrage](../../img/towerify-limited-administrator-settings-1.png)
 
 1. Permet de démarrer une application pour laquelle une permission d'accès a été délivrée à l'utilisateur connecté. 
 2. Permet de lister les serveurs commandés ainsi l'état de ceux-ci: en cours de mise en service ou prêt à être utilisé. 
 3. Permet de lister les applications disponibles ainsi que l'état de celles-ci: prête à être déployée ou déployée.
 
-![Paramétrage](../img/towerify-limited-administrator-settings-2.png)
+![Paramétrage](../../img/towerify-limited-administrator-settings-2.png)
 
 1. Permet de lister les applications qui n'ont pas été déployées à l'aide de Towerify Cloud.
 2. Permet de lister les utilisateurs ayant accès aux différents serveurs.
@@ -155,7 +155,7 @@ Les possibilités offertes à toute personne possédant le rôle _utilisateur fi
 - **Accès aux applications.** Permet d'accéder aux applications pour lesquelles un _administrateur restreint_ a 
   configuré un accès à l'utilisateur.
 
-![Paramétrage](../img/towerify-apps-launcher.png)
+![Paramétrage](../../img/towerify-apps-launcher.png)
 
 ### Towerify CLI
 

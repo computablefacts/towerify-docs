@@ -9,7 +9,7 @@
     [Towerify sur votre propre serveur][2].
 
 [1]: ./index.md
-[2]: ./cloud/self-hosting.md
+[2]: cloud/archive/self-hosting.md
 
 
 *Instance Towerify*

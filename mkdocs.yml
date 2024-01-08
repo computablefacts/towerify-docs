@@ -5,13 +5,16 @@ site_url: https://docs.towerify.io/
 
 # Page tree
 nav:
-  - Cloud:
-      - Accueil: index.md
-      - Catalogue: cloud/catalog.md
-      - Cas d'usage: cloud/use-case.md
-      - Fonctionnement: cloud/how-it-works.md
-      - Auto-hébergement: cloud/self-hosting.md
-  - CLI:
+  - Introduction:
+    - Introduction: index.md
+  - Towerify Cloud:
+      - Aperçu: cloud/overview.md
+      - Archive:
+        - Catalogue: cloud/archive/catalog.md
+        - Cas d'usage: cloud/archive/use-case.md
+        - Fonctionnement: cloud/archive/how-it-works.md
+        - Auto-hébergement: cloud/archive/self-hosting.md
+  - Towerify CLI:
       - Accueil: cli/index.md
       - Tutoriel: cli/tutorial.md
       - App statique: cli/app-static.md
@@ -24,7 +27,7 @@ nav:
       - Interne:
           - cli/interne/coder.md
           - cli/interne/next.md
-  - Vocabulaire: vocabular.md
+          - Vocabulaire: vocabular.md
 
 theme:
   name: material

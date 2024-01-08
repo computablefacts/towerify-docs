@@ -7,7 +7,7 @@ tracas liés au déploiement d'applications et à la maintenance de serveurs phy
 
 Que vous souhaitiez développer une application avec un framework tel que [Laravel](https://laravel.com/),
 [FastApi](https://fastapi.tiangolo.com/), [Jooby](https://jooby.io/), ou qu'il s'agisse simplement de déployer une
-[application pré-packagée](cloud/catalog.md) par nos soins, Towerify est la solution qu'il vous faut.
+[application pré-packagée](catalog.md) par nos soins, Towerify est la solution qu'il vous faut.
 
 ## Tutorial Vidéo
 
@@ -35,7 +35,7 @@ vous avez l'intention d'automatiser la gestion de votre réseau ou de votre infr
 
 Towerify CLI est une ligne de commande pouvant être utilisée de manière indépendante de Towerify Cloud pour vous
 permettre de déployer vos propres applications de manière programmatique. Vous trouverez la documentation de Towerify
-CLI [ici](cli/getting-started.md).
+CLI [ici](../../cli/index.md).
 
 ## Vous voulez déployer Towerify vous-même ?
 
