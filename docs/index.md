@@ -35,7 +35,7 @@ vous avez l'intention d'automatiser la gestion de votre réseau ou de votre infr
 
 Towerify CLI est une ligne de commande pouvant être utilisée de manière indépendante de Towerify Cloud pour vous
 permettre de déployer vos propres applications de manière programmatique. Vous trouverez la documentation de Towerify
-CLI [ici](cli/getting-started.md).
+CLI [ici](cli/index.md).
 
 ## Vous voulez déployer Towerify vous-même ?
 
