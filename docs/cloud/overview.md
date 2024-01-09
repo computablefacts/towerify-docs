@@ -14,9 +14,8 @@ Vous trouverez ci-dessous un schéma d'architecture illustrant les principaux é
 
 La plate-forme Towerify Cloud est constituée:
 
-- d'une __tour de contrôle__ permettant de traiter des demandes de provisionnement d'infrastructure ou de mise à jour
-  d'applications ou d'OS ;
-- d'__exécuteurs__ déployés sur chaque serveur et en charge d'appliquer ces demandes.
+- d'une __tour de contrôle__ permettant de déclencher des demandes de changement ;
+- d'__hôtes__ étant la cible de ces demandes de changement.
 
 ## Une erreur ou une imprécision?
 
