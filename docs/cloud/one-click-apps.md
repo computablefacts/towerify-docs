@@ -1,17 +1,13 @@
-# Catalogue
+# One-Click Apps
 
-## Qu'est-ce qu'une application pré-packagée?
+Par défaut, Towerify Cloud dispose d'un catalogue intégré d'applications populaires prêtes à l'emploi. Déployer et
+configurer ces applications avec Towerify Cloud est aussi simple que d'installer une application sur votre téléphone!
 
-Installer des applications avec Towerify est aussi facile que d'installer des applications sur votre téléphone!
-Choisissez une application dans notre catalogue et commencez à l'utiliser en quelques clics.
+Parce que maintenir votre système à jour et sécurisé est un travail à plein temps, Towerify Cloud s'occupe de mettre à
+jour automatiquement ces applications. **Towerify Cloud vous permet ainsi de vous concentrer sur l'utilisation de ces
+applications** et de ne pas avoir à vous préoccuper de l'administration du système.
 
-Parce que maintenir votre système à jour et sécurisé est un travail à plein temps, Towerify s'occupe de mettre à jour
-automatiquement les applications que vous déployez. **Towerify vous permet ainsi de vous concentrer sur
-l'utilisation des applications** et de ne pas avoir à vous préoccuper de l'administration du système.
-
-## Applications supportées
-
-[En savoir plus sur les applications que nous proposons](catalog-details.md).
+## Catalogue
 
 <div id="gallery"></div>
 <style>

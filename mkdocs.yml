@@ -10,11 +10,12 @@ nav:
   - Towerify Cloud:
       - Aperçu: cloud/overview.md
       - Fonctionnement: cloud/how-it-works.md
+      - Personas: cloud/personas.md
       - Processus: cloud/workflows.md
+      - One-Click Apps: cloud/one-click-apps.md
+      - Avancé: cloud/advanced.md
       - Archive:
-        - Catalogue: cloud/archive/catalog.md
         - Fonctionnement: cloud/archive/how-it-works.md
-        - Auto-hébergement: cloud/archive/self-hosting.md
   - Towerify CLI:
       - Accueil: cli/index.md
       - Tutoriel: cli/tutorial.md

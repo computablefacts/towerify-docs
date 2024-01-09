@@ -28,7 +28,7 @@ contienne des approximations, l'objet est ici de donner une image globale du fon
 détailler les différents aspects de l'architecture.
 
 [**Towerify Cloud**](#towerify-cloud) est l'application en charge de la gestion de l'infrastructure: installer YunoHost,
-configurer l'instance, déployer des [apps pré-packagées](catalog.md), distribuer des accès aux apps, etc.
+configurer l'instance, déployer des [apps pré-packagées](../catalog.md), distribuer des accès aux apps, etc.
 
 [**Towerify CLI**](#towerify-cli) est une ligne de commande permettant de déployer sur une instance YunoHost des
 applications hors catalogue, i.e. développées par vos soins, au moyen d'un processus
