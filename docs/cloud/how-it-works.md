@@ -59,10 +59,10 @@ fonctionner.
 Les demandes de changement sont des petits "programmes" décrivant les actions à effectuer sur un hôte pour que celui-ci
 atteigne un état cible.
 
-Les demandes de changement sont émises par un opérateur et placées dans une file d'attente. Cette file d'attente est
-surveillée par une tâche planifiée qui a en charge de choisir la prochaine demande de changement à effectuer et de
-router cette demande vers l'hôte cible. Le choix de la prochaine demande de changement à exécuter est réalisé en
-appliquant le principe "premier arrivé, premier servi" (FIFO).
+Les demandes de changement sont émises par un opérateur de la tour de contrôle et sont placées dans une file d'attente.
+Cette file d'attente est surveillée par une tâche planifiée qui a en charge de choisir la prochaine demande de
+changement à effectuer et de router cette demande vers l'hôte cible. Le choix de la prochaine demande de changement à
+exécuter est réalisé en appliquant le principe "premier arrivé, premier servi" (FIFO).
 
 Les demandes de changement concernant des hôtes différents s'exécutent en parallèle. Cependant, à un instant donné, une
 unique demande de changement est en cours d'exécution sur chaque hôte.
