@@ -20,7 +20,7 @@ va gérer pour nous les commandes, les options, l'affichage de l'aide, etc.
 
 Nous avons besoin de coder 2 scripts :
 
-- `install.sh` qui sera téléchargé par le client grâce à un `curl`
+- `install.sh` qui sera téléchargé par l'utilisateur grâce à un `curl`
 - `towerify` qui sera l'outil principal permettant de piloter le déploiement des
   applications grâce à ses commandes (`towerify init`, `towerify deploy`, etc)
 
@@ -159,11 +159,11 @@ sequenceDiagram
 Dans un deuxième temps, nous pourrions gérer plusieurs instances Towerify avec,
 comme AWS CLI, une notion de profil.
 
-* [ ] Ajouter un paramètre `--profile`
-* [ ] Si le paramètre n'est pas passé, on change les credentials par défaut
-* [ ] Si le paramètre est passé, on crée ou on modifie les credentials de ce profil
+* [X] Ajouter un paramètre `--profile`
+* [X] Si le paramètre n'est pas passé, on change les credentials par défaut
+* [X] Si le paramètre est passé, on crée ou on modifie les credentials de ce profil
 
-Le fichier `config.ini` ressemblerait alors à ça :
+Le fichier `config.ini` ressemble alors à ça :
 
 ``` ini
 [default]
