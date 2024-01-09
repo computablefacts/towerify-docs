@@ -67,7 +67,7 @@ appliquant le principe "premier arrivé, premier servi" (FIFO).
 Les demandes de changement concernant des hôtes différents s'exécutent en parallèle. Cependant, à un instant donné, une
 unique demande de changement est en cours d'exécution sur chaque hôte.
 
-## Exécution des demandes de changement
+## Exécution d'une demande de changement
 
 La demande de changement émise par la tour de contrôle est envoyée à l'hôte concerné. La demandes de changement est
 ensuite appliquée sous forme d'une série d'étapes. Après l'exécution de chaque étape un retour est fait à la tour de
