@@ -47,7 +47,7 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
-copyright: Copyright &copy; 2023 ComputableFacts
+copyright: Copyright &copy; 2023-2024 ComputableFacts
 
 markdown_extensions:
   - admonition
