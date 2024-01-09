@@ -10,7 +10,7 @@ nav:
   - Towerify Cloud:
       - Aperçu: cloud/overview.md
       - Fonctionnement: cloud/how-it-works.md
-      - Personas: cloud/personas.md
+      - Rôles & Personas: cloud/personas.md
       - Processus: cloud/workflows.md
       - One-Click Apps: cloud/one-click-apps.md
       - Avancé: cloud/advanced.md
