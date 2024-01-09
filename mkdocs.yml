@@ -13,7 +13,6 @@ nav:
       - Processus: cloud/workflows.md
       - Archive:
         - Catalogue: cloud/archive/catalog.md
-        - Cas d'usage: cloud/archive/use-case.md
         - Fonctionnement: cloud/archive/how-it-works.md
         - Auto-hébergement: cloud/archive/self-hosting.md
   - Towerify CLI:
