@@ -103,13 +103,19 @@ Codé automatiquement par Bashly :thumbup:
 
 Permet de mettre à jour `towerify`
 
-* [ ] Télécharge le package (towerify.tar.gz) depuis acme.towerify.io
-* [ ] Décompresse le package dans un répertoire temporaire
-* [ ] Compare la version de ce package et avec celle qui est installée
-* [ ] Si la version est la même => message Towerify est à jour
-* [ ] Si la version est plus récente, remplace le `towerify` installé par le
-      nouveau (avec les templates)
+* [X] Compare la version installée avec la dernière version disponible
+    * Utilise le fichier [https://acme.towerify.io/cli/version.txt][update01]
+      pour connaitre la dernière version disponible
+* [X] Si la version est la même => message indiquant que Towerify est à jour
+* [X] Si la version est plus récente => mise à jour vers la nouvelle version
+    * [X] Télécharge le package (towerify.tar.gz) depuis acme.towerify.io
+    * [X] Décompresse le package dans un répertoire temporaire
+    * [X] Met à jour les fichiers nécessaires
+* [X] Ajouter une option `--force` pour forcer la mise à jour même si la
+      dernière version disponible est inférieure ou égale à la version
+      installée.
 
+[update01]: https://acme.towerify.io/cli/version.txt
 
 #### `towerify configure`
 
