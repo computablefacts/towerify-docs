@@ -4,7 +4,7 @@
 
 Towerify est une plateforme extensible et adaptée au déploiement de tout type d'applications. Towerify utilise des
 méthodes éprouvées pour assurer le déploiement de vos applications les plus critiques, que celles-ci soient développées
-en interne ou proviennent de notre [catalogue](cloud/catalog.md). En centralisant la gestion de vos serveurs,
+en interne ou proviennent de notre [catalogue](cloud/one-click-apps.md). En centralisant la gestion de vos serveurs,
 Towerify simplifie le maintien en condition opérationnelle de votre système d'information.
 
 L'objectif de Towerify est de simplifier la vie des développeurs et des administrateurs systèmes pour que ceux-ci

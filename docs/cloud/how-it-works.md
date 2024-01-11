@@ -20,7 +20,7 @@ La tour de contrôle opère sur quatre types d'entités:
 
 - Les __serveurs__ sont des machines physiques ou virtuelles à laquelle la tour de contrôle peut se connecter pour
   exécuter des demandes de changement.
-- Les __applications__ sont des programmes développés en interne ou provenant de notre [catalogue](catalog.md)
+- Les __applications__ sont des programmes développés en interne ou provenant de notre [catalogue](one-click-apps.md)
   et servant à résoudre un problème métier ou technique.
 - Les __opérateurs__ sont les utilisateurs de la tour de contrôle. Ils administrent les hôtes ou certaines applications
   déployées sur les hôtes.
