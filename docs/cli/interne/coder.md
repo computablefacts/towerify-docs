@@ -114,6 +114,9 @@ Permet de mettre à jour `towerify`
 * [X] Ajouter une option `--force` pour forcer la mise à jour même si la
       dernière version disponible est inférieure ou égale à la version
       installée.
+* [ ] Ajouter un message si `dpkg` n'est pas disponible (si ce n'est pas une
+      Debian) pour propose de faire `towerify update --force` (qui ne fait pas
+      de comparaison de version donc n'a pas besoin de `dpkg` pour le faire)
 
 [update01]: https://acme.towerify.io/cli/version.txt
 
