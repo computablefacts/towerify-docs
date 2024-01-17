@@ -5,14 +5,14 @@
 :   C'est notre application web en charge de la gestion de l'infrastructure :
     ajouter des *instances Towerify*, installer YunoHost, configurer 
     l'*instance Towerify*, déployer des 
-    [apps pré-packagées](cloud/catalog.md), distribuer des accès aux apps,
+    [apps pré-packagées](cloud/one-click-apps.md), distribuer des accès aux apps,
     etc.
 
     Vous pouvez utiliser [notre version Cloud][1] ou déployer vous-même 
     [Towerify sur votre propre serveur][2].
 
 [1]: ./index.md
-[2]: cloud/archive/self-hosting.md
+[2]: cloud/advanced.md#auto-hebergement
 
 
 *Towerify Cloud*
