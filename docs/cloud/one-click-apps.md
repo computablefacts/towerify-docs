@@ -51,7 +51,7 @@ applications** et de ne pas avoir à vous préoccuper de l'administration du sys
 </style>
 <script>
     /* from https://codepen.io/DivyaPatel/pen/dxjgVL */
-    fetch("https://dev.towerify-ui.myapps.addapps.io/catalog")
+    fetch("https://app.towerify.io/catalog")
     .then((response) => response.json())
     .then((apps) => {
         const el = document.getElementById('gallery'); 
