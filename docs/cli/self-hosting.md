@@ -70,7 +70,7 @@ sudo yunohost settings set security.password.passwordless_sudo -v yes
 ### Générer le certificat SSL
 
 ```bash
-sudo yunohost diagnosis run web dnsrecords --force
+sudo yunohost diagnosis run --force
 sudo yunohost domain cert install towerify.mycompany.com
 ```
 
