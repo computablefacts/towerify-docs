@@ -6,22 +6,21 @@
 dans différents environnements.
 
 1. Si vous n'en possédez pas déjà un, instanciez un nouveau serveur à l'aide de Towerify Cloud. Dans la suite, nous
-   supposerons que les requêtes vers `*.acme.towerify.io` seront routées vers ce serveur.
+   supposerons que les requêtes HTTP/HTTPS à destination de `*.acme.towerify.io` seront routées vers ce serveur.
    ![](../img/towerify-cloud-list-of-servers.png)
-2. Téléchargez et installez ensuite Towerify CLI sur votre poste de travail à l'aide de la commande:
-   ```bash
-   curl -sL https://cli.towerify.io/install.sh | bash
-   ```
-   En cas de succès, le message suivant s'affiche à l'écran:
-   ```output
+2. Téléchargez et installez Towerify CLI sur votre poste de travail :
+   ```console
+   $ curl -sL https://cli.towerify.io/install.sh | bash
+   
    Towerify CLI est maintenant installé!
-
+   
    Pour configurer votre identifiant et mot de passe, exécutez la commande :
-       towerify configure
+      towerify configure
    ```
-3. Vous allez maintenant devoir configurer Towerify CLI au moyen de la commande `towerify configure` pour être en mesure
-   de vous connecter à votre instance:
-   ```output
+3. Vous allez maintenant devoir configurer Towerify CLI pour être en mesure de vous connecter à votre instance :
+   ```console
+   $ towerify configure
+   
    ? Quel est le domaine associé à votre instance Towerify ?
    > acme.towerify.io
    
@@ -32,8 +31,8 @@ dans différents environnements.
    (Par sécurité, les caractères que vous tapez ne s'afficheront à l'écran)
    >
    ```
-   Si tout s'est bien passé, Towerify CLI confirme alors le succès de l'opération:
-   ```output
+   Quand l'opération de configuration se déroule avec succès, le message suivant s'affiche alors à l'écran :
+   ```console
    Tentative de connexion à votre instance Towerify... ==> Connexion réussie.
    
    Towerify CLI est maintenant configuré!
@@ -41,9 +40,28 @@ dans différents environnements.
    Pour déployer une première application, rendez-vous dans le répertoire contenant celle-ci et exécutez la commande :
        towerify init
    ```
-4. Déplacez-vous maintenant dans le répertoire de l'application que vous souhaitez déployer et exécutez la
-   commande `towerify init` pour en paramétrer le déploiement:
-   ```output
+   Dans le cas contraire, un message d'erreur s'affiche.
+4. Créez un répertoire `hello-world/` et déplacez-vous dans celui-ci :
+   ```bash
+   $ mkdir hello-world
+   $ cd hello-world/
+   ```
+   Créez ensuite dans ce répertoire un fichier `index.html` dont le contenu est le suivant :
+   ```html
+   <!DOCTYPE html>
+   <html>
+       <head>
+           <title>Example</title>
+       </head>
+       <body>
+           <p>This is an example of a simple HTML page with one paragraph.</p>
+       </body>
+   </html>
+   ```
+5. Vous allez maintenant devoir configurer le processus de déploiement de cette page web :
+   ```console
+   $ towerify init
+   
    ? Choisissez le nom de l'application à déployer ?
    > hello-world
    
@@ -53,20 +71,24 @@ dans différents environnements.
    3) laravel-9
    > Votre choix : 1
    ```
-   Si tout s'est bien passé, Towerify CLI confirme alors le succès de l'opération:
-   ```output
+   Quand l'opération de configuration se déroule avec succès, le message suivant s'affiche alors à l'écran :
+   ```console
    L'application hello-world est maintenant prête à être déployée!
 
    Vous pouvez maintenant déployer votre application en exécutant la commande :
        towerify deploy
    ```
-5. Vous êtes maintenant prêt à déployer votre application en exécutant la commande `towerify deploy` dans le répertoire
-   de l'application à déployer:
-   ```output
+   Dans le cas contraire, un message d'erreur s'affiche.
+6. Vous êtes maintenant prêt à déployer votre application :
+   ```console
+   $ towerify deploy
+   
    Déploiement de l'application hello-world en cours...
    
    L'application a été correctement déployée en dev!
    
-   Vous pouvez maintenant accéder à votre application au moyen de cette URL :
+   Vous pouvez maintenant accéder à votre application au travers cette URL :
        https://dev.hello-world.acme.towerify.io/
    ```
+7. Pour terminer, et à l'aide de votre navigateur, rendez-vous à l'adresse `https://dev.hello-world.acme.towerify.io` .
+   Vous devriez y apercevoir la page HTML créée lors de l'étape 4.
