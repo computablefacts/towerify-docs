@@ -73,9 +73,9 @@ dans différents environnements.
    ```
    Quand l'opération de configuration se déroule avec succès, le message suivant s'affiche alors à l'écran :
    ```console
-   L'application hello-world est maintenant prête à être déployée!
+   L'application hello-world est prête à être déployée!
 
-   Vous pouvez maintenant déployer votre application en exécutant la commande :
+   Vous pouvez maintenant déployer celle-ci en exécutant la commande :
        towerify deploy
    ```
    Dans le cas contraire, un message d'erreur s'affiche.
@@ -85,10 +85,10 @@ dans différents environnements.
    
    Déploiement de l'application hello-world en cours...
    
-   L'application a été correctement déployée en dev!
+   L'application a été déployée en dev avec succès!
    
-   Vous pouvez maintenant accéder à votre application au travers cette URL :
+   Votre application est accessible ici :
        https://dev.hello-world.acme.towerify.io/
    ```
-7. Pour terminer, et à l'aide de votre navigateur, rendez-vous à l'adresse `https://dev.hello-world.acme.towerify.io` .
+7. Pour terminer, rendez-vous à l'adresse `https://dev.hello-world.acme.towerify.io` à l'aide de votre navigateur.
    Vous devriez y apercevoir la page HTML créée lors de l'étape 4.
