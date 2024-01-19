@@ -12,6 +12,7 @@ nav:
       - Fonctionnement: cloud/how-it-works.md
       - Rôles & Personas: cloud/personas.md
       - One-Click Apps: cloud/one-click-apps.md
+      - Workflows: cloud/workflows.md
       - Pas à pas: cloud/walkthroughs.md
       - Avancé: cloud/advanced.md
   - Towerify CLI:
