@@ -39,7 +39,7 @@ comptes :
 
 ### Création d'un compte Administrateur
 
-Pour créer un nouveau compte de type _Administrateur_, cliquez sur l'onglet __Invitations__ puis sur le bouton
+Pour créer un compte de type _Administrateur_, cliquez sur l'onglet __Invitations__ puis sur le bouton
 __Invite new user__. Saisissez alors l'email de l'utilisateur, sélectionnez __admin__ comme type d'utilisateur
 puis associez le compte au rôle __administrator__ :
 
@@ -54,7 +54,7 @@ Une invitation sera alors envoyée à l'utilisateur avec un lien de connection �
 
 ### Création d'un compte Administrateur Restreint
 
-Pour créer un nouveau compte de type _Administrateur Restreint_, cliquez sur l'onglet __Invitations__ puis sur le bouton
+Pour créer un compte de type _Administrateur Restreint_, cliquez sur l'onglet __Invitations__ puis sur le bouton
 __Invite new user__. Saisissez alors l'email de l'utilisateur, sélectionnez __client__ comme type d'utilisateur
 puis associez le compte au rôle __limited administrator__ :
 
@@ -73,7 +73,7 @@ Une invitation sera alors envoyée à l'utilisateur avec un lien de connection �
 
 ### Création d'un compte Utilisateur Final
 
-Les comptes de type _Utilisateur Final_ sont créés par des utilisateurs de type _Administrateur Restreint_. Pour se
+Les comptes de type _Utilisateur Final_ sont créés par des utilisateurs de type _Administrateur Restreint_. Pour ce
 faire, il leur suffit de se connecter à leur espace de travail puis dans la section __Invitations__ de cliquer sur le
 bouton __+ send__ :
 
