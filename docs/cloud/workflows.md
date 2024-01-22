@@ -39,8 +39,8 @@ comptes :
 
 ### Création d'un compte Administrateur
 
-Pour créer un compte de type _Administrateur_, cliquez sur l'onglet __Invitations__ puis sur le bouton
-__Invite new user__. Saisissez alors l'email de l'utilisateur, sélectionnez __admin__ comme type d'utilisateur
+Pour créer un compte de type _Administrateur_, cliquez sur l'onglet __invitations__ puis sur le bouton
+__invite new user__. Saisissez alors l'email de l'utilisateur, sélectionnez __admin__ comme type d'utilisateur
 puis associez le compte au rôle __administrator__ :
 
 ![](../img/towerify-cloud-create-administrator.png)
@@ -54,8 +54,8 @@ Une invitation sera alors envoyée à l'utilisateur avec un lien de connection �
 
 ### Création d'un compte Administrateur Restreint
 
-Pour créer un compte de type _Administrateur Restreint_, cliquez sur l'onglet __Invitations__ puis sur le bouton
-__Invite new user__. Saisissez alors l'email de l'utilisateur, sélectionnez __client__ comme type d'utilisateur
+Pour créer un compte de type _Administrateur Restreint_, cliquez sur l'onglet __invitations__ puis sur le bouton
+__invite new user__. Saisissez alors l'email de l'utilisateur, sélectionnez __client__ comme type d'utilisateur
 puis associez le compte au rôle __limited administrator__ :
 
 ![](../img/towerify-cloud-create-limited-administrator.png)
@@ -74,7 +74,7 @@ Une invitation sera alors envoyée à l'utilisateur avec un lien de connection �
 ### Création d'un compte Utilisateur Final
 
 Les comptes de type _Utilisateur Final_ sont créés par des utilisateurs de type _Administrateur Restreint_. Pour ce
-faire, il leur suffit de se connecter à leur espace de travail puis dans la section __Invitations__ de cliquer sur le
+faire, il leur suffit de se connecter à leur espace de travail puis dans la section __invitations__ de cliquer sur le
 bouton __+ send__ :
 
 ![](../img/towerify-cloud-send-invitation.png)
@@ -106,7 +106,34 @@ Cette section décrit le processus de gestion des serveurs mise en oeuvre dans T
 
 ### Mise à disposition d'un nouveau modèle de serveur
 
-A venir.
+Les _Administrateurs_ ont en charge l'administration des modèles de serveurs pouvant être provisionnés par les
+_Administrateurs Restreints_.
+
+Pour ce faire, l'_Administrateur_ doit se rendre dans la section __shop__ de la console d'administration puis cliquer
+sur l'entrée de menu __products__. L'_Administrateur_ peut alors créer une nouvelle fiche produit en cliquant sur le 
+bouton __new product__ en haut à droite de l'écran :
+
+![](../img/towerify-cloud-list-of-products.png)
+
+L'_Administrateur_ peut alors associer un __nom__, une __description__ ou encore un __état__ à la fiche produit :
+
+![](../img/towerify-cloud-new-product.png)
+
+Une fois la fiche produit créé en cliquant sur le bouton __create product__ en bas à gauche de l'écran, il est
+possible d'assigner au serveur une catégorie ainsi que des caractéristiques :
+
+![](../img/towerify-cloud-product-description.png)
+
+??? note "Bon à savoir : produits de la catégorie applications"
+
+      Bien que les applications proposées par Towerify Cloud soient visibles dans la liste des produits, les fiches 
+      produits associées à ces applications ne sont pas éditables par les _Administrateurs_.
+
+Dans le cas où le statut de la fiche produit est __active__, les _Administrateurs Restreints_ ont alors la capacité de 
+demander la mise en service de ce modèle de matériel en se rendant dans l'onglet __store__ de leur environnement de 
+travail :
+
+![img.png](../img/towerify-cloud-store.png)
 
 ### Mise en service d'un hôte
 
