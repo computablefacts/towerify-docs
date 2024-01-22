@@ -100,7 +100,7 @@ plateforme.
     Cependant, si l'utilisateur créé a en charge le développement et le déploiement de nouveaux services sur les hôtes,
     un tel compte s'avérera nécessaire.
 
-## Administration des serveurs
+## Administration du catalogue de serveurs
 
 A venir.
 
