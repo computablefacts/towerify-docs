@@ -102,7 +102,7 @@ plateforme.
 
 ## Gestion de l'infrastructure
 
-Cette section décrit le processus de gestion des serveurs mise en oeuvre dans Towerify Cloud.
+Cette section décrit le processus de gestion des serveurs mis en oeuvre dans Towerify Cloud.
 
 ### Mise à disposition d'un nouveau modèle de serveur
 
@@ -119,7 +119,7 @@ L'_Administrateur_ peut alors associer un __nom__, une __description__ ou encore
 
 ![](../img/towerify-cloud-new-product.png)
 
-Une fois la fiche produit créé en cliquant sur le bouton __create product__ en bas à gauche de l'écran, il est
+Une fois la fiche produit créée en cliquant sur le bouton __create product__ en bas à gauche de l'écran, il devient
 possible d'assigner au serveur une catégorie ainsi que des caractéristiques :
 
 ![](../img/towerify-cloud-product-description.png)
