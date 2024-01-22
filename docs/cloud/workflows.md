@@ -66,17 +66,30 @@ Une invitation sera alors envoyée à l'utilisateur avec un lien de connection �
 
     Si vous souhaitez restreindre l'accès de l'utilisateur aux serveurs et applications déployées par une organisation 
     donnée, il vous sera nécessaire d'associer celui-ci à une organisation. Autrement dit, la colonne 
-    `users.customer_id` de cet utilisateur doit être associée à une entrée de la table `customers`.
+    `users.customer_id` de cet utilisateur devra être associée à une entrée de la table `customers`.
+
+    Un identifiant d'organisation sera __automatiquement__ attribué à l'utilisateur après sa première mise en service
+    d'hôte.
 
 ### Création d'un compte Utilisateur Final
 
-Pour créer un nouveau compte de type _Utilisateur Final_, cliquez sur l'onglet __Invitations__ puis sur le bouton
-__Invite new user__. Saisissez alors l'email de l'utilisateur, sélectionnez __client__ comme type d'utilisateur
-puis associez le compte au rôle __basic end user__ :
+Les comptes de type _Utilisateur Final_ sont créés par des utilisateurs de type _Administrateur Restreint_. Pour se
+faire, il leur suffit de se connecter à leur espace de travail puis dans la section __Invitations__ de cliquer sur le
+bouton __+ send__ :
+
+![](../img/towerify-cloud-send-invitation.png)
+
+pour être redirigé vers la page de création de compte :
 
 ![](../img/towerify-cloud-create-basic-end-user.png)
 
-Une invitation sera alors envoyée à l'utilisateur avec un lien de connection à la plateforme.
+Après saisie de l'email et du nom de l'utilisateur, une invitation lui sera envoyée avec un lien de connection à la
+plateforme.
+
+??? warning "Attention : périmètre de visibilité de l'utilisateur"
+
+    Un identifiant d'organisation sera automatiquement attribué à l'utilisateur en se basant sur celui de 
+    l'_Administrateur Restreint_.
 
 ??? note "Bon à savoir : Single Sign-On (SSO)"
 
