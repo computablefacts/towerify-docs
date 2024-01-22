@@ -110,7 +110,7 @@ Les _Administrateurs_ ont en charge l'administration des modèles de serveurs po
 _Administrateurs Restreints_.
 
 Pour ce faire, l'_Administrateur_ doit se rendre dans la section __shop__ de la console d'administration puis cliquer
-sur l'entrée de menu __products__. L'_Administrateur_ peut alors créer une nouvelle fiche produit en cliquant sur le 
+sur l'entrée de menu __products__. L'_Administrateur_ peut alors créer une nouvelle fiche produit en cliquant sur le
 bouton __new product__ en haut à droite de l'écran :
 
 ![](../img/towerify-cloud-list-of-products.png)
@@ -129,15 +129,36 @@ possible d'assigner au serveur une catégorie ainsi que des caractéristiques :
       Bien que les applications proposées par Towerify Cloud soient visibles dans la liste des produits, les fiches 
       produits associées à ces applications ne sont pas éditables par les _Administrateurs_.
 
-Dans le cas où le statut de la fiche produit est __active__, les _Administrateurs Restreints_ ont alors la capacité de 
-demander la mise en service de ce modèle de matériel en se rendant dans l'onglet __store__ de leur environnement de 
+Dans le cas où le statut de la fiche produit est __active__, les _Administrateurs Restreints_ ont alors la capacité de
+demander la mise en service de ce modèle de matériel en se rendant dans l'onglet __store__ de leur environnement de
 travail :
 
-![img.png](../img/towerify-cloud-store.png)
+![](../img/towerify-cloud-store.png)
 
 ### Mise en service d'un hôte
 
-A venir.
+Une demande de mise en service est envoyée à l'_Administrateur_ lorsque qu'un _Administrateur Restreint_ complète le
+processus de commande d'un nouveau matériel. L'_Administrateur_ a alors en charge de provisionner ce matériel, notamment
+en associant à celui-ci une adresse IP et un DNS. Les demandes de mises en service sont accessibles via l'entrée de menu
+__orders__ de la section __shop__ de la console d'administration :
+
+![](../img/towerify-cloud-list-of-orders.png)
+
+Une fois la demande de mise en service reçue, l'_Administrateur_ passe celle-ci dans le statut __processing__ :
+
+![](../img/towerify-cloud-processing-order.png)
+
+Ce statut permet à l'_Administrateur_ de signaler à l'_Administrateur Restreint_ que sa demande de mise en service a
+bien été prise en compte et d'associer une adresse IP et un DNS au matériel commandé :
+
+![](../img/towerify-cloud-configure-server.png)
+
+Une fois la clef SSH ajoutée au matériel, l'_Administrateur_ peut tester la connexion à celui-ci au moyen du bouton
+__test ssh connection__. Si la connexion réussit, un message s'affiche à l'écran et l'_Administrateur_ peut alors lancer
+la configuration de l'hôte en cliquant sur le bouton __configure host__.
+
+Une fois ces actions réalisées, l'_Administrateur_ passe le statut de la commande à __completed__ pour signaler à
+l'_Administrateur Restreint_ le matériel commandé est prêt à être utilisé.
 
 ## Mise en place d'un environnement de développement avec Towerify CLI
 
