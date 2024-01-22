@@ -1,23 +1,21 @@
-# Rôles & Personas
+# Personas
 
-## Roles
+Towerify Cloud permet à différentes catégories d'utilisateurs appartenant à un même __royaume__ (i.e. ensemble
+d'équipes, d'organisations, etc.) d'agir de concert vers un but commun : s'assurer que les ressources humaines de ce
+royaume restent tournées vers l'innovation.
 
-Les rôles proposés par défaut par Towerify Cloud sont au nombre de trois: __Administrateur__, __Administrateur
-Restreint__ et __Utilisateur Final__. Vous trouverez ci-après un schéma donnant un aperçu des principales interactions
-entre les différents rôles.
+Towerify Cloud étant une plateforme [multi-tenant](https://en.wikipedia.org/wiki/Multitenancy), chaque royaume est créé
+et administré par un "super-administrateur" différent. Par défaut, un royaume est configuré pour tenir compte des
+personas décrits ci-après :
 
-![Paramétrage](../img/towerify-cloud-architecture-des-roles.png)
+- Les __fournisseurs__ d'infrastructure ont en charge de provisionner des hôtes ;
+- Les __opérateurs__ ont en charge de déployer des applications sur ces hôtes ;
+- Les __utilisateurs__ accèdent aux applications déployées ou développent de nouveaux services à déployer sur ces hôtes.
 
-## Personas
+Le système de permissions et de rôles utilisé par Towerify Cloud étant extrêmement flexible, il est tout à fait
+envisageable de modéliser d'autres personas que ceux décrits ci-après.
 
-Towerify Cloud permet à des personas d'agir de concert vers un but commun : s'assurer que les ressources humaines
-d'une organisation restent tournées vers l'innovation.
-
-Par défaut, Towerify Cloud est configuré pour tenir compte des trois personas décrits ci-après. Cependant, le système
-de permissions et de rôles utilisé par Towerify Cloud étant extrêmement flexible, il est tout à fait envisageable de
-modéliser d'autres personas que ceux décrits ci-après.
-
-### William, le fournisseur
+## William, le fournisseur
 
 Les __fournisseurs__ d'infrastructure sont des personnes, équipes ou organisations en charge de provisionner de
 l'infrastructure. Leur périmètre fonctionnel comprend notamment :
@@ -35,7 +33,7 @@ Ce persona correspond au rôle __Administrator__.
     Une fois l'hôte mis en service, le fournisseur d'infrastructure n'a plus accès à celui-ci. Cependant, Towerify Cloud
     permet de fournir un accès direct à un hôte en cas de nécessité ou dans le cadre d'un processus de réversibilité.
 
-### Marie, l'opérateur
+## Marie, l'opérateur
 
 Les __opérateurs__ sont des personnes ou équipes en charge de déployer des applications sur des hôtes. Leur périmètre
 fonctionnel comprend notamment :
@@ -51,7 +49,7 @@ Ce persona correspond au rôle __Limited Administrator__.
     Un opérateur n'a pas d'accès direct aux hôtes provisionnés par le fournisseur d'infrastructure. Cependant, Towerify 
     Cloud permet de fournir un accès direct à un hôte en cas de nécessité ou dans le cadre d'un processus de réversibilité.
 
-### Patrick, l'utilisateur
+## Patrick, l'utilisateur
 
 Les __utilisateurs__ se divisent en deux catégories :
 
@@ -76,3 +74,17 @@ Ce persona correspond au rôle __Basic End User__.
     réaliser pour provisionner les DNS de dev/staging/prod, les certificats SSL ou encore la base de données MySQL. 
     L'ensemble de ces actions est pris en charge automatiquement et de façon transparente par Towerify CLI.
 
+??? note "Bon à savoir : Single Sign-On (SSO)"
+
+    Les utilisateurs finaux n'ont pas besoins d'être créés au sein de la plateforme! En effet, si les applications 
+    déployées sont compatible SSO la connexion peut se faire de manière transparente au moyen de notre Fédération 
+    d'Identité. Pour en savoir plus, contactez-nous.
+
+    Cependant, si l'utilisateur créé a en charge le développement et le déploiement de nouveaux services sur les hôtes, 
+    un tel compte s'avérera nécessaire.
+
+## Diagramme d'interactions
+
+Vous trouverez ci-après un schéma donnant un aperçu des principales interactions entre les différents rôles.
+
+![Paramétrage](../img/towerify-cloud-interactions-entre-les-roles.png)
