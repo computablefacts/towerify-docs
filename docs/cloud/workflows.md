@@ -1,6 +1,6 @@
 # Workflows
 
-## Administration des comptes
+## Gestion des comptes
 
 Cette section décrit le processus de création des comptes utilisateurs dans Towerify Cloud.
 
@@ -89,7 +89,7 @@ plateforme.
 ??? warning "Attention : périmètre de visibilité de l'utilisateur"
 
     Un identifiant d'organisation sera automatiquement attribué à l'utilisateur en se basant sur celui de 
-    l'_Administrateur Restreint_.
+    l'_Administrateur Restreint_ à l'initiative de l'invitation.
 
 ??? note "Bon à savoir : Single Sign-On (SSO)"
 
@@ -100,7 +100,15 @@ plateforme.
     Cependant, si l'utilisateur créé a en charge le développement et le déploiement de nouveaux services sur les hôtes,
     un tel compte s'avérera nécessaire.
 
-## Administration du catalogue de serveurs
+## Gestion de l'infrastructure
+
+Cette section décrit le processus de gestion des serveurs mise en oeuvre dans Towerify Cloud.
+
+### Mise à disposition d'un nouveau modèle de serveur
+
+A venir.
+
+### Mise en service d'un hôte
 
 A venir.
 
