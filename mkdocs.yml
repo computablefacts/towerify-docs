@@ -13,7 +13,6 @@ nav:
       - Personas: cloud/personas.md
       - One-Click Apps: cloud/one-click-apps.md
       - Workflows: cloud/workflows.md
-      - Pas à pas: cloud/walkthroughs.md
       - Avancé: cloud/advanced.md
   - Towerify CLI:
       - Accueil: cli/index.md
