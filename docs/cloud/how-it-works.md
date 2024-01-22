@@ -1,7 +1,7 @@
 # Fonctionnement
 
 Ce document détail comment les demandes de changement (encore appelées commandes) émises par la tour de contrôle
-circulent dans le système. Plus spécifiquement, ce document couvre:
+circulent dans le système. Plus spécifiquement, ce document couvre :
 
 - Le fonctionnement de la [tour de contrôle](#la-tour-de-controle) ;
 - Le fonctionnement des [hôtes](#les-hotes) ;
@@ -16,7 +16,7 @@ Towerify Cloud avant de se lancer dans la lecture de ce document.
 La tour de contrôle permet de provisionner des __hôtes__, d'appliquer des mises à jour système ou encore de déployer des
 applications. Ces modifications d'infrastructure s'effectuent via l'émission de __demandes de changement__.
 
-La tour de contrôle opère sur quatre types d'entités:
+La tour de contrôle opère sur quatre types d'entités :
 
 - Les __serveurs__ sont des machines physiques ou virtuelles à laquelle la tour de contrôle peut se connecter pour
   exécuter des demandes de changement.
@@ -26,14 +26,14 @@ La tour de contrôle opère sur quatre types d'entités:
   déployées sur les hôtes.
 - Les __permissions__ permettent de décrire le périmètre fonctionnel des opérateurs.
 
-Ces entités sont regroupées au sein de catalogues permettant d'administrer celles-ci aisément:
+Ces entités sont regroupées au sein de catalogues permettant d'administrer celles-ci aisément :
 
 - Le __catalogue de produits__ permet de gérer la liste des serveurs pouvant être provisionnés par un opérateur et
   des applications pouvant être déployées sur ces serveurs ;
 - Le __catalogue d'opérateurs__ permet de lister les utilisateurs de la tour de contrôle et d'attribuer ou de révoquer
   les permissions associées à un opérateur particulier.
 
-Le catalogue de produits est lui-même sous-divisés en deux catégories:
+Le catalogue de produits est lui-même sous-divisés en deux catégories :
 
 - Le __catalogue de serveurs__ représente le matériel pouvant être provisionné par un opérateur pour être transformé en
   hôte ;
