@@ -30,33 +30,33 @@ différents paramétrages dans Jenkins.
 
 Nos modifications :
 
-* [ ] Ajout du plugin Strict Crumb Issuer
+* [X] Ajout du plugin Strict Crumb Issuer
     * Ce plugin est nécessaire pour pouvoir faire des appels à l'API de
       Jenkins 
-    * [ ] Configurer le plugin : aller dans "Administrer Jenkins" > 
+    * [X] Configurer le plugin : aller dans "Administrer Jenkins" > 
       "Security" > CSRF Protection, choisir "Strict Crumb Issuer", cliquer 
       sur "Avancé" et décocher "Check the session ID"
-* [ ] Ajout du plugin File Parameter 
+* [X] Ajout du plugin File Parameter 
     * Ce plugin est nécessaire pour que le pipeline Jenkins puisse 
       accepter un paramètre de type stashedFile qui permet d'envoyer le code
       de l'appplication à déployer dans un fichier compressé.
-* [ ] Ajout du plugin Pipeline Utility Steps
+* [X] Ajout du plugin Pipeline Utility Steps
     * Ce plugin est nécessaire pour que le pipeline Jenkins puisse lire le 
       fichier de configuration écrit en YAML.
-* [ ] Ajout du plugin Docker Pipeline
+* [X] Ajout du plugin Docker Pipeline
     * Ce plugin est nécessaire pour que le pipeline Jenkins puisse utiliser 
       Docker 
-    * [ ] Donner à Jenkins le droit d'utiliser Docker avec la commande
-      `sudo usermod -a -G docker jenkins`. Puis redémarrer Jenkins avec la 
-      commande `sudo systemctl restart jenkins.service`.
+    * [X] Donner à Jenkins le droit d'utiliser Docker avec la commande
+      `sudo usermod -a -G docker jenkins`. Puis redémarrer Docker avec la 
+      commande `sudo systemctl restart docker.service`.
 * Donner les droits _sudoer_ à l'utilisateur `jenkins`
     * Nécessaire pour que le pipeline Jenkins puisse executer les commandes
       `sudo yunohost ...`.
-    * [ ] Ajouter l'utilisateur jenkins aux sudoers avec la commande 
+    * [X] Ajouter l'utilisateur jenkins aux sudoers avec la commande 
       `sudo sh -c 'echo "jenkins ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/50-jenkins'`
 * Jenkins doit être déployé pour le groupe `visitors` pour que les appels à 
   l'API de Jenkins depuis *Towerify CLI* fonctionnent. 
-    * [ ] Nous avons changé un réglage de sécurité : ne pas laisser un accès
+    * [X] Nous avons changé un réglage de sécurité : ne pas laisser un accès
       en lecture seule à Jenkins pour les utilisateurs non connectés.
 * Les applications déployées peuvent peser plus de 10Mo
     * [X] Augmenter la taille maximale des uploads autorisés dans la configuration
@@ -78,7 +78,7 @@ la clarté pour une compréhension rapide et intuitive de l'état du pipeline.
 
 Nos modifications :
 
-* [ ] Ajout du plugin Blue Ocean.
+* [X] Ajout du plugin Blue Ocean.
 * [ ] Modification de la configuration `nginx` pour rediriger automatiquement vers Blue
   Ocean.
 
