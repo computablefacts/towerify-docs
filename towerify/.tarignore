@@ -1,3 +1,4 @@
+towerify/*.tar.gz
 towerify/*/*.tar.gz
 .git
 .idea
