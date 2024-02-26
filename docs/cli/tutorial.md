@@ -25,14 +25,14 @@ curl -sL https://acme.towerify.io/cli/install.sh | bash
 
 Towerify télécharge et installe notre outil en ligne de commande :
 
-``` output
+``` output linenums="0"
 Installation de Towerify pour l'instance acme.towerify.io
 ##################################################################### 100,0%
 ```
 
 Towerify confirme l'installation :
 
-``` output
+``` output linenums="0"
 Towerify CLI est installé pour l'instance acme.towerify.io
 
 Pour le configurer avec vos login et mot de passe, utilisez :
@@ -56,12 +56,12 @@ towerify configure
 
 Towerify vous demande votre domaine, votre login et votre mot de passe :
 
-``` output
+``` output linenums="0"
 ? Quel est le domaine de votre Towerify ?
 > acme.towerify.io
 
 ? Quel est votre login Towerify ?
-> 
+> jdoe
 
 ? Quel est votre mot de passe Towerify ?
 (Par sécurité, les caractères que vous tapez ne s'afficheront à l'écran)
@@ -70,7 +70,7 @@ Towerify vous demande votre domaine, votre login et votre mot de passe :
 
 Towerify confirme l'installation :
 
-``` output
+``` output linenums="0"
 Tentative de connexion à Towerify... ==> Connexion réussie.
 
 Towerify CLI est correctement configuré pour l'instance Towerify acme.towerify.io
@@ -85,7 +85,7 @@ application et utilisez :
     Vous pouvez donner vos paramètres d'accès directement dans la commande :
 
     ``` bash
-    towerify configure --domain my-corp.towerify.io --login user --password P@ssw0rd
+    towerify configure --domain my-corp.towerify.io --login jdoe --password P@ssw0rd
     ```
 
 
@@ -98,12 +98,12 @@ la commande.
 towerify init
 ```
 
-``` output
+``` output linenums="0"
 ? Quel est le nom de votre application ?
 > my-app
 ```
 
-``` output
+``` output linenums="0"
 ? Choissisez le type de votre application ?
 1) static
 2) laravel-10
@@ -112,7 +112,7 @@ Votre choix : 1
 
 ```
 
-``` output
+``` output linenums="0"
 Application my-app initialisée
 
 Vous pouvez maintenant déployer votre application avec :
@@ -129,12 +129,19 @@ la commande.
 towerify deploy
 ```
 
-``` output
-Déploiement de l'application my-app en cours...
-Application correctement déployée en dev.
+``` output linenums="0"
+Tentative de connexion à Towerify ..................................... [OK]
+Vérification du pipeline de déploiement ............................... [OK]
+Envoi des secrets ..................................................... [OK]
+Compression des fichiers de votre application ......................... [OK]
+Lancement du déploiement .............................................. [OK]
+Le job est terminé avec le statut : SUCCESS ........................... [OK]
+==> Le job a réussi.
+Application compressée dans ./towerify/dev/app.20240205-210918.tar.gz
 
 Vous pouvez accéder à votre application avec :
 https://dev.my-app.acme.towerify.io/
+
 ```
 
 Vous pouvez visiter le lien fourni par Towerify (https://dev.my-app.acme.towerify.io/)
@@ -143,7 +150,7 @@ pour afficher votre application dans votre navigateur.
 ??? failure "Pas de fichier `towerify/config.yaml`"
 
     Si le fichier de configuration n'existe pas, on affiche une erreur :
-    ``` output
+    ``` output linenums="0"
     Impossible de publier une application depuis ce répertoire.
     Vous devez d'abord initialiser votre application avec :
         towerify init
