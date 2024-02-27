@@ -87,4 +87,4 @@ Ce persona correspond au rôle __Basic End User__.
 
 Vous trouverez ci-après un schéma donnant un aperçu des principales interactions entre les différents rôles.
 
-![Paramétrage](../img/towerify-cloud-interactions-entre-les-roles.png)
+![Paramétrage](../../img/towerify-cloud-interactions-entre-les-roles.png)

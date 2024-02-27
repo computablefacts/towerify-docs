@@ -1,33 +1,35 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
-site_name: Towerify
-site_url: https://docs.towerify.io/
+site_name: ComputableFacts
+site_url: https://docs.computablefacts.com/
 
 # Page tree
 nav:
-  - Introduction:
-    - Introduction: index.md
+  - Accueil: index.md
+  - AdversaryMeter:
+    - Accueil: adversarymeter/index.md
   - Towerify Cloud:
-      - Aperçu: cloud/overview.md
-      - Fonctionnement: cloud/how-it-works.md
-      - Personas: cloud/personas.md
-      - One-Click Apps: cloud/one-click-apps.md
-      - Workflows: cloud/workflows.md
-      - Avancé: cloud/advanced.md
+    - Accueil: towerify/index.md
+    - Aperçu: towerify/cloud/overview.md
+    - Fonctionnement: towerify/cloud/how-it-works.md
+    - Personas: towerify/cloud/personas.md
+    - One-Click Apps: towerify/cloud/one-click-apps.md
+    - Workflows: towerify/cloud/workflows.md
+    - Avancé: towerify/cloud/advanced.md
   - Towerify CLI:
-      - Accueil: cli/index.md
-      - Tutoriel: cli/tutorial.md
-      - App statique: cli/app-static.md
-      - App Laravel: cli/app-laravel.md
-      - Auto-hébergement: cli/self-hosting.md
+      - Accueil: towerify/cli/index.md
+      - Tutoriel: towerify/cli/tutorial.md
+      - App statique: towerify/cli/app-static.md
+      - App Laravel: towerify/cli/app-laravel.md
+      - Auto-hébergement: towerify/cli/self-hosting.md
       - Avancé:
-          - Environnements: cli/avance/environments.md
-          - Secrets: cli/avance/secrets.md
-          - Dockerfile: cli/avance/mydockerfile.md
+          - Environnements: towerify/cli/avance/environments.md
+          - Secrets: towerify/cli/avance/secrets.md
+          - Dockerfile: towerify/cli/avance/mydockerfile.md
       - Interne:
-          - cli/interne/coder.md
-          - cli/interne/next.md
-          - Vocabulaire: vocabular.md
+          - towerify/cli/interne/coder.md
+          - towerify/cli/interne/next.md
+          - Vocabulaire: towerify/vocabular.md
 
 theme:
   name: material

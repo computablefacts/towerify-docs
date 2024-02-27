@@ -8,7 +8,7 @@ de détailler les différents aspects de l'architecture.
 
 Vous trouverez ci-dessous un schéma d'architecture illustrant les principaux éléments de la plate-forme Towerify Cloud.
 
-![Architecture Diaram](../img/towerify-cloud-architecture-diagram.png)
+![Architecture Diaram](../../img/towerify-cloud-architecture-diagram.png)
 
 ## Aperçu technique
 

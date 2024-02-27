@@ -25,17 +25,17 @@ Cet utilisateur peut alors organiser son royaume comme il le souhaite : inviter 
 opérateurs, etc. La création d'un nouveau compte se fait au moyen de la console d'administration de
 Towerify Cloud :
 
-![](../img/towerify-cloud-admin-panel.png)
+![](../../img/towerify-cloud-admin-panel.png)
 
 Il suffit alors de déplier la section __settings__ puis de sélectionner l'entrée de menu __users__ pour accéder à la
 page de création des comptes :
 
-![](../img/towerify-cloud-users.png)
+![](../../img/towerify-cloud-users.png)
 
 Il est fortement recommandé d'utiliser la fonctionnalité d'__invitation__ des utilisateurs pour créer de nouveaux
 comptes :
 
-![](../img/towerify-cloud-invite-new-user.png)
+![](../../img/towerify-cloud-invite-new-user.png)
 
 ### Création d'un compte Administrateur
 
@@ -43,7 +43,7 @@ Pour créer un compte de type _Administrateur_, cliquez sur l'onglet __invitatio
 __invite new user__. Saisissez alors l'email de l'utilisateur, sélectionnez __admin__ comme type d'utilisateur
 puis associez le compte au rôle __administrator__ :
 
-![](../img/towerify-cloud-create-administrator.png)
+![](../../img/towerify-cloud-create-administrator.png)
 
 Une invitation sera alors envoyée à l'utilisateur avec un lien de connection à la plateforme.
 
@@ -58,7 +58,7 @@ Pour créer un compte de type _Administrateur Restreint_, cliquez sur l'onglet _
 __invite new user__. Saisissez alors l'email de l'utilisateur, sélectionnez __client__ comme type d'utilisateur
 puis associez le compte au rôle __limited administrator__ :
 
-![](../img/towerify-cloud-create-limited-administrator.png)
+![](../../img/towerify-cloud-create-limited-administrator.png)
 
 Une invitation sera alors envoyée à l'utilisateur avec un lien de connection à la plateforme.
 
@@ -77,11 +77,11 @@ Les comptes de type _Utilisateur Final_ sont créés par des utilisateurs de typ
 faire, il leur suffit de se connecter à leur espace de travail puis dans la section __invitations__ de cliquer sur le
 bouton __+ send__ :
 
-![](../img/towerify-cloud-send-invitation.png)
+![](../../img/towerify-cloud-send-invitation.png)
 
 pour être redirigé vers la page de création de compte :
 
-![](../img/towerify-cloud-create-basic-end-user.png)
+![](../../img/towerify-cloud-create-basic-end-user.png)
 
 Après saisie de l'email et du nom de l'utilisateur, une invitation lui sera envoyée avec un lien de connection à la
 plateforme.
@@ -113,16 +113,16 @@ Pour ce faire, l'_Administrateur_ doit se rendre dans la section __shop__ de la 
 sur l'entrée de menu __products__. L'_Administrateur_ peut alors créer une nouvelle fiche produit en cliquant sur le
 bouton __new product__ en haut à droite de l'écran :
 
-![](../img/towerify-cloud-list-of-products.png)
+![](../../img/towerify-cloud-list-of-products.png)
 
 L'_Administrateur_ peut alors associer un __nom__, une __description__ ou encore un __état__ à la fiche produit :
 
-![](../img/towerify-cloud-new-product.png)
+![](../../img/towerify-cloud-new-product.png)
 
 Une fois la fiche produit créée en cliquant sur le bouton __create product__ en bas à gauche de l'écran, il devient
 possible d'assigner au serveur une catégorie ainsi que des caractéristiques :
 
-![](../img/towerify-cloud-product-description.png)
+![](../../img/towerify-cloud-product-description.png)
 
 ??? note "Bon à savoir : produits de la catégorie applications"
 
@@ -133,7 +133,7 @@ Dans le cas où le statut de la fiche produit est __active__, les _Administrateu
 demander la mise en service de ce modèle de matériel en se rendant dans l'onglet __store__ de leur environnement de
 travail :
 
-![](../img/towerify-cloud-store.png)
+![](../../img/towerify-cloud-store.png)
 
 ### Mise en service d'un hôte
 
@@ -142,16 +142,16 @@ processus de commande d'un nouveau matériel. L'_Administrateur_ a alors en char
 en associant à celui-ci une adresse IP et un DNS. Les demandes de mises en service sont accessibles via l'entrée de menu
 __orders__ de la section __shop__ de la console d'administration :
 
-![](../img/towerify-cloud-list-of-orders.png)
+![](../../img/towerify-cloud-list-of-orders.png)
 
 Une fois la demande de mise en service reçue, l'_Administrateur_ passe celle-ci dans le statut __processing__ :
 
-![](../img/towerify-cloud-processing-order.png)
+![](../../img/towerify-cloud-processing-order.png)
 
 Ce statut permet à l'_Administrateur_ de signaler à l'_Administrateur Restreint_ que sa demande de mise en service a
 bien été prise en compte et d'associer une adresse IP et un DNS au matériel commandé :
 
-![](../img/towerify-cloud-configure-server.png)
+![](../../img/towerify-cloud-configure-server.png)
 
 Une fois la clef SSH ajoutée au matériel, l'_Administrateur_ peut tester la connexion à celui-ci au moyen du bouton
 __test ssh connection__. Si la connexion réussit, un message s'affiche à l'écran et l'_Administrateur_ peut alors lancer
@@ -167,7 +167,7 @@ dans différents environnements.
 
 1. Si vous n'en possédez pas déjà un, instanciez un nouveau serveur à l'aide de Towerify Cloud. Dans la suite, nous
    supposerons que les requêtes HTTP/HTTPS à destination de `*.acme.towerify.io` seront routées vers ce serveur.
-   ![](../img/towerify-cloud-list-of-servers.png)
+   ![](../../img/towerify-cloud-list-of-servers.png)
 2. Téléchargez et installez Towerify CLI sur votre poste de travail :
    ```console
    $ curl -sL https://cli.towerify.io/install.sh | bash

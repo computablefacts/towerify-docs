@@ -11,7 +11,7 @@
     Vous pouvez utiliser [notre version Cloud][1] ou déployer vous-même 
     [Towerify sur votre propre serveur][2].
 
-[1]: ./index.md
+[1]: index.md
 [2]: cloud/advanced.md#auto-hebergement
 
 
@@ -30,7 +30,7 @@
     vous devez installer d'autres éléments comme décrit dans la 
     [page sur l'auto-hébergement de *Towerify CLI*][3].
 
-[3]: ./cli/self-hosting.md
+[3]: cli/self-hosting.md
 
 
 *Towerify CLI*
@@ -39,5 +39,5 @@
     une *instance Towerify* des applications hors catalogue, i.e. développées
     par vos soins, au moyen d'un processus d'[intégration continue][5].
 
-[4]: ./cli/index.md
+[4]: cli/index.md
 [5]: https://fr.wikipedia.org/wiki/Int%C3%A9gration_continue

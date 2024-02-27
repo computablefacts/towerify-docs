@@ -1,3 +1,8 @@
+---
+search:
+exclude: true
+--
+
 # Détails sur les application que nous proposons
 
 [Retour au catalogue](../how-it-works.md)
