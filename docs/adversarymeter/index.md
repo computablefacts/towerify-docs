@@ -1,5 +1,7 @@
 # AdversaryMeter
 
+![](/img/logo-adversarymeter.svg)
+
 ## Introduction
 
 A venir.

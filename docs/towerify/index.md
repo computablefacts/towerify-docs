@@ -1,5 +1,7 @@
 # Towerify
 
+![](/img/logo-towerify.svg)
+
 ## Introduction
 
 Towerify est une plateforme extensible et adaptée au déploiement de tout type d'applications. Towerify utilise des

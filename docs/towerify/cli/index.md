@@ -1,5 +1,7 @@
 # Towerify CLI
 
+![](/img/logo-towerify.svg)
+
 ## C'est quoi ?
 
 Towerify est notre tour de contrôle. 

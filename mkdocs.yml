@@ -32,6 +32,8 @@ nav:
           - Vocabulaire: towerify/vocabular.md
   - Federa:
       - Accueil: federa/index.md
+      - Formation: federa/legacy.md
+
 theme:
   name: material
   features:
