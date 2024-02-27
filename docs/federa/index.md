@@ -6,7 +6,7 @@
 
 __Federa est un Data Lake permettant à ses utilisateurs de créer rapidement des systèmes d'aide à la décision.__
 
-Décisions offre toutes les fonctionnalités d'un Data Lake traditionnel telles que le stockage et le traitement de
+Federa offre toutes les fonctionnalités d'un Data Lake traditionnel telles que le stockage et le traitement de
 quantités massives de données hétérogènes, à la fois structurées et non structurées. Cependant, __Federa est unique :
 au lieu de stocker les données sous formes de blobs ou de fichiers, Federa inspecte et extrait automatiquement le
 contenu de plus d'une trentaine de formats de fichiers__ (dont PDF, Word, PowerPoint, CSV, etc.) Les données extraites
