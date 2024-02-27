@@ -30,7 +30,8 @@ nav:
           - towerify/cli/interne/coder.md
           - towerify/cli/interne/next.md
           - Vocabulaire: towerify/vocabular.md
-
+  - Federa:
+      - Accueil: federa/index.md
 theme:
   name: material
   features:
