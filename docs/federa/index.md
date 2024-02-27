@@ -41,7 +41,7 @@ permet à la fois de stocker des données nécessitant différents niveaux d'hab
 aussi à des utilisateurs possédant différents niveaux d'habilitation d'interroger ce même système tout en préservant la
 confidentialité des données.
 
-### Modules
+### Présentation
 
 Les _modules_ sont des applications Web évolutives (UI ou API) permettant de répondre à une ou plusieurs questions
 analytiques précises.
