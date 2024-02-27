@@ -35,7 +35,11 @@ cohésion.
 
 ### Sécurité
 
-A venir.
+Chaque donnée intégrée dans Federa peut être associée à une étiquette de sécurité. Cette étiquette de sécurité
+est utilisée pour déterminer si un utilisateur répond aux exigences de sécurité requis pour accéder à une donnée. Cela
+permet à la fois de stocker des données nécessitant différents niveaux d'habilitation au sein d'un même système mais
+aussi à des utilisateurs possédant différents niveaux d'habilitation d'interroger ce même système tout en préservant la
+confidentialité des données.
 
 ### Modules
 
