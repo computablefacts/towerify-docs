@@ -8,6 +8,7 @@ nav:
   - Accueil: index.md
   - AdversaryMeter:
     - Accueil: adversarymeter/index.md
+    - Workflows: adversarymeter/workflows.md
   - Towerify Cloud:
     - Accueil: towerify/index.md
     - Aperçu: towerify/cloud/overview.md
