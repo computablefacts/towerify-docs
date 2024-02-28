@@ -1,8 +1,6 @@
-# Federa
-
 ![](../img/logo-federa.svg)
 
-## Préambule
+# Préambule
 
 __Federa est un Data Lake permettant à ses utilisateurs de créer rapidement des systèmes d'aide à la décision.__
 
@@ -14,17 +12,17 @@ sont ensuite sauvegardées sous forme d'enregistrements individuels regroupés l
 
 Federa a été spécialement conçu pour se conformer aux exigences de confidentialité du GDPR et du CCPA.
 
-## Aperçu du fonctionnement de la plateforme
+# Aperçu du fonctionnement de la plateforme
 
 ![](../img/federa/federa-platform.png)
 
-### Capture & Stockage
+## Capture & Stockage
 
 Les données provenant de sources internes et/ou externes sont capturées puis stockées dans des systèmes appropriés pour
 un traitement ultérieur. __L'objectif est d'identifier, d'acquérir et de stocker les données pertinentes issues du
 système d'information de l'organisation, de bases de données opérationnelles ou de sources externes (ex. Open Data).__
 
-### Sémantique
+## Sémantique
 
 Les données passent par une série d'opérations de prétraitement afin d'être qualifiées, nettoyées et structurées de
 manière à en faciliter la réutilisation. La notion de concept a pour but de généraliser et d'harmoniser les différentes
@@ -33,7 +31,7 @@ les concepts métiers d'autre part afin de fournir à tous les utilisateurs une 
 mise en relation constitue un atout important pour l'organisation en établissant un vocabulaire commun garantissant sa
 cohésion.
 
-### Sécurité
+## Sécurité
 
 Chaque donnée intégrée dans Federa peut être associée à une étiquette de sécurité. Cette étiquette de sécurité
 est utilisée pour déterminer si un utilisateur répond aux exigences de sécurité requis pour accéder à une donnée. Cela
@@ -41,12 +39,12 @@ permet à la fois de stocker des données nécessitant différents niveaux d'hab
 aussi à des utilisateurs possédant différents niveaux d'habilitation d'interroger ce même système tout en préservant la
 confidentialité des données.
 
-### Présentation
+## Présentation
 
 Les _modules_ sont des applications Web évolutives (UI ou API) permettant de répondre à une ou plusieurs questions
 analytiques précises.
 
-#### Modules de type UI
+### Modules de type UI
 
 Un Module de type UI est une application Web stateless utilisant notre SDK Javascript pour communiquer avec la
 plateforme. Un Module de type UI permet, par exemple, d’agencer librement des composants graphiques.
@@ -56,7 +54,7 @@ plateforme. Un Module de type UI permet, par exemple, d’agencer librement des 
 - Le SDK Javascript propage de manière transparente l’identité, les permissions et les autorisations de l’utilisateur au
   Module.
 
-#### Modules de type API
+### Modules de type API
 
 Un Module de type API est une API Python stateless réalisée à l’aide de [FastAPI](https://fastapi.tiangolo.com/). Un
 Module de type API permet, par exemple, de réaliser des calculs complexes qu’il serait peu aisé d’implanter en
@@ -67,7 +65,7 @@ Javascript.
 - L’identité, les permissions et les autorisations de l’utilisateur sont transmis à l’API par le paramètre `api_key`
   ajouté à l’URL par le SDK d’un Module de type UI.
 
-#### Autres interfaces
+### Autres interfaces
 
 La plateforme s’interface avec les outils de visualisation suivants :
 

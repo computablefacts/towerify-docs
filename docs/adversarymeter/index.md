@@ -1,15 +1,13 @@
-# AdversaryMeter
-
 ![](../img/logo-adversarymeter.svg)
 
-## Introduction
+# Introduction
 
 A venir.
 
-## Le problème
+# Le problème
 
 A venir.
 
-## La solution AdversaryMeter
+# La solution AdversaryMeter
 
 A venir.

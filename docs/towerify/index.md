@@ -1,8 +1,6 @@
-# Towerify
-
 ![](../img/logo-towerify.svg)
 
-## Introduction
+# Introduction
 
 Towerify est une plateforme extensible et adaptée au déploiement de tout type d'applications. Towerify utilise des
 méthodes éprouvées pour assurer le déploiement de vos applications les plus critiques, que celles-ci soient développées
@@ -15,7 +13,7 @@ qu'en soit l'environnement d'exécution. Avec Towerify, les développeurs et les
 besoin de perdre un temps précieux à automatiser les tâches de déploiement ou à devenir des experts des différents
 fournisseurs d'infrastructure cloud ou bare metal.
 
-## Le problème
+# Le problème
 
 Avec l'introduction continue de nouvelles réglementations telles la Réglementation Générale sur la Protection des
 Données (RGPD), de nouvelles lois telles que la loi sur la cyberrésilience (CRA) et la mise en place de labels tels que
@@ -29,7 +27,7 @@ aux utilisateurs finaux.
 Towerify permet à une organisation de s'assurer que ses ressources humaines restent tournées vers l'innovation tout en
 conservant la certitude que le code développé peut-être déployé partout où cela s'avèrerait nécessaire.
 
-## La solution Towerify
+# La solution Towerify
 
 Towerify est constitué de deux projets:
 

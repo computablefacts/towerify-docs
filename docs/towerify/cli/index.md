@@ -1,8 +1,6 @@
-# Towerify CLI
-
 ![](../../img/logo-towerify.svg)
 
-## C'est quoi ?
+# C'est quoi ?
 
 Towerify est notre tour de contrôle. 
 Il facilite l'emballage, le déploiement et la réutilisation des applications et des services. 
@@ -16,20 +14,20 @@ dans plusieurs environnements.
     Lien vers une page décrivant les outils mis à disposition (Jenkins, phpMyAdmin, Portainer, etc).
 
 
-## Objectif
+# Objectif
 
 Towerify vous permet d'automatiser la publication de votre application
 dans plusieurs environnements en fonction du code que vous mettez à jour dans votre repo Git.
 
 
-## Prérequis
+# Prérequis
 
 Aucun.
 
 Installez notre outil en ligne de commande, *Towerify CLI*, puis utilisez le pour déployer vos
 applications.
 
-## Principe
+# Principe
 
 Une première commande, `towerify init`, initialise le répertoire de votre application. Une
 deuxième commande, `towerify deploy`, paramètre votre *instance Towerify* et déclenche la
@@ -42,7 +40,7 @@ Towerify gère la complexité à votre place :
 * Towerify automatisera la création de l'image Docker et sa publication avec Docker Compose grâce à un pipeline Jenkins
   configuré dans un `Jenkinsfile`.
 
-## Et maintenant ?
+# Et maintenant ?
 
 Après cette présentation, vous vous dîtes certainement : 
 
