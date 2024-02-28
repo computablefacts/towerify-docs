@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
 site_name: ComputableFacts
-site_url: https://docs.computablefacts.com/
+site_url: http://docs.computablefacts.com/
 
 # Page tree
 nav:
