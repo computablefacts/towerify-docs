@@ -75,11 +75,11 @@ la clarté pour une compréhension rapide et intuitive de l'état du pipeline.
 
 === "Avec Blue Ocean"
 
-    ![Jenkins with Blue Ocean](../../img/jenkins-with-blue-ocean.png)
+    ![Jenkins with Blue Ocean](../../../img/jenkins-with-blue-ocean.png)
 
 === "Sans Blue Ocean"
 
-    ![Jenkins without Blue Ocean](../../img/jenkins-without-blue-ocean.png)
+    ![Jenkins without Blue Ocean](../../../img/jenkins-without-blue-ocean.png)
 
 Nos modifications :
 

@@ -1,6 +1,6 @@
 # Towerify
 
-![](/img/logo-towerify.svg)
+![](../img/logo-towerify.svg)
 
 ## Introduction
 

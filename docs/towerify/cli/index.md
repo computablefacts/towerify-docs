@@ -1,6 +1,6 @@
 # Towerify CLI
 
-![](/img/logo-towerify.svg)
+![](../../img/logo-towerify.svg)
 
 ## C'est quoi ?
 

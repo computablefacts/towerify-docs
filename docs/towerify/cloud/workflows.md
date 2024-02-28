@@ -162,7 +162,7 @@ l'_Administrateur Restreint_ le matériel commandé est prêt à être utilisé.
 
 ## Mise en place d'un environnement de développement avec Towerify CLI
 
-[Towerify CLI](../cli/) est une ligne de commande permettant l'automatisation de la publication d'applications ad hoc
+[Towerify CLI](../cli/index.md) est une ligne de commande permettant l'automatisation de la publication d'applications ad hoc
 dans différents environnements.
 
 1. Si vous n'en possédez pas déjà un, instanciez un nouveau serveur à l'aide de Towerify Cloud. Dans la suite, nous

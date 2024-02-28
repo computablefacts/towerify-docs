@@ -1,6 +1,6 @@
 # AdversaryMeter
 
-![](/img/logo-adversarymeter.svg)
+![](../img/logo-adversarymeter.svg)
 
 ## Introduction
 

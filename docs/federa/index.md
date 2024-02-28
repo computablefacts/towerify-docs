@@ -1,6 +1,6 @@
 # Federa
 
-![](/img/logo-federa.svg)
+![](../img/logo-federa.svg)
 
 ## Préambule
 
@@ -16,7 +16,7 @@ Federa a été spécialement conçu pour se conformer aux exigences de confident
 
 ## Aperçu du fonctionnement de la plateforme
 
-![](/img/federa-platform.png)
+![](../img/federa-platform.png)
 
 ### Capture & Stockage
 

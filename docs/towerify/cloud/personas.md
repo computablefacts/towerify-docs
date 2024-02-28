@@ -70,9 +70,9 @@ Ce persona correspond au rôle __Basic End User__.
 
 ??? note "Bon à savoir : intégration continue..."
 
-    Dans le cas où une application est déployée à l'aide de [Towerify CLI](../cli/), les opérateurs n'ont aucune action à 
-    réaliser pour provisionner les DNS de dev/staging/prod, les certificats SSL ou encore la base de données MySQL. 
-    L'ensemble de ces actions est pris en charge automatiquement et de façon transparente par Towerify CLI.
+    Dans le cas où une application est déployée à l'aide de [Towerify CLI](../cli/index.md), les opérateurs n'ont aucune 
+    action à réaliser pour provisionner les DNS de dev/staging/prod, les certificats SSL ou encore la base de données 
+    MySQL. L'ensemble de ces actions est pris en charge automatiquement et de façon transparente par Towerify CLI.
 
 ??? note "Bon à savoir : Single Sign-On (SSO)"
 
