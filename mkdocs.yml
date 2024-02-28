@@ -42,7 +42,7 @@ theme:
     - navigation.top
     - content.code.copy
     - content.code.select
-  logo: img/logo.svg
+  logo: img/logo.png
   favicon: img/favicon.png
   palette:
     primary: custom

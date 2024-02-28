@@ -16,7 +16,7 @@ Federa a été spécialement conçu pour se conformer aux exigences de confident
 
 ## Aperçu du fonctionnement de la plateforme
 
-![](../img/federa-platform.png)
+![](../img/federa/federa-platform.png)
 
 ### Capture & Stockage
 
