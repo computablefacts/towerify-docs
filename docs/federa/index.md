@@ -62,12 +62,12 @@ Un Module de type API est une API Python stateless réalisée à l’aide de [Fa
 Module de type API permet, par exemple, de réaliser des calculs complexes qu’il serait peu aisé d’implanter en
 Javascript.
 
-- L’API est versionnée par git et déployée à l’aide de Jenkins dans notre infrastructure.
+- L’API est versionnée par `git` et déployée à l’aide de Jenkins dans notre infrastructure.
 - L’API est accessible par n’importe quel Module de type UI.
 - L’identité, les permissions et les autorisations de l’utilisateur sont transmis à l’API par le paramètre `api_key`
   ajouté à l’URL par le SDK d’un Module de type UI.
 
-### Autres interfaces
+#### Autres interfaces
 
 La plateforme s’interface avec les outils de visualisation suivants :
 
