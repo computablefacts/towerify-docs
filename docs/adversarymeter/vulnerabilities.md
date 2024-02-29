@@ -35,3 +35,22 @@ vulnérabilités sont triées en fonction de leur niveau de criticité.
 11. Le picto indique que la vulnérabilité a été exploitée sur un des honeypots de l'organisation.
 
 12. Permet d'afficher la "[carte d'identité](assets.md#carte-didentite-dun-actif)" de l'actif concerné.
+
+## Délégation prestataire
+
+Cette fonctionnalité facilite la création d'une liste de tâches ciblée, ou "Cyber TODO", qui comprend tous les actifs
+nécessitant une attention particulière. Une fois cette liste établie, elle peut être facilement partagée avec un
+prestataire externe de services informatiques ou de cybersécurité. Cela permet une collaboration efficace et ciblée,
+où le prestataire a une vision claire de son périmètre d'actions à réaliser, optimisant ainsi les efforts de
+sécurisation et de maintenance du système informatique de l'organisation.
+
+Pour créer une "Cyber TODO" :
+
+- Sélectionner l'onglet "Délégation prestataire" puis cliquer sur le bouton "+" placé au milieu de l'écran :
+  ![](../img/adversarymeter/delegation-1.png)
+- Sélectionner ensuite une [étiquette](assets.md) dans la liste prévue à cet effet. Cette étiquette sera utilisée pour
+  regrouper ensemble les vulnérabilités associées aux actifs munis de celle-ci.
+  ![](../img/adversarymeter/delegation-2.png)
+- Une fois l'étiquette sélectionnée, un lien est automatiquement généré vers une liste des vulnérabilités pouvant être
+  partagée à des tiers.
+  ![](../img/adversarymeter/delegation-3.png)

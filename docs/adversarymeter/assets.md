@@ -20,7 +20,7 @@ ainsi que de démarrer ou d'arrêter la surveillance d'un actif.
 3. Actifs de l'organisation.
 
 4. Etiquettes permettant de regrouper les actifs d'une organisation. Ces étiquettes permettent notamment la création
-   d'une ou plusieurs "Cyber TODO" dans le cadre de délégations de service.
+   d'une ou plusieurs "[Cyber TODO](vulnerabilities.md#delegation-prestataire)" dans le cadre de délégations de service.
 
 5. Aperçu rapide du nombre et du niveau de criticité des vulnérabilités impactant un actif.
 
