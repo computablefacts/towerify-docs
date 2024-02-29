@@ -28,10 +28,10 @@ ainsi que de démarrer ou d'arrêter la surveillance d'un actif.
 
 7. Permet de relancer le scan d'un actif sans attendre scan le prochain scan automatique.
 
-8. Permet d'afficher la "carte d'identité" d'un actif ou de supprimer ce dernier. Cette "carte d'identité" contient de
-   nombreuses informations dont la liste des vulnérabilités impactant cet actif, la liste des ports ouverts et des
-   technologies exposées, le statut du scan, etc. Il est important de noter qu'un actif surveillé ne peut pas être
-   supprimé.
+8. Permet d'afficher la "[carte d'identité](#carte-didentite-dun-actif)" d'un actif ou de supprimer ce dernier.
+   Cette "[carte d'identité](#carte-didentite-dun-actif)" contient de nombreuses informations dont la liste des
+   vulnérabilités impactant cet actif, la liste des ports ouverts et des technologies exposées, le statut du scan, etc.
+   Il est important de noter qu'un actif surveillé ne peut pas être supprimé.
 
 9. Permet de parcourir la liste des actifs.
 
@@ -107,3 +107,17 @@ masse d'__étiquettes__ :
 - En cas de succès, vous serez automatiquement redirigé vers la liste de vos actifs. Les actifs ajoutés sont maintenant
   visibles dans cette liste.
   ![](../img/adversarymeter/add-asset-from-tld-4.png)
+
+## Carte d'identité d'un actif
+
+La carte d'identité d'un actif résume l'ensemble des informations découvertes par AdversaryMeter à propos d'un actif.
+La carte d'identité d'un actif permet notamment d'accéder à la liste des vulnérabilités impactant cet actif.
+
+![](../img/adversarymeter/my-assets-lateral-panel.png)
+
+Il est à noter que c'est au niveau de cette carte d'identité que des règles peuvent être configurées pour masquer
+des vulnérabilités. Il est notamment possible de :
+
+- masquer la vulnérabilité pour l'actif sélectionné seulement ;
+- masquer les vulnérabilités du même _type_ que celle sélectionnée ; 
+- masquer les vulnérabilités du même _titre_ que celle sélectionnée.
