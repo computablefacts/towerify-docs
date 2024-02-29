@@ -126,3 +126,7 @@ Il est notamment possible de :
 - masquer la vulnérabilité pour l'actif sélectionné seulement ;
 - masquer les vulnérabilités de même _type_ que celle sélectionnée ;
 - masquer les vulnérabilités de même _titre_ que celle sélectionnée.
+
+Enfin, une capture d'écran est réalisée automatiquement par AdversaryMeter lorsque le service exposé est de type _http_ :
+
+![](../img/adversarymeter/my-assets-lateral-panel-3.png)
