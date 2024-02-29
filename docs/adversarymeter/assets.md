@@ -28,13 +28,14 @@ ainsi que de démarrer ou d'arrêter la surveillance d'un actif.
 
 7. Permet de relancer le scan d'un actif sans attendre scan le prochain scan automatique.
 
-8. Permet d'afficher la "carte d'identité" d'un actif. Cette "carte d'identité" contient de nombreuses informations dont
-   la liste des vulnérabilités impactant cet actif, la liste des ports ouverts et des technologies exposées, le statut
-   du scan, etc.
+8. Permet d'afficher la "carte d'identité" d'un actif ou de supprimer ce dernier. Cette "carte d'identité" contient de
+   nombreuses informations dont la liste des vulnérabilités impactant cet actif, la liste des ports ouverts et des
+   technologies exposées, le statut du scan, etc. Il est important de noter qu'un actif surveillé ne peut pas être
+   supprimé.
 
 9. Permet de parcourir la liste des actifs.
 
-## Import
+## Ajouter un actif
 
 Il est possible d'importer de nouveaux actifs de trois manières différentes :
 
