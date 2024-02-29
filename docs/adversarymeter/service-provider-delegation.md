@@ -14,5 +14,5 @@ Pour créer une "Cyber TODO" :
   utilisée pour regrouper ensemble les vulnérabilités associées à des actifs munis de celle-ci.
   ![](../img/adversarymeter/delegation-2.png)
 - Une fois l'étiquette sélectionnée, un lien est automatiquement généré vers une page web pouvant être partagée à un
-  tiers.
+  tiers. Cocher une des cases de la TODO déclenche le lancement d'un nouveau scan.
   ![](../img/adversarymeter/delegation-3.png)
