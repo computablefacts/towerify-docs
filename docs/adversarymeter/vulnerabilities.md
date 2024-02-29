@@ -4,8 +4,6 @@ Une _vulnérabilité_ représente une faiblesse d'un serveur ou d'une applicatio
 L'exploitation d'une vulnérabilité peut permettre à un attaquant d'accéder à des données sensibles, de prendre le
 contrôle du système affecté, d'introduire des logiciels malveillants, ou de perturber les services fournis.
 
-## Mes vulnérabilités
-
 L'onglet "Mes vulnérabilités" regroupe l'ensemble des vulnérabilités impactant les actifs d'une organisation. Ces
 vulnérabilités sont triées en fonction de leur niveau de criticité.
 
