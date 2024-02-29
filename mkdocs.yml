@@ -10,6 +10,7 @@ nav:
     - Accueil: adversarymeter/index.md
     - Actifs: adversarymeter/assets.md
     - Vulnérabilités: adversarymeter/vulnerabilities.md
+    - Délégation: adversarymeter/service-provider-delegation.md
     - Equipes: adversarymeter/teams.md
   - Towerify Cloud:
     - Accueil: towerify/index.md
