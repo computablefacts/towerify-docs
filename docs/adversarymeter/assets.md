@@ -111,7 +111,8 @@ masse d'__étiquettes__ :
 ## Carte d'identité d'un actif
 
 La carte d'identité d'un actif résume l'ensemble des informations découvertes par AdversaryMeter à propos d'un actif.
-La carte d'identité d'un actif permet notamment d'accéder à la liste des vulnérabilités impactant cet actif.
+La carte d'identité d'un actif permet notamment d'accéder à la liste des vulnérabilités impactant cet actif ou encore à
+la liste de ses ports ouverts.
 
 ![](../img/adversarymeter/my-assets-lateral-panel.png)
 
@@ -119,5 +120,5 @@ Il est à noter que c'est au niveau de cette carte d'identité que des règles p
 des vulnérabilités. Il est notamment possible de :
 
 - masquer la vulnérabilité pour l'actif sélectionné seulement ;
-- masquer les vulnérabilités du même _type_ que celle sélectionnée ; 
+- masquer les vulnérabilités du même _type_ que celle sélectionnée ;
 - masquer les vulnérabilités du même _titre_ que celle sélectionnée.
