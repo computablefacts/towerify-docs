@@ -8,6 +8,7 @@ nav:
   - Accueil: index.md
   - AdversaryMeter:
     - Accueil: adversarymeter/index.md
+    - Tableau de bord: adversarymeter/dashboard.md
     - Actifs: adversarymeter/assets.md
     - Vulnérabilités: adversarymeter/vulnerabilities.md
     - Délégation: adversarymeter/service-provider-delegation.md
