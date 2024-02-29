@@ -1,6 +1,6 @@
 # Actifs
 
-Un _actif_ représente une adresse IP, une plage d'adresses IP ou un DNS vous appartenant.
+Un _actif_ représente une adresse IP, une plage d'adresses IP ou un DNS appartenant à une organisation.
 
 ## Mes actifs
 
