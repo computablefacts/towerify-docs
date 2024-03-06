@@ -53,7 +53,9 @@ l'organisation.
 4. Agressivité de l'attaquant. Cet indicateur tient aussi bien compte de la quantité d'événements générés par
    l'attaquant que de l'espacement temporel entre ceux-ci ou encore de l'impact qu'aurait son attaque si celle-ci était
    rejouée sur les actifs de l'organisation. C'est une mesure du risque que l'attaquant fait _actuellement_ peser sur 
-   l'organisation.
+   l'organisation. Cela peut permettre, par exemple, d'ajuster vos blacklists en fonction de ce paramètre au bien 
+   d'augmenter l'état d'alerte de votre équipe sécurité dans le cas où le nombre d'attaquants agressifs est supérieur à 
+   une baseline.
 
 5. Liste d'adresses IP pouvant être associées à l'attaquant.
 
