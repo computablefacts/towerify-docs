@@ -18,9 +18,9 @@ nav:
     - Aperçu: towerify/cloud/overview.md
     - Fonctionnement: towerify/cloud/how-it-works.md
     - Personas: towerify/cloud/personas.md
+    - Comptes: towerify/cloud/accounts.md
+    - Infrastructure: towerify/cloud/infrastructure.md
     - One-Click Apps: towerify/cloud/one-click-apps.md
-    - Workflows: towerify/cloud/workflows.md
-    - Avancé: towerify/cloud/advanced.md
   - Towerify CLI:
       - Accueil: towerify/cli/index.md
       - Tutoriel: towerify/cli/tutorial.md
