@@ -38,3 +38,9 @@ Towerify est constitué de deux projets:
 
 Il n'y a aucune dépendance entre Towerify Cloud et Towerify CLI. L'utilisation de l'un n'implique pas nécessairement 
 l'utilisation de l'autre.
+
+# La démo
+
+<div class="video-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/nvQmI5Pls6g?si=HPXVd_zYPsEqSNNm" frameborder="0" title="Towerify" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
