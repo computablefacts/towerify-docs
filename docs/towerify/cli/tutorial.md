@@ -20,7 +20,7 @@ du type https://my-app.acme.towerify.io/.
 ## Installation de l'outil
 
 ``` bash
-curl -sL https://acme.towerify.io/cli/install.sh | bash
+curl -sL https://cli.towerify.io/install.sh | bash
 ```
 
 Towerify télécharge et installe notre outil en ligne de commande :
@@ -45,7 +45,7 @@ Pour le configurer avec vos login et mot de passe, utilisez :
     est my-corp.towerify.io, faîtes :
 
     ``` bash
-    curl -sL https://acme.towerify.io/cli/install.sh | bash -s -- my-corp.towerify.io
+    curl -sL https://cli.towerify.io/install.sh | bash -s -- my-corp.towerify.io
     ```
 
 ## Configuration des paramètres d'accès

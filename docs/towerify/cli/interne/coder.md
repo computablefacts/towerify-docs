@@ -34,13 +34,13 @@ Les 2 applications se trouvent dans le [même dépôt GitHub public][towerify-cl
 Permet d'installer Towerify CLI grâce à la commande :
 
 ``` bash
-curl -sL https://acme.towerify.io/cli/install.sh | bash
+curl -sL https://cli.towerify.io/install.sh | bash
 ```
 
 Il est possible de préciser le domaine de son instance Towerify si besoin :
 
 ``` bash
-curl -sL https://acme.towerify.io/cli/install.sh | bash -s -- my-corp.towerify.io
+curl -sL https://cli.towerify.io/install.sh | bash -s -- my-corp.towerify.io
 ```
 
 Voici comment cela fonctionne :
@@ -59,7 +59,7 @@ sequenceDiagram
     participant Jenkins
   end
 
-  par curl -sL https://acme.towerify.io/cli/install.sh | bash
+  par curl -sL https://cli.towerify.io/install.sh | bash
     User ->> AppCLI: Installe Towerify CLI
     AppCLI ->> Install: Télécharge install.sh
 
@@ -104,7 +104,7 @@ Codé automatiquement par Bashly :thumbup:
 Permet de mettre à jour `towerify`
 
 * [X] Compare la version installée avec la dernière version disponible
-    * Utilise le fichier [https://acme.towerify.io/cli/version.txt][update01]
+    * Utilise le fichier [https://cli.towerify.io/version.txt][update01]
       pour connaitre la dernière version disponible
 * [X] Si la version est la même => message indiquant que Towerify est à jour
 * [X] Si la version est plus récente => mise à jour vers la nouvelle version
@@ -118,7 +118,7 @@ Permet de mettre à jour `towerify`
       Debian) pour propose de faire `towerify update --force` (qui ne fait pas
       de comparaison de version donc n'a pas besoin de `dpkg` pour le faire)
 
-[update01]: https://acme.towerify.io/cli/version.txt
+[update01]: https://cli.towerify.io/version.txt
 
 #### `towerify configure`
 
@@ -409,7 +409,7 @@ L'idée : faire une application YunoHost qui permettra à un utilisateur du Yuno
 Une fois cette app installé sur un YunoHost, le client peut faire la commande :
 
 ``` bash
-curl -sL https://acme.towerify.io/cli/install.sh | bash
+curl -sL https://cli.towerify.io/install.sh | bash
 ```
 
 * Adapter le script `build.sh` à la racine de la repo `towerify-cli` pour : 
