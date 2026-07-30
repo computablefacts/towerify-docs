@@ -1,6 +1,6 @@
 {"version": 2, "width": 104, "height": 37, "timestamp": 1699284233, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
 [0.463364, "o", "\u001b[?2004h\u001b[0;32m✔\u001b[0;0m \u001b[0;33m/mnt/data/dev/computablefacts/towerify-cli/install\u001b[0;0m [\u001b[0;35mmain\u001b[0;0m|\u001b[1;32m✔\u001b[0;0m\u001b[0;0m] \r\r\n\u001b[0;37m16:23\u001b[0;0m $ "]
-[1.348119, "o", "curl -L https://acme.towerify.io/cli/install.sh | sh"]
+[1.348119, "o", "curl -L https://cli.towerify.io/install.sh | sh"]
 [4.156995, "o", "\r\n\u001b[?2004l\r"]
 [4.222481, "o", "\u001b[1mInstallation de Towerify pour l'instance acme.towerify.io\u001b[0m\r\n\r\nPour vous authentifier auprès de Towerify, vous devez fournir votre login\r\net votre mot de passe.\r\n"]
 [4.222659, "o", "\r\n"]

@@ -42,3 +42,21 @@ besoin de la rafraîchir.
 
 Pratique si on possède deux écrans : IDE pour modifier la doc sur le premier et navigateur pour 
 voir les modifications sur le deuxième.
+
+## Publier la documentation
+
+Nous publions grâce à Towerify CLI.
+
+Pour déployer en DEV :
+```bash
+towerify deploy --env dev --profile cywise
+```
+
+La doc de DEV est accessible sur : [https://dev.docs.towerify.io/](https://dev.docs.towerify.io/).
+
+Pour déployer en PROD :
+```bash
+towerify deploy --env prod --profile cywise
+```
+
+La doc de PROD est accessible sur : [https://docs.towerify.io/](https://docs.towerify.io/).

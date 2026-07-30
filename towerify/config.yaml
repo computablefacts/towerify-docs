@@ -5,3 +5,5 @@ config:
   envs:
     dev:
       domain: dev.docs.towerify.io
+    prod:
+      domain: docs.towerify.io
